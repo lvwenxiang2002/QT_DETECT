@@ -1,0 +1,431 @@
+{
+    "currentRecipe": "0623",
+    "recipes": [
+        {
+            "globalInferConfidence": 0.25,
+            "lightFields": {
+                "暗场": {
+                    "划伤": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "气泡": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "白点": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "脏污": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "麻点": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "黑点": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    }
+                },
+                "背光": {
+                    "划伤": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "气泡": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "白点": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "脏污": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "麻点": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    },
+                    "黑点": {
+                        "maxArea": 10000,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 1000,
+                        "minArea": 10,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 5,
+                        "uiState": 1
+                    }
+                }
+            },
+            "name": "默认型号"
+        },
+        {
+            "globalInferConfidence": 0.6000000238418579,
+            "lightFields": {
+                "暗场": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.8,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 2
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 2
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 2
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 2
+                    }
+                },
+                "背光": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.8,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 2
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 1,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.5,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    }
+                }
+            },
+            "name": "0623"
+        },
+        {
+            "globalInferConfidence": 0.25,
+            "lightFields": {
+                "暗场": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 0
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 2
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 2
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 2
+                    }
+                },
+                "背光": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    }
+                }
+            },
+            "name": "06231"
+        }
+    ]
+}
