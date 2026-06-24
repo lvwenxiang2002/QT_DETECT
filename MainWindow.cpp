@@ -38,6 +38,9 @@ MainWindow::MainWindow(QWidget *parent)
     }
     
     updateDefectTags();
+    
+    // 初始化时创建一个新的批次
+    createNewBatch();
 }
 
 MainWindow::~MainWindow()
@@ -292,18 +295,8 @@ void MainWindow::onStartClicked()
         }
     }
     m_btnStop->setEnabled(true);
-    
-    // 重置所有计数和双相机对齐追踪变量
-    m_totalCount = 0;
-    m_ngCount = 0;
-    m_currentFrameIndex = -1;
-    m_pendingFrames.clear();
-    m_ngFrameIndices.clear();
-    m_lblPieceCount->setText("第0片");
-    m_lblStatus->setText("--");
-    m_lblStatus->setStyleSheet("font-size: 80px; font-weight: bold; color: #CCCCCC; border: none;");
-    m_lblTotal->setText("0片");
-    m_pieChart->setStats(0, 0);
+
+    // 原本在这里的清零逻辑已经移除。现在的暂停和开始只会控制相机的采图，不会清零计数器。
     
     for (auto cam : m_cameraThreads) {
         cam->startCapture();
@@ -391,6 +384,8 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
             QString dateStr = QDateTime::currentDateTime().toString("yyyy-MM-dd");
             QString timestamp = QDateTime::currentDateTime().toString("HHmmss_zzz");
             QString camStr = QString("Camera_%1").arg(data.frame->cameraId);
+            QString seqStr = QString("%1").arg(m_totalCount + 1, 5, 10, QChar('0'));
+            QString batchStr = m_currentBatchDir;
             
             static QThreadPool compressPool;
             static QThreadPool diskPool;
@@ -408,14 +403,14 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
             }
 
             // 将耗时的保存任务扔给后台
-            QtConcurrent::run(&compressPool, [frame = data.frame, rootPath, dateStr, timestamp, isNG, camStr, imgBL = data.imgBL, imgDF = data.imgDF, uiImage]() {
+            QtConcurrent::run(&compressPool, [frame = data.frame, rootPath, dateStr, batchStr, timestamp, seqStr, isNG, camStr, imgBL = data.imgBL, imgDF = data.imgDF, uiImage]() {
                 auto saveField = [&](const cv::Mat& img, LightField lf, const QString& lfStr) {
                     if (img.empty()) return;
                         
-                    QString oriDir = isNG ? QString("%1/%2/NG_ori/%3/%4").arg(rootPath).arg(dateStr).arg(camStr).arg(lfStr)
-                                          : QString("%1/%2/OK_ori/%3/%4").arg(rootPath).arg(dateStr).arg(camStr).arg(lfStr);
+                    QString oriDir = isNG ? QString("%1/%2/%3/NG_ori/%4").arg(rootPath).arg(dateStr).arg(batchStr).arg(lfStr)
+                                          : QString("%1/%2/%3/OK_ori/%4").arg(rootPath).arg(dateStr).arg(batchStr).arg(lfStr);
                     QDir().mkpath(oriDir);
-                    QString filenameBase = QString("%1_%2_%3_%4").arg(timestamp).arg(camStr).arg(lfStr).arg(isNG ? "NG" : "OK");
+                    QString filenameBase = QString("%1_%2_%3_%4_%5").arg(seqStr).arg(camStr).arg(timestamp).arg(lfStr).arg(isNG ? "NG" : "OK");
                     
                     QString oriFile = QString("%1/%2.png").arg(oriDir).arg(filenameBase);
                     std::vector<int> compression_params = {cv::IMWRITE_PNG_COMPRESSION, 1};
@@ -436,9 +431,9 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
                 saveField(imgDF, LightField::DarkField, "Darkfield");
 
                 if (isNG && !uiImage.isNull()) {
-                    QString resultDir = QString("%1/%2/NG_result").arg(rootPath).arg(dateStr);
+                    QString resultDir = QString("%1/%2/%3/NG_result").arg(rootPath).arg(dateStr).arg(batchStr);
                     QDir().mkpath(resultDir);
-                    QString filenameBase = QString("%1_%2_Result_NG").arg(timestamp).arg(camStr);
+                    QString filenameBase = QString("%1_%2_%3_Result_NG").arg(seqStr).arg(camStr).arg(timestamp);
                     QString resultFile = QString("%1/%2.jpg").arg(resultDir).arg(filenameBase);
                     
                     QByteArray ba;
@@ -508,6 +503,24 @@ void MainWindow::onMenuConfigClicked()
     }
 }
 
+void MainWindow::createNewBatch()
+{
+    // 使用时间戳（时分秒）作为批次文件夹名字
+    m_currentBatchDir = QDateTime::currentDateTime().toString("HHmmss");
+    
+    // 重置所有计数和双相机对齐追踪变量
+    m_totalCount = 0;
+    m_ngCount = 0;
+    m_currentFrameIndex = -1;
+    m_pendingFrames.clear();
+    m_ngFrameIndices.clear();
+    m_lblPieceCount->setText("第0片");
+    m_lblStatus->setText("--");
+    m_lblStatus->setStyleSheet("font-size: 80px; font-weight: bold; color: #CCCCCC; border: none;");
+    m_lblTotal->setText("0片");
+    m_pieChart->setStats(0, 0);
+}
+
 void MainWindow::onMenuDetectClicked()
 {
     DetectDialog dlg(this);
@@ -575,6 +588,9 @@ void MainWindow::onRecipeChanged(const QString& recipeName)
 {
     m_statusTitle->setText("当前检测型号 - " + recipeName);
     updateDefectTags();
+    
+    // 切换型号时，必须新建一个批次，并清零计数
+    createNewBatch();
 }
 
 void MainWindow::updateDefectTags()

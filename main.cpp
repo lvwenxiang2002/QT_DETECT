@@ -3,8 +3,17 @@
 #include <opencv2/opencv.hpp>
 #include "Common.h"
 
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif
+
 int main(int argc, char *argv[])
 {
+#ifdef Q_OS_WIN
+    // 主动提权：将当前进程设置为高优先级，防止被 Windows 后台节流 (Background Throttling)
+    SetPriorityClass(GetCurrentProcess(), HIGH_PRIORITY_CLASS);
+#endif
+
     // 启用高分屏 (High-DPI) 缩放支持，保证 4K 和 1080P 下界面比例一致
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);

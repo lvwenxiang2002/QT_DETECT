@@ -40,6 +40,7 @@ private slots:
 private:
     void setupUi();
     void setupLightTheme();
+    void createNewBatch();
 
     // UI Panels
     QWidget* createLeftPanel();
@@ -75,6 +76,7 @@ private:
     QMap<int, QMap<int, PendingFrameData>> m_pendingFrames;
     QSet<int> m_ngFrameIndices;
     int m_currentFrameIndex;
+    QString m_currentBatchDir;
     
     // Store hidden defects
     QStringList m_hiddenDefects;
