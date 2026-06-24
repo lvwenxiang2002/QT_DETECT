@@ -20,6 +20,9 @@ public:
     void updateImage(std::shared_ptr<ImageFrame> frame, const cv::Mat& imgBL, const cv::Mat& imgDF);
 
     void setHiddenDefects(const QStringList& defects);
+    
+    // 截取当前场景内容用于保存
+    QImage grabSceneImage() const;
 
 protected:
     void wheelEvent(QWheelEvent *event) override;

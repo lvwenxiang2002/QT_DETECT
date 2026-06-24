@@ -223,6 +223,26 @@ void ImageWidget::mouseReleaseEvent(QMouseEvent *event)
     QGraphicsView::mouseReleaseEvent(event);
 }
 
+QImage ImageWidget::grabSceneImage() const
+{
+    // 按照用户要求，渲染整个场景到 1:1 的原分辨率 QImage
+    QRectF sourceRect = m_scene->sceneRect();
+    if (sourceRect.isEmpty()) return QImage();
+
+    QSize targetSize = sourceRect.size().toSize();
+    QImage image(targetSize, QImage::Format_RGB32);
+    image.fill(Qt::black);
+    
+    QPainter painter(&image);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::SmoothPixmapTransform);
+    
+    // 把 sceneRect 的内容绘制到 image 尺寸里
+    m_scene->render(&painter, QRectF(0, 0, targetSize.width(), targetSize.height()), sourceRect);
+    
+    return image;
+}
+
 void ImageWidget::setHiddenDefects(const QStringList& defects)
 {
     m_hiddenDefects = defects;

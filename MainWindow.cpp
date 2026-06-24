@@ -297,7 +297,7 @@ void MainWindow::onStartClicked()
     m_totalCount = 0;
     m_ngCount = 0;
     m_currentFrameIndex = -1;
-    m_receivedCamerasPerFrame.clear();
+    m_pendingFrames.clear();
     m_ngFrameIndices.clear();
     m_lblPieceCount->setText("第0片");
     m_lblStatus->setText("--");
@@ -346,68 +346,83 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
         imgDF = frame->image.clone();
     }
     
-    if (frame->cameraId == 0) {
-        m_imageWidgetLeft->updateImage(frame, imgBL, imgDF);
-    } else {
-        m_imageWidgetRight->updateImage(frame, imgBL, imgDF);
+    int fIdx = (int)frame->frameIndex;
+    int camId = frame->cameraId;
+    
+    // 1. 将当前相机的帧数据暂存
+    m_pendingFrames[fIdx][camId] = {frame, imgBL, imgDF};
+
+    // 2. 如果同一片的两个相机数据还没凑齐，就先等待
+    if (m_pendingFrames[fIdx].size() < 2) {
+        return;
     }
 
-    bool isNG = false;
-    QStringList defectNames = {"崩边", "划伤", "黑划伤", "凹凸点", "不可擦拭脏污", "点伤", "异色"};
-    for (const auto& res : frame->results) {
-        QString label = (res.class_id >= 0 && res.class_id < defectNames.size()) ? defectNames[res.class_id] : "unknown";
-        QString lfPrefix = (res.light_type == LightField::DarkField) ? "暗场-" : "背光-";
-        QString fullLabel = lfPrefix + label;
-        if (res.passedHostAppFilter && !m_hiddenDefects.contains(fullLabel)) {
-            isNG = true;
-            break;
-        }
-    }
-    if (ConfigManager::instance().storage.saveStrategy == 0 ||
-        (ConfigManager::instance().storage.saveStrategy == 1 && isNG)) 
-    {
-        // 强制使用 C 盘进行 NVMe 固态硬盘极致 IO 测试
-        QString rootPath = "C:/BLL_test_save"; 
-        QString dateStr = QDateTime::currentDateTime().toString("yyyy-MM-dd");
-        QString timestamp = QDateTime::currentDateTime().toString("HHmmss_zzz");
-        QString camStr = QString("Camera_%1").arg(frame->cameraId);
-        // 专门用于 CPU 图像压缩的线程池 (由于压缩耗时，且多核可并行)
-        static QThreadPool compressPool;
-        // 针对 NVMe 固态硬盘，开启多线程并发写入以榨干 PCIe 带宽
-        static QThreadPool diskPool;
-        static bool poolInit = false;
-        if (!poolInit) {
-            compressPool.setMaxThreadCount(6);
-            diskPool.setMaxThreadCount(6); // NVMe 固态硬盘并发写入极快
-            poolInit = true;
+    // --- 此时两个相机的数据都已经准备好了，我们开始严格同步执行！ ---
+    
+    auto data0 = m_pendingFrames[fIdx][0];
+    auto data1 = m_pendingFrames[fIdx][1];
+
+    // 3. 同时更新左右两侧的 UI 界面，保证绝对的视觉同步！
+    m_imageWidgetLeft->updateImage(data0.frame, data0.imgBL, data0.imgDF);
+    m_imageWidgetRight->updateImage(data1.frame, data1.imgBL, data1.imgDF);
+
+    // 提取通用保存逻辑到一个 lambda
+    auto processSaveForCamera = [&](const PendingFrameData& data, ImageWidget* widget) {
+        bool isNG = false;
+        QStringList defectNames = {"崩边", "划伤", "黑划伤", "凹凸点", "不可擦拭脏污", "点伤", "异色"};
+        for (const auto& res : data.frame->results) {
+            QString label = (res.class_id >= 0 && res.class_id < defectNames.size()) ? defectNames[res.class_id] : "unknown";
+            QString lfPrefix = (res.light_type == LightField::DarkField) ? "暗场-" : "背光-";
+            QString fullLabel = lfPrefix + label;
+            if (res.passedHostAppFilter && !m_hiddenDefects.contains(fullLabel)) {
+                isNG = true;
+                break;
+            }
         }
 
-        static std::atomic<int> pendingSaves{0};
-        pendingSaves++;
+        if (isNG) {
+            m_ngFrameIndices.insert(fIdx);
+        }
 
-        // 1. 将耗时的压缩任务扔给 compressPool
-        QtConcurrent::run(&compressPool, [frame, rootPath, dateStr, timestamp, isNG, camStr, imgBL, imgDF]() {
-            auto saveField = [&](const cv::Mat& img, LightField lf, const QString& lfStr) {
-                if (img.empty()) return;
-                    
+        if (ConfigManager::instance().storage.saveStrategy == 0 ||
+            (ConfigManager::instance().storage.saveStrategy == 1 && isNG)) 
+        {
+            QString rootPath = ConfigManager::instance().storage.savePath; 
+            QString dateStr = QDateTime::currentDateTime().toString("yyyy-MM-dd");
+            QString timestamp = QDateTime::currentDateTime().toString("HHmmss_zzz");
+            QString camStr = QString("Camera_%1").arg(data.frame->cameraId);
+            
+            static QThreadPool compressPool;
+            static QThreadPool diskPool;
+            static bool poolInit = false;
+            if (!poolInit) {
+                compressPool.setMaxThreadCount(6);
+                diskPool.setMaxThreadCount(6);
+                poolInit = true;
+            }
+
+            QImage uiImage;
+            if (isNG) {
+                // 在主线程同步截取刚更新好的 UI 画面
+                uiImage = widget->grabSceneImage();
+            }
+
+            // 将耗时的保存任务扔给后台
+            QtConcurrent::run(&compressPool, [frame = data.frame, rootPath, dateStr, timestamp, isNG, camStr, imgBL = data.imgBL, imgDF = data.imgDF, uiImage]() {
+                auto saveField = [&](const cv::Mat& img, LightField lf, const QString& lfStr) {
+                    if (img.empty()) return;
+                        
                     QString oriDir = isNG ? QString("%1/%2/NG_ori/%3/%4").arg(rootPath).arg(dateStr).arg(camStr).arg(lfStr)
                                           : QString("%1/%2/OK_ori/%3/%4").arg(rootPath).arg(dateStr).arg(camStr).arg(lfStr);
-                    QString resultDir = QString("%1/%2/NG_result/%3/%4").arg(rootPath).arg(dateStr).arg(camStr).arg(lfStr);
-                    
                     QDir().mkpath(oriDir);
                     QString filenameBase = QString("%1_%2_%3_%4").arg(timestamp).arg(camStr).arg(lfStr).arg(isNG ? "NG" : "OK");
                     
-                    // 1. Save original image as PNG with low compression to avoid OOM
                     QString oriFile = QString("%1/%2.png").arg(oriDir).arg(filenameBase);
-                    std::vector<int> compression_params;
-                    compression_params.push_back(cv::IMWRITE_PNG_COMPRESSION);
-                    compression_params.push_back(1); // Low compression = much faster
+                    std::vector<int> compression_params = {cv::IMWRITE_PNG_COMPRESSION, 1};
                     
-                    // 先在内存中将 Mat 压缩为 PNG 字节流 (完全吃 CPU，不沾硬盘 IO)
                     std::vector<uchar> oriBuffer;
                     cv::imencode(".png", img, oriBuffer, compression_params);
                     
-                    // 将压缩好的字节流丢给单线程的 diskPool 进行极致顺序写入
                     QtConcurrent::run(&diskPool, [oriFile, buffer = std::move(oriBuffer)]() {
                         QFile file(oriFile);
                         if (file.open(QIODevice::WriteOnly)) {
@@ -415,108 +430,47 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
                             file.close();
                         }
                     });
-                    
-                    // NG 绘图被移到了下方统一处理
                 };
+                
                 saveField(imgBL, LightField::Backlight, "Backlight");
                 saveField(imgDF, LightField::DarkField, "Darkfield");
 
-                // 2. 统一绘制和保存 NG_result (缩放后一次性绘制所有光场的缺陷，彻底解决大图转换 OOM 问题)
-                if (isNG) {
-                    QString resultDir = QString("%1/%2/NG_result/%3").arg(rootPath).arg(dateStr).arg(camStr);
+                if (isNG && !uiImage.isNull()) {
+                    QString resultDir = QString("%1/%2/NG_result").arg(rootPath).arg(dateStr);
                     QDir().mkpath(resultDir);
                     QString filenameBase = QString("%1_%2_Result_NG").arg(timestamp).arg(camStr);
                     QString resultFile = QString("%1/%2.jpg").arg(resultDir).arg(filenameBase);
                     
-                    // 将大图缩放到 1/5 进行展示和保存，内存占用下降 25 倍，渲染飞快
-                    const float scale = 0.2f;
-                    cv::Mat resultImg;
-                    cv::resize(frame->image, resultImg, cv::Size(), scale, scale, cv::INTER_LINEAR);
-                    if (resultImg.channels() == 1) cv::cvtColor(resultImg, resultImg, cv::COLOR_GRAY2BGR);
+                    QByteArray ba;
+                    QBuffer buffer(&ba);
+                    buffer.open(QIODevice::WriteOnly);
+                    uiImage.save(&buffer, "JPG", 80); 
                     
-                    std::vector<std::string> defectNames = {
-                        "broken", "scratch", "scratch_black", "pit", 
-                        "squalidity", "spot_defect", "discoloration"
-                    };
-                    
-                    for (const auto& box : frame->results) {
-                        cv::Scalar boxColor = (box.light_type == LightField::DarkField) ? cv::Scalar(0, 0, 255) : cv::Scalar(0, 255, 255);
-                        cv::Scalar lfBgColor = (box.light_type == LightField::DarkField) ? cv::Scalar(0, 0, 255) : cv::Scalar(255, 100, 0); // BGR
-                        
-                        float center_x = (box.x1 + (box.x2 - box.x1) / 2.0f) * scale;
-                        float center_y = (box.y1 + (box.y2 - box.y1) / 2.0f) * scale;
-                        float small_w = (box.x2 - box.x1) * scale;
-                        float small_h = (box.y2 - box.y1) * scale;
-                        float small_x = center_x - small_w / 2.0f;
-                        float small_y = center_y - small_h / 2.0f;
-                        
-                        cv::Rect small_rect(small_x, small_y, small_w, small_h);
-                        cv::rectangle(resultImg, small_rect, boxColor, 2);
-                        
-                        std::string label = (box.class_id >= 0 && box.class_id < defectNames.size()) ? defectNames[box.class_id] : "unknown";
-                        std::string prefix = (box.light_type == LightField::DarkField) ? "DF-" : "BL-";
-                        std::string text = prefix + label + " " + std::to_string((int)(box.confidence * 100)) + "%";
-                        
-                        cv::putText(resultImg, text, cv::Point(small_x, small_y - 5), cv::FONT_HERSHEY_SIMPLEX, 0.8, lfBgColor, 2);
-                        
-                        if (box.passedHostAppFilter) {
-                            float big_w = small_w * 5.0f;
-                            float big_h = small_h * 5.0f;
-                            float big_x = center_x - big_w / 2.0f;
-                            float big_y = center_y - big_h / 2.0f;
-                            
-                            cv::Rect big_rect(big_x, big_y, big_w, big_h);
-                            cv::rectangle(resultImg, big_rect, boxColor, 2);
-                            
-                            // 半透明遮罩
-                            cv::Mat overlay;
-                            resultImg.copyTo(overlay);
-                            cv::rectangle(overlay, big_rect, boxColor, cv::FILLED);
-                            cv::addWeighted(overlay, 0.2, resultImg, 0.8, 0, resultImg);
-                            
-                            int baseLine = 0;
-                            cv::Size bigTextSize = cv::getTextSize(text, cv::FONT_HERSHEY_SIMPLEX, 2.0, 3, &baseLine);
-                            cv::rectangle(resultImg, cv::Point(big_x, big_y - bigTextSize.height - 10), cv::Point(big_x + bigTextSize.width, big_y), lfBgColor, cv::FILLED);
-                            cv::putText(resultImg, text, cv::Point(big_x, big_y - 5), cv::FONT_HERSHEY_SIMPLEX, 2.0, cv::Scalar(255, 255, 255), 3);
-                        }
-                    }
-
-                    std::vector<uchar> resBuffer;
-                    cv::imencode(".jpg", resultImg, resBuffer);
-                    
-                    QtConcurrent::run(&diskPool, [resultFile, buffer = std::move(resBuffer)]() {
+                    QtConcurrent::run(&diskPool, [resultFile, data = std::move(ba)]() {
                         QFile file(resultFile);
                         if (file.open(QIODevice::WriteOnly)) {
-                            file.write((const char*)buffer.data(), buffer.size());
+                            file.write(data);
                             file.close();
                         }
                     });
                 }
-                
-                pendingSaves--;
             });
-    }
-
-    int fIdx = (int)frame->frameIndex;
-    int camId = frame->cameraId;
-
-    // 1. 记录此相机在此帧的结果
-    m_receivedCamerasPerFrame[fIdx].insert(camId);
-    if (isNG) {
-        m_ngFrameIndices.insert(fIdx);
-    }
-
-    // 2. 双相机都到达时，进行整片玻璃的最终统计
-    if (m_receivedCamerasPerFrame[fIdx].size() == 2) {
-        m_totalCount++;
-        
-        bool pieceIsNG = m_ngFrameIndices.contains(fIdx);
-        if (pieceIsNG) {
-            m_ngCount++;
-            m_ngFrameIndices.remove(fIdx);
         }
-        
-        m_receivedCamerasPerFrame.remove(fIdx);
+    };
+
+    // 4. 同步触发两张图的保存和 NG 检测
+    processSaveForCamera(data0, m_imageWidgetLeft);
+    processSaveForCamera(data1, m_imageWidgetRight);
+
+    // 5. 统一更新计数器和饼图
+    m_totalCount++;
+    bool pieceIsNG = m_ngFrameIndices.contains(fIdx);
+    if (pieceIsNG) {
+        m_ngCount++;
+        m_ngFrameIndices.remove(fIdx);
+    }
+
+    m_pendingFrames.remove(fIdx);
 
         // 更新计数 UI (总数、批次、饼图)
         m_lblPieceCount->setText(QString("第%1片\n(%2 ms)").arg(m_totalCount).arg(frame->processTimeMs));
@@ -532,25 +486,7 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
             m_lblStatus->setText("OK");
             m_lblStatus->setStyleSheet("font-size: 80px; font-weight: bold; color: #00C853; border: none;");
         }
-    } else {
-        // 3. 只有一个相机到达时，先提供实时状态反馈，但不计入总数和饼图
-        if (fIdx > m_currentFrameIndex) {
-            m_currentFrameIndex = fIdx;
-            if (isNG) {
-                m_lblStatus->setText("NG");
-                m_lblStatus->setStyleSheet("font-size: 80px; font-weight: bold; color: #E53935; border: none;");
-            } else {
-                m_lblStatus->setText("OK");
-                m_lblStatus->setStyleSheet("font-size: 80px; font-weight: bold; color: #00C853; border: none;");
-            }
-        } else if (fIdx == m_currentFrameIndex) {
-            // 如果此帧之前已经展现过，只有当这次到的相机检测为 NG 时才覆盖为 NG
-            if (isNG) {
-                m_lblStatus->setText("NG");
-                m_lblStatus->setStyleSheet("font-size: 80px; font-weight: bold; color: #E53935; border: none;");
-            }
-        }
-    }
+
 }
 
 void MainWindow::onMenuConfigClicked()

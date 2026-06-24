@@ -66,7 +66,13 @@ private:
     
     int m_totalCount;
     int m_ngCount;
-    QMap<int, QSet<int>> m_receivedCamerasPerFrame;
+    
+    struct PendingFrameData {
+        std::shared_ptr<ImageFrame> frame;
+        cv::Mat imgBL;
+        cv::Mat imgDF;
+    };
+    QMap<int, QMap<int, PendingFrameData>> m_pendingFrames;
     QSet<int> m_ngFrameIndices;
     int m_currentFrameIndex;
     
