@@ -1,21 +1,54 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
+# ==========================================
+# Qt + C++ (MSVC) Git Ignore Configuration
+# ==========================================
+
+# C++ Build Output
 *.obj
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+*.o
+*.pdb
+*.ilk
+*.idb
+*.exp
 *.lib
-
-# Executables
+*.dll
 *.exe
-*.out
-*.app
+*.map
+
+# Qt QMake build files
+Makefile
+Makefile.Debug
+Makefile.Release
+object_script.*
+*.qmake.stash
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
+*.moc
+
+# Qt Creator & Visual Studio files
+*.user
+*.user.user
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.user
+.vs/
+**/.vs/**
+*.ipch
+**/*.ipch
+ipch/
+**/ipch/**
+*.db
+*.opendb
+*.tlog
+*.lastbuildstate
+
+# Qt compilation folders
+debug/
+release/
+
+# Temporary / OS files
+Thumbs.db
+Desktop.ini
+*~
+*.swp

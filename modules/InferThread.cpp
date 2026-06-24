@@ -108,13 +108,20 @@ void InferThread::stop()
 
 void InferThread::pushImage(std::shared_ptr<ImageFrame> frame)
 {
-    QMutexLocker locker(&m_mutex);
-    if (m_queue.size() > 5) {
-        qWarning() << "Infer queue full, dropping frame.";
-        return;
+    while (true) {
+        {
+            QMutexLocker locker(&m_mutex);
+            if (!m_isRunning) return;
+            
+            if (m_queue.size() <= 2) {
+                m_queue.enqueue(frame);
+                m_condition.wakeOne();
+                break;
+            }
+        }
+        // 队列满时，阻塞调用线程（CameraThread），变相降低相机采图速率以匹配推理速度
+        QThread::msleep(10);
     }
-    m_queue.enqueue(frame);
-    m_condition.wakeOne();
 }
 
 void InferThread::processFrame(std::shared_ptr<ImageFrame> frame)
@@ -429,9 +436,8 @@ void InferThread::run()
     // 模型路径配置 (Model Path Configuration)
     // 动态获取可执行文件所在目录，以便项目自由移动
     // ==========================================
-    QString appDir = QCoreApplication::applicationDirPath();
-    QString enginePathBL = appDir + "/../../test_models/1_1_1_tilt_light_defects_0616.engine";
-    QString enginePathDF = appDir + "/../../test_models/tilt_dark.engine";
+    QString enginePathBL = "E:/BLL_QT_detect/test_models/1_1_1_tilt_light_defects_0616.engine";
+    QString enginePathDF = "E:/BLL_QT_detect/test_models/tilt_dark.engine";
     
     if (!initializeTRT(enginePathBL, enginePathDF)) {
         qWarning() << "Failed to initialize TensorRT engines";

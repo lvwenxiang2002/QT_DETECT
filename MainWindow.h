@@ -7,6 +7,8 @@
 #include <QFrame>
 #include <vector>
 #include <memory>
+#include <QMap>
+#include <QSet>
 #include "widgets/ImageWidget.h"
 #include "widgets/PieChartWidget.h"
 #include "modules/CameraThread.h"
@@ -64,6 +66,9 @@ private:
     
     int m_totalCount;
     int m_ngCount;
+    QMap<int, QSet<int>> m_receivedCamerasPerFrame;
+    QSet<int> m_ngFrameIndices;
+    int m_currentFrameIndex;
     
     // Store hidden defects
     QStringList m_hiddenDefects;

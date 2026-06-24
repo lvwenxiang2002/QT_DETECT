@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include <QApplication>
+#include <opencv2/opencv.hpp>
 #include "Common.h"
 
 int main(int argc, char *argv[])
@@ -9,6 +10,9 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 
     QApplication a(argc, argv);
+    
+    // 限制 OpenCV 内部多线程，防止与 QThreadPool 抢占过多 CPU 资源导致界面和推理卡顿
+    cv::setNumThreads(1);
     
     // 注册自定义类型以便跨线程信号槽传递
     qRegisterMetaType<std::shared_ptr<ImageFrame>>("std::shared_ptr<ImageFrame>");

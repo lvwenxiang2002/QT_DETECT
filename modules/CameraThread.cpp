@@ -42,8 +42,7 @@ void CameraThread::run()
     // MV_CC_StartGrabbing(m_hCamera);
     // MV_FRAME_OUT stImageInfo;
     
-    QString appDir = QCoreApplication::applicationDirPath();
-    QString camDir = appDir + "/../../test_images" + QString("/Camera%1").arg(m_cameraId);
+    QString camDir = "E:/BLL_QT_detect/test_images" + QString("/Camera%1").arg(m_cameraId);
     QDir dir(camDir);
     QStringList filters;
     filters << "*.bmp" << "*.jpg" << "*.png" << "*.tif";

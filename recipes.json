@@ -156,7 +156,7 @@
             "name": "默认型号"
         },
         {
-            "globalInferConfidence": 0.6000000238418579,
+            "globalInferConfidence": 0.25,
             "lightFields": {
                 "暗场": {
                     "不可擦拭脏污": {

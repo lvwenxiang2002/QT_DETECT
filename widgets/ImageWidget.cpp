@@ -118,55 +118,67 @@ void ImageWidget::updateImage(std::shared_ptr<ImageFrame> frame, const cv::Mat& 
         float center_x = box.x1 + box_w / 2.0f;
         float center_y = box.y1 + box_h / 2.0f;
         
-        float draw_w = box_w;
-        float draw_h = box_h;
-        int pen_width = 4;
-        int font_size = 40;
+        // Small Box logic
+        float small_draw_w = box_w;
+        float small_draw_h = box_h;
+        float small_draw_x = center_x - small_draw_w / 2.0f;
+        float small_draw_y = center_y - small_draw_h / 2.0f;
         
-        if (box.passedHostAppFilter) {
-            draw_w *= 5.0f;
-            draw_h *= 5.0f;
-            pen_width = 12; // 边框也加粗一点
-            font_size = 200; // 字体放大五倍
-        } else {
-            // 没有通过上位机参数的，存在感低一点，全透明小框
-            boxColor.setAlpha(180);
-            lfBgColor.setAlpha(180);
-            pen_width = 2;
-            font_size = 20; // 缩小一半
-        }
-
-        float draw_x = center_x - draw_w / 2.0f;
-        float draw_y = center_y - draw_h / 2.0f;
-
-        QGraphicsRectItem *rectItem = new QGraphicsRectItem(draw_x, draw_y, draw_w, draw_h);
-        QPen borderPen(boxColor, pen_width, penStyle);
-        rectItem->setPen(borderPen); 
-        
-        if (box.passedHostAppFilter) {
-            rectItem->setBrush(QColor(boxColor.red(), boxColor.green(), boxColor.blue(), 50)); 
-        } else {
-            rectItem->setBrush(Qt::NoBrush); // 全透明无幕布
+        QColor smallBoxColor = boxColor;
+        QColor smallLfBgColor = lfBgColor;
+        if (!box.passedHostAppFilter) {
+            smallBoxColor.setAlpha(180);
+            smallLfBgColor.setAlpha(180);
         }
         
-        m_scene->addItem(rectItem);
+        QGraphicsRectItem *smallRectItem = new QGraphicsRectItem(small_draw_x, small_draw_y, small_draw_w, small_draw_h);
+        QPen smallBorderPen(smallBoxColor, 2, penStyle);
+        smallRectItem->setPen(smallBorderPen); 
+        smallRectItem->setBrush(Qt::NoBrush);
+        m_scene->addItem(smallRectItem);
         
-        QGraphicsTextItem *textItem = new QGraphicsTextItem(displayText);
-        textItem->setDefaultTextColor(Qt::white);
-        QFont f = textItem->font();
-        f.setPixelSize(font_size); 
-        f.setBold(true);
-        textItem->setFont(f);
+        // Small Text (Just text, no background block, text color is the background color)
+        QGraphicsTextItem *smallTextItem = new QGraphicsTextItem(displayText);
+        smallTextItem->setDefaultTextColor(smallLfBgColor); // "翻转过来" -> Text is colored, no block
+        QFont fSmall = smallTextItem->font();
+        fSmall.setPixelSize(20); 
+        fSmall.setBold(true);
+        smallTextItem->setFont(fSmall);
         
-        QRectF textRect = textItem->boundingRect();
-        QGraphicsRectItem* textBg = new QGraphicsRectItem(draw_x, draw_y - textRect.height(), textRect.width() + 10, textRect.height());
-        textBg->setBrush(lfBgColor);
-        textBg->setPen(Qt::NoPen);
-        
-        m_scene->addItem(textBg);
-        
-        textItem->setPos(draw_x + 5, draw_y - textRect.height());
-        m_scene->addItem(textItem);
+        QRectF smallTextRect = smallTextItem->boundingRect();
+        smallTextItem->setPos(small_draw_x + 5, small_draw_y - smallTextRect.height());
+        m_scene->addItem(smallTextItem);
+
+        // Big Box logic
+        if (box.passedHostAppFilter) {
+            float big_draw_w = box_w * 5.0f;
+            float big_draw_h = box_h * 5.0f;
+            float big_draw_x = center_x - big_draw_w / 2.0f;
+            float big_draw_y = center_y - big_draw_h / 2.0f;
+
+            QGraphicsRectItem *bigRectItem = new QGraphicsRectItem(big_draw_x, big_draw_y, big_draw_w, big_draw_h);
+            QPen bigBorderPen(boxColor, 12, penStyle);
+            bigRectItem->setPen(bigBorderPen); 
+            bigRectItem->setBrush(QColor(boxColor.red(), boxColor.green(), boxColor.blue(), 50)); // 半透明幕布
+            m_scene->addItem(bigRectItem);
+            
+            // Big Text (White text, colored background block)
+            QGraphicsTextItem *bigTextItem = new QGraphicsTextItem(displayText);
+            bigTextItem->setDefaultTextColor(Qt::white);
+            QFont fBig = bigTextItem->font();
+            fBig.setPixelSize(200); 
+            fBig.setBold(true);
+            bigTextItem->setFont(fBig);
+            
+            QRectF bigTextRect = bigTextItem->boundingRect();
+            QGraphicsRectItem* bigTextBg = new QGraphicsRectItem(big_draw_x, big_draw_y - bigTextRect.height(), bigTextRect.width() + 10, bigTextRect.height());
+            bigTextBg->setBrush(lfBgColor);
+            bigTextBg->setPen(Qt::NoPen);
+            m_scene->addItem(bigTextBg);
+            
+            bigTextItem->setPos(big_draw_x + 5, big_draw_y - bigTextRect.height());
+            m_scene->addItem(bigTextItem);
+        }
     }
 }
 
