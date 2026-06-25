@@ -1,7 +1,9 @@
 {
-    "currentRecipe": "0623",
+    "currentRecipe": "0624",
     "recipes": [
         {
+            "exposureTimeLeft": 1000,
+            "exposureTimeRight": 1000,
             "globalInferConfidence": 0.25,
             "lightFields": {
                 "暗场": {
@@ -153,9 +155,19 @@
                     }
                 }
             },
-            "name": "默认型号"
+            "name": "默认型号",
+            "offsetXLeft": 0,
+            "offsetXRight": 0,
+            "offsetYLeft": 0,
+            "offsetYRight": 0,
+            "roiHeightLeft": 8192,
+            "roiHeightRight": 8192,
+            "roiWidthLeft": 16384,
+            "roiWidthRight": 16384
         },
         {
+            "exposureTimeLeft": 1000,
+            "exposureTimeRight": 1000,
             "globalInferConfidence": 0.25,
             "lightFields": {
                 "暗场": {
@@ -289,10 +301,20 @@
                     }
                 }
             },
-            "name": "0623"
+            "name": "0623",
+            "offsetXLeft": 0,
+            "offsetXRight": 0,
+            "offsetYLeft": 0,
+            "offsetYRight": 0,
+            "roiHeightLeft": 30000,
+            "roiHeightRight": 30000,
+            "roiWidthLeft": 16384,
+            "roiWidthRight": 16384
         },
         {
-            "globalInferConfidence": 0.25,
+            "exposureTimeLeft": 1000,
+            "exposureTimeRight": 1000,
+            "globalInferConfidence": 0.8500000238418579,
             "lightFields": {
                 "暗场": {
                     "不可擦拭脏污": {
@@ -302,7 +324,7 @@
                         "minArea": 0,
                         "minConfidence": 0.25,
                         "minDiagonal": 0,
-                        "uiState": 0
+                        "uiState": 1
                     },
                     "凹凸点": {
                         "maxArea": 0,
@@ -318,7 +340,7 @@
                         "maxConfidence": 0,
                         "maxDiagonal": 0,
                         "minArea": 0,
-                        "minConfidence": 0.25,
+                        "minConfidence": 0.6,
                         "minDiagonal": 0,
                         "uiState": 1
                     },
@@ -425,7 +447,453 @@
                     }
                 }
             },
-            "name": "06231"
+            "name": "06231",
+            "offsetXLeft": 1305,
+            "offsetXRight": 0,
+            "offsetYLeft": 0,
+            "offsetYRight": 0,
+            "roiHeightLeft": 6000,
+            "roiHeightRight": 6000,
+            "roiWidthLeft": 6000,
+            "roiWidthRight": 6000
+        },
+        {
+            "exposureTimeLeft": 50,
+            "exposureTimeRight": 50,
+            "globalInferConfidence": 0.25,
+            "lightFields": {
+                "暗场": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.6,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    }
+                },
+                "背光": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    }
+                }
+            },
+            "name": "0624",
+            "offsetXLeft": 0,
+            "offsetXRight": 0,
+            "offsetYLeft": 0,
+            "offsetYRight": 0,
+            "roiHeightLeft": 50000,
+            "roiHeightRight": 50000,
+            "roiWidthLeft": 8000,
+            "roiWidthRight": 8000
+        },
+        {
+            "exposureTimeLeft": 50,
+            "exposureTimeRight": 50,
+            "globalInferConfidence": 0.25,
+            "lightFields": {
+                "暗场": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    }
+                },
+                "背光": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    }
+                }
+            },
+            "name": "06241",
+            "offsetXLeft": 0,
+            "offsetXRight": 0,
+            "offsetYLeft": 0,
+            "offsetYRight": 0,
+            "roiHeightLeft": 30000,
+            "roiHeightRight": 30000,
+            "roiWidthLeft": 8192,
+            "roiWidthRight": 8192
+        },
+        {
+            "exposureTimeLeft": 50,
+            "exposureTimeRight": 1000,
+            "globalInferConfidence": 0.25,
+            "lightFields": {
+                "暗场": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    }
+                },
+                "背光": {
+                    "不可擦拭脏污": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "凹凸点": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "崩边": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "异色": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "点伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    },
+                    "黑划伤": {
+                        "maxArea": 0,
+                        "maxConfidence": 0,
+                        "maxDiagonal": 0,
+                        "minArea": 0,
+                        "minConfidence": 0.25,
+                        "minDiagonal": 0,
+                        "uiState": 1
+                    }
+                }
+            },
+            "name": "0625",
+            "offsetXLeft": 5748,
+            "offsetXRight": 0,
+            "offsetYLeft": 0,
+            "offsetYRight": 0,
+            "roiHeightLeft": 40000,
+            "roiHeightRight": 8192,
+            "roiWidthLeft": 9888,
+            "roiWidthRight": 16384
         }
     ]
 }

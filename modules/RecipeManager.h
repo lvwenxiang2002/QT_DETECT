@@ -28,6 +28,20 @@ struct Recipe {
     QString name;
     float globalInferConfidence = 0.25f; // 统一的底层推理库置信度过滤阈值
     QMap<QString, LightFieldParam> lightFields;
+    
+    // Camera Left Settings
+    int roiWidthLeft = 16384;
+    int roiHeightLeft = 8192;
+    int offsetXLeft = 0;
+    int offsetYLeft = 0;
+    float exposureTimeLeft = 1000.0f;
+
+    // Camera Right Settings
+    int roiWidthRight = 16384;
+    int roiHeightRight = 8192;
+    int offsetXRight = 0;
+    int offsetYRight = 0;
+    float exposureTimeRight = 1000.0f;
 };
 
 class RecipeManager {

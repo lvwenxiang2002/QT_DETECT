@@ -31,6 +31,17 @@ void RecipeManager::load(const QString& filePath) {
         Recipe r;
         r.name = obj["name"].toString();
         r.globalInferConfidence = obj["globalInferConfidence"].toDouble(0.25);
+        r.roiWidthLeft = obj["roiWidthLeft"].toInt(16384);
+        r.roiHeightLeft = obj["roiHeightLeft"].toInt(8192);
+        r.offsetXLeft = obj["offsetXLeft"].toInt(0);
+        r.offsetYLeft = obj["offsetYLeft"].toInt(0);
+        r.exposureTimeLeft = obj["exposureTimeLeft"].toDouble(1000.0);
+
+        r.roiWidthRight = obj["roiWidthRight"].toInt(16384);
+        r.roiHeightRight = obj["roiHeightRight"].toInt(8192);
+        r.offsetXRight = obj["offsetXRight"].toInt(0);
+        r.offsetYRight = obj["offsetYRight"].toInt(0);
+        r.exposureTimeRight = obj["exposureTimeRight"].toDouble(1000.0);
         
         QJsonObject lfObj = obj["lightFields"].toObject();
         for (auto lfIt = lfObj.begin(); lfIt != lfObj.end(); ++lfIt) {
@@ -64,6 +75,17 @@ void RecipeManager::save(const QString& filePath) {
         QJsonObject obj;
         obj["name"] = r.name;
         obj["globalInferConfidence"] = r.globalInferConfidence;
+        obj["roiWidthLeft"] = r.roiWidthLeft;
+        obj["roiHeightLeft"] = r.roiHeightLeft;
+        obj["offsetXLeft"] = r.offsetXLeft;
+        obj["offsetYLeft"] = r.offsetYLeft;
+        obj["exposureTimeLeft"] = r.exposureTimeLeft;
+
+        obj["roiWidthRight"] = r.roiWidthRight;
+        obj["roiHeightRight"] = r.roiHeightRight;
+        obj["offsetXRight"] = r.offsetXRight;
+        obj["offsetYRight"] = r.offsetYRight;
+        obj["exposureTimeRight"] = r.exposureTimeRight;
         
         QJsonObject lfObj;
         for (auto lfIt = r.lightFields.begin(); lfIt != r.lightFields.end(); ++lfIt) {

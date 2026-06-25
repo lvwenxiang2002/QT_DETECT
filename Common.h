@@ -27,6 +27,7 @@ struct DefectResult {
 struct ImageFrame {
     int cameraId;
     int frameIndex;
+    bool isForRoi = false; // Flag to indicate if this frame is specifically for ROI setup and should bypass inference
     
     // 我们将使用 cv::Mat 指向 Pinned Memory，避免在高频操作中使用 QImage
     cv::Mat image; 

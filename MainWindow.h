@@ -19,12 +19,27 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    
+    enum SystemStatus {
+        Status_Stopped = 0,
+        Status_Running,
+        Status_Error
+    };
+    void updateStatusLight(SystemStatus status);
+
+signals:
+    void capturedForRoi(std::shared_ptr<ImageFrame> frame);
+
+public slots:
+    Q_INVOKABLE void triggerCameraForRoi(int cameraId);
+    Q_INVOKABLE void stopCameraForRoi(int cameraId);
 
 private slots:
     void onStartClicked();
     void onStopClicked();
+    void onCameraError(QString msg);
     void onImageProcessed(std::shared_ptr<ImageFrame> frame);
 
     // New slots for interaction
@@ -53,6 +68,7 @@ private:
     ImageWidget* m_imageWidgetRight;
     PieChartWidget* m_pieChart;
 
+    SystemStatus m_currentStatus = Status_Stopped;
     // UI Elements
     QPushButton* m_btnStart;
     QPushButton* m_btnStop;
@@ -77,6 +93,7 @@ private:
     QSet<int> m_ngFrameIndices;
     int m_currentFrameIndex;
     QString m_currentBatchDir;
+    QString m_runningRecipeName;
     
     // Store hidden defects
     QStringList m_hiddenDefects;

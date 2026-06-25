@@ -7,10 +7,22 @@
 #include <QFile>
 
 struct CameraConfig {
+    QString serialNumberLeft = "";
+    QString serialNumberRight = "";
     int exposureTime = 5000;
     double gain = 1.0;
     int triggerMode = 0; // 0: Line rate, 1: Encoder, 2: Free
     int reconnectRetries = 3;
+    double lineRate = 5000.0; // 软触发模拟行频
+};
+
+struct LightControllerConfig {
+    int commType = 0; // 0: RS232, 1: TCP/IP
+    QString ipAddress = "192.168.1.101";
+    int port = 5000;
+    QString comPort = "COM1";
+    int baudRate = 115200;
+    int protocol = 0; // 0: OPT, 1: CST, 2: Wordop
 };
 
 struct PlcConfig {
@@ -46,6 +58,7 @@ public:
     PlcConfig plc;
     StorageConfig storage;
     GeneralConfig general;
+    LightControllerConfig light;
 
 private:
     ConfigManager() = default;

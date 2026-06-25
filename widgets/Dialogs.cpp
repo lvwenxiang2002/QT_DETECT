@@ -11,7 +11,9 @@
 #include <QTableWidget>
 #include <QHeaderView>
 #include "modules/RecipeManager.h"
+#include "modules/RecipeManager.h"
 #include "modules/ConfigManager.h"
+#include "RoiSettingDialog.h"
 
 ConfigDialog::ConfigDialog(QWidget *parent) : QDialog(parent) {
     setWindowTitle("系统配置");
@@ -26,14 +28,21 @@ ConfigDialog::ConfigDialog(QWidget *parent) : QDialog(parent) {
     QFormLayout *formCam = new QFormLayout(tabCamera);
     m_comboTriggerMode = new QComboBox(this);
     m_comboTriggerMode->addItems({"行频触发 (Line Rate)", "编码器触发 (Encoder)", "自由采集 (Free Run)"});
-    m_spinExposure = new QSpinBox(this);
-    m_spinExposure->setRange(10, 100000);
+    m_editSerialLeft = new QLineEdit(this);
+    m_editSerialLeft->setPlaceholderText("左相机 SN");
+    m_editSerialRight = new QLineEdit(this);
+    m_editSerialRight->setPlaceholderText("右相机 SN");
     m_spinGain = new QDoubleSpinBox(this);
     m_spinGain->setRange(0.0, 20.0);
     m_spinReconnect = new QSpinBox(this);
     m_spinReconnect->setRange(0, 10);
+    m_spinLineRate = new QDoubleSpinBox(this);
+    m_spinLineRate->setRange(100.0, 100000.0);
+    m_spinLineRate->setDecimals(1);
+    formCam->addRow("左相机 SN:", m_editSerialLeft);
+    formCam->addRow("右相机 SN:", m_editSerialRight);
     formCam->addRow("触发模式:", m_comboTriggerMode);
-    formCam->addRow("曝光时间(us):", m_spinExposure);
+    formCam->addRow("模拟软触发行频:", m_spinLineRate);
     formCam->addRow("增益:", m_spinGain);
     formCam->addRow("掉线重试次数:", m_spinReconnect);
     m_tabWidget->addTab(tabCamera, "📷 相机配置");
@@ -52,7 +61,29 @@ ConfigDialog::ConfigDialog(QWidget *parent) : QDialog(parent) {
     formPlc->addRow("IP 地址:", m_editIpAddress);
     formPlc->addRow("端口号:", m_spinPort);
     formPlc->addRow("心跳包间隔(ms):", m_spinHeartbeat);
-    m_tabWidget->addTab(tabPlc, "🔌 通信配置");
+    m_tabWidget->addTab(tabPlc, "🔌 PLC配置");
+
+    // 2.5 Light Controller Tab
+    QWidget *tabLight = new QWidget();
+    QFormLayout *formLight = new QFormLayout(tabLight);
+    m_comboLightCommType = new QComboBox(this);
+    m_comboLightCommType->addItems({"串口 (RS232)", "网口 (TCP/IP)"});
+    m_editLightIp = new QLineEdit(this);
+    m_spinLightPort = new QSpinBox(this);
+    m_spinLightPort->setRange(1, 65535);
+    m_editLightComPort = new QLineEdit(this);
+    m_comboLightBaudRate = new QComboBox(this);
+    m_comboLightBaudRate->addItems({"9600", "19200", "38400", "57600", "115200"});
+    m_comboLightProtocol = new QComboBox(this);
+    m_comboLightProtocol->addItems({"OPT 奥普特", "CST", "Wordop", "自定义"});
+    
+    formLight->addRow("通信接口类型:", m_comboLightCommType);
+    formLight->addRow("IP 地址(网口):", m_editLightIp);
+    formLight->addRow("端口号(网口):", m_spinLightPort);
+    formLight->addRow("COM口(串口):", m_editLightComPort);
+    formLight->addRow("波特率(串口):", m_comboLightBaudRate);
+    formLight->addRow("控制器协议厂商:", m_comboLightProtocol);
+    m_tabWidget->addTab(tabLight, "💡 光源配置");
 
     // 3. Storage Tab
     QWidget *tabStorage = new QWidget();
@@ -96,16 +127,27 @@ void ConfigDialog::loadConfig() {
     const auto& p = ConfigManager::instance().plc;
     const auto& s = ConfigManager::instance().storage;
     const auto& g = ConfigManager::instance().general;
+    const auto& l = ConfigManager::instance().light;
 
-    m_spinExposure->setValue(c.exposureTime);
+    m_editSerialLeft->setText(c.serialNumberLeft);
+    m_editSerialRight->setText(c.serialNumberRight);
     m_spinGain->setValue(c.gain);
     m_comboTriggerMode->setCurrentIndex(c.triggerMode);
     m_spinReconnect->setValue(c.reconnectRetries);
+    m_spinLineRate->setValue(c.lineRate);
 
     m_comboProtocol->setCurrentIndex(p.protocol);
     m_editIpAddress->setText(p.ipAddress);
     m_spinPort->setValue(p.port);
     m_spinHeartbeat->setValue(p.heartbeatInterval);
+
+    m_comboLightCommType->setCurrentIndex(l.commType);
+    m_editLightIp->setText(l.ipAddress);
+    m_spinLightPort->setValue(l.port);
+    m_editLightComPort->setText(l.comPort);
+    m_comboLightProtocol->setCurrentIndex(l.protocol);
+    int baudIdx = m_comboLightBaudRate->findText(QString::number(l.baudRate));
+    if (baudIdx >= 0) m_comboLightBaudRate->setCurrentIndex(baudIdx);
 
     m_comboSaveStrategy->setCurrentIndex(s.saveStrategy);
     m_editSavePath->setText(s.savePath);
@@ -120,16 +162,26 @@ void ConfigDialog::onSaveConfig() {
     auto& p = ConfigManager::instance().plc;
     auto& s = ConfigManager::instance().storage;
     auto& g = ConfigManager::instance().general;
+    auto& l = ConfigManager::instance().light;
 
-    c.exposureTime = m_spinExposure->value();
+    c.serialNumberLeft = m_editSerialLeft->text().trimmed();
+    c.serialNumberRight = m_editSerialRight->text().trimmed();
     c.gain = m_spinGain->value();
     c.triggerMode = m_comboTriggerMode->currentIndex();
     c.reconnectRetries = m_spinReconnect->value();
+    c.lineRate = m_spinLineRate->value();
 
     p.protocol = m_comboProtocol->currentIndex();
     p.ipAddress = m_editIpAddress->text();
     p.port = m_spinPort->value();
     p.heartbeatInterval = m_spinHeartbeat->value();
+
+    l.commType = m_comboLightCommType->currentIndex();
+    l.ipAddress = m_editLightIp->text().trimmed();
+    l.port = m_spinLightPort->value();
+    l.comPort = m_editLightComPort->text().trimmed();
+    l.baudRate = m_comboLightBaudRate->currentText().toInt();
+    l.protocol = m_comboLightProtocol->currentIndex();
 
     s.saveStrategy = m_comboSaveStrategy->currentIndex();
     s.savePath = m_editSavePath->text();
@@ -158,6 +210,8 @@ DetectDialog::DetectDialog(QWidget *parent) : QDialog(parent) {
     QHBoxLayout *btnLayout = new QHBoxLayout();
     QPushButton *btnAdd = new QPushButton("新建型号", this);
     QPushButton *btnDelete = new QPushButton("删除型号", this);
+    m_btnSetRoiLeft = new QPushButton("左相机 ROI 设置", this);
+    m_btnSetRoiRight = new QPushButton("右相机 ROI 设置", this);
     btnLayout->addWidget(btnAdd);
     btnLayout->addWidget(btnDelete);
     
@@ -167,6 +221,11 @@ DetectDialog::DetectDialog(QWidget *parent) : QDialog(parent) {
     
     // Right panel: Parameters
     QVBoxLayout *rightLayout = new QVBoxLayout();
+    
+    QHBoxLayout *roiBtnLayout = new QHBoxLayout();
+    roiBtnLayout->addWidget(m_btnSetRoiLeft);
+    roiBtnLayout->addWidget(m_btnSetRoiRight);
+    rightLayout->addLayout(roiBtnLayout);
     
     // 全局推理库置信度
     QHBoxLayout *confLayout = new QHBoxLayout();
@@ -212,6 +271,8 @@ DetectDialog::DetectDialog(QWidget *parent) : QDialog(parent) {
     connect(btnAdd, &QPushButton::clicked, this, &DetectDialog::onAddRecipe);
     connect(btnDelete, &QPushButton::clicked, this, &DetectDialog::onDeleteRecipe);
     connect(btnSave, &QPushButton::clicked, this, &DetectDialog::onSaveRecipe);
+    connect(m_btnSetRoiLeft, &QPushButton::clicked, this, &DetectDialog::onSetRoiLeftClicked);
+    connect(m_btnSetRoiRight, &QPushButton::clicked, this, &DetectDialog::onSetRoiRightClicked);
     
     loadRecipeList();
 }
@@ -340,6 +401,88 @@ void DetectDialog::onSaveRecipe() {
     
     QMessageBox::information(this, "成功", "参数保存并应用成功！");
     emit recipeChanged(name);
+}
+
+void DetectDialog::onSetRoiLeftClicked() {
+    QListWidgetItem* item = m_recipeList->currentItem();
+    if (!item) {
+        QMessageBox::warning(this, "警告", "请先选择一个型号");
+        return;
+    }
+    
+    QString recipeName = item->text();
+    Recipe r = RecipeManager::instance().getRecipe(recipeName);
+    
+    RoiSettingDialog dlg(0, this);
+    dlg.setRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft, r.roiHeightLeft);
+    dlg.setExposure(r.exposureTimeLeft);
+    
+    QWidget* p = parentWidget();
+    while (p && !p->inherits("MainWindow")) {
+        p = p->parentWidget();
+    }
+    
+    if (p) {
+        connect(p, SIGNAL(capturedForRoi(std::shared_ptr<ImageFrame>)), &dlg, SLOT(updateImage(std::shared_ptr<ImageFrame>)));
+        QMetaObject::invokeMethod(p, "triggerCameraForRoi", Q_ARG(int, 0));
+    }
+    
+    int execResult = dlg.exec();
+    if (p) {
+        QMetaObject::invokeMethod(p, "stopCameraForRoi", Q_ARG(int, 0));
+    }
+    
+    if (execResult == QDialog::Accepted) {
+        r.offsetXLeft = dlg.roiX();
+        r.offsetYLeft = dlg.roiY();
+        r.roiWidthLeft = dlg.roiWidth();
+        r.roiHeightLeft = dlg.roiHeight();
+        r.exposureTimeLeft = dlg.exposureTime();
+        RecipeManager::instance().addOrUpdateRecipe(r);
+        RecipeManager::instance().save("recipes.json");
+        emit recipeChanged(recipeName);
+    }
+}
+
+void DetectDialog::onSetRoiRightClicked() {
+    QListWidgetItem* item = m_recipeList->currentItem();
+    if (!item) {
+        QMessageBox::warning(this, "警告", "请先选择一个型号");
+        return;
+    }
+    
+    QString recipeName = item->text();
+    Recipe r = RecipeManager::instance().getRecipe(recipeName);
+    
+    RoiSettingDialog dlg(1, this);
+    dlg.setRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight, r.roiHeightRight);
+    dlg.setExposure(r.exposureTimeRight);
+    
+    QWidget* p = parentWidget();
+    while (p && !p->inherits("MainWindow")) {
+        p = p->parentWidget();
+    }
+    
+    if (p) {
+        connect(p, SIGNAL(capturedForRoi(std::shared_ptr<ImageFrame>)), &dlg, SLOT(updateImage(std::shared_ptr<ImageFrame>)));
+        QMetaObject::invokeMethod(p, "triggerCameraForRoi", Q_ARG(int, 1));
+    }
+    
+    int execResult = dlg.exec();
+    if (p) {
+        QMetaObject::invokeMethod(p, "stopCameraForRoi", Q_ARG(int, 1));
+    }
+    
+    if (execResult == QDialog::Accepted) {
+        r.offsetXRight = dlg.roiX();
+        r.offsetYRight = dlg.roiY();
+        r.roiWidthRight = dlg.roiWidth();
+        r.roiHeightRight = dlg.roiHeight();
+        r.exposureTimeRight = dlg.exposureTime();
+        RecipeManager::instance().addOrUpdateRecipe(r);
+        RecipeManager::instance().save("recipes.json");
+        emit recipeChanged(recipeName);
+    }
 }
 
 LogDialog::LogDialog(QWidget *parent) : QDialog(parent) {

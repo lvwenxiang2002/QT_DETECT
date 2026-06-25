@@ -108,6 +108,10 @@ void InferThread::stop()
 
 void InferThread::pushImage(std::shared_ptr<ImageFrame> frame)
 {
+    if (frame && frame->isForRoi) {
+        return; // Skip inference for ROI setup frames
+    }
+
     while (true) {
         {
             QMutexLocker locker(&m_mutex);

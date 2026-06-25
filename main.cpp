@@ -7,12 +7,18 @@
 #include <windows.h>
 #endif
 
+#include "IKapC.h"
+#include "IKapBoard.h"
+
 int main(int argc, char *argv[])
 {
 #ifdef Q_OS_WIN
     // 主动提权：将当前进程设置为高优先级，防止被 Windows 后台节流 (Background Throttling)
     SetPriorityClass(GetCurrentProcess(), HIGH_PRIORITY_CLASS);
 #endif
+
+    // 初始化埃科 SDK
+    ItkManInitialize();
 
     // 启用高分屏 (High-DPI) 缩放支持，保证 4K 和 1080P 下界面比例一致
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -30,5 +36,10 @@ int main(int argc, char *argv[])
     w.resize(1600, 900); // 默认窗口大小
     w.show();
 
-    return a.exec();
+    int ret = a.exec();
+
+    // 释放埃科 SDK
+    ItkManTerminate();
+
+    return ret;
 }

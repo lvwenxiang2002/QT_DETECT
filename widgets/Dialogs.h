@@ -24,16 +24,26 @@ private:
     QTabWidget *m_tabWidget;
 
     // Camera tab
-    QSpinBox *m_spinExposure;
+    QLineEdit *m_editSerialLeft;
+    QLineEdit *m_editSerialRight;
     QDoubleSpinBox *m_spinGain;
     QComboBox *m_comboTriggerMode;
     QSpinBox *m_spinReconnect;
+    QDoubleSpinBox *m_spinLineRate;
 
     // PLC tab
     QComboBox *m_comboProtocol;
     QLineEdit *m_editIpAddress;
     QSpinBox *m_spinPort;
     QSpinBox *m_spinHeartbeat;
+
+    // Light Controller tab
+    QComboBox *m_comboLightCommType;
+    QLineEdit *m_editLightIp;
+    QSpinBox *m_spinLightPort;
+    QLineEdit *m_editLightComPort;
+    QComboBox *m_comboLightBaudRate;
+    QComboBox *m_comboLightProtocol;
 
     // Storage tab
     QComboBox *m_comboSaveStrategy;
@@ -62,12 +72,18 @@ private slots:
     void onAddRecipe();
     void onDeleteRecipe();
     void onSaveRecipe();
+    void onSetRoiLeftClicked();
+    void onSetRoiRightClicked();
 
 private:
     void loadRecipeList();
+    void loadRecipeDetails(const QString& name);
+    void setupLightFieldTable(QTableWidget* table);
     void populateTable();
     
     QListWidget *m_recipeList;
+    QPushButton *m_btnSetRoiLeft;
+    QPushButton *m_btnSetRoiRight;
     
     QDoubleSpinBox *m_spinGlobalInferConf;
     

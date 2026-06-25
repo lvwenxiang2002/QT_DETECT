@@ -34,12 +34,18 @@ MainWindow::MainWindow(QWidget *parent)
 
         CameraThread* camThread = new CameraThread(i, this);
         connect(camThread, &CameraThread::imageCaptured, inferTh, &InferThread::pushImage, Qt::DirectConnection);
+        connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::capturedForRoi, Qt::QueuedConnection);
+        connect(camThread, &CameraThread::errorOccurred, this, &MainWindow::onCameraError, Qt::QueuedConnection);
         m_cameraThreads.push_back(camThread);
+        
+        // 初始化时立刻启动线程，让相机尽早完成打开和配置，避免第一次点击开始时卡顿
+        camThread->start();
     }
     
     updateDefectTags();
     
-    // 初始化时创建一个新的批次
+    // 初始化时，记录当前的型号名字，并创建一个新的批次
+    m_runningRecipeName = RecipeManager::instance().getCurrentRecipeName();
     createNewBatch();
 }
 
@@ -115,7 +121,8 @@ void MainWindow::setupUi()
     // Initialize RecipeManager
     RecipeManager::instance().load("recipes.json");
     
-    m_statusTitle = new QLabel(QString("● 当前检测 - %1").arg(RecipeManager::instance().getCurrentRecipeName()), this);
+    m_statusTitle = new QLabel(this);
+    updateStatusLight(m_currentStatus);
     m_statusTitle->setStyleSheet("font-size: 16px; font-weight: bold;");
     statusLayout->addWidget(m_statusTitle);
     statusLayout->addStretch();
@@ -288,6 +295,31 @@ void MainWindow::setupLightTheme()
 
 void MainWindow::onStartClicked()
 {
+    // 如果系统处于报警停机状态，点击开始时，我们需要强制销毁并重启相机线程，以重新初始化硬件（这会触发 ItkDevOpen 等底层 API）
+    if (m_currentStatus == Status_Error) {
+        qDebug() << "[MainWindow] Re-initializing cameras after error state.";
+        for (auto cam : m_cameraThreads) {
+            cam->stopCapture();
+            cam->quit();
+            cam->wait();
+            delete cam;
+        }
+        m_cameraThreads.clear();
+        
+        for (int i = 0; i < 2; ++i) {
+            CameraThread* camThread = new CameraThread(i, this);
+            connect(camThread, &CameraThread::imageCaptured, m_inferThreads[i], &InferThread::pushImage, Qt::DirectConnection);
+            connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::capturedForRoi, Qt::QueuedConnection);
+            connect(camThread, &CameraThread::errorOccurred, this, &MainWindow::onCameraError, Qt::QueuedConnection);
+            m_cameraThreads.push_back(camThread);
+            
+            camThread->start(); // 立即跑底层初始化
+        }
+        
+        // 确保配置是最新的
+        onRecipeChanged(m_runningRecipeName);
+    }
+
     QList<QPushButton*> allBtns = this->findChildren<QPushButton*>();
     for (QPushButton* btn : allBtns) {
         if (btn != m_btnStop) {
@@ -296,9 +328,14 @@ void MainWindow::onStartClicked()
     }
     m_btnStop->setEnabled(true);
 
+    m_pendingFrames.clear();
+
+    updateStatusLight(Status_Running);
+
     // 原本在这里的清零逻辑已经移除。现在的暂停和开始只会控制相机的采图，不会清零计数器。
     
     for (auto cam : m_cameraThreads) {
+        cam->resetFrameCounter();
         cam->startCapture();
     }
 }
@@ -311,8 +348,32 @@ void MainWindow::onStopClicked()
     }
     m_btnStop->setEnabled(false);
     
+    updateStatusLight(Status_Stopped);
+    
     for (auto cam : m_cameraThreads) {
         cam->stopCapture();
+    }
+}
+
+void MainWindow::triggerCameraForRoi(int cameraId) {
+    if (cameraId >= 0 && cameraId < m_cameraThreads.size()) {
+        bool wasRunning = m_cameraThreads[cameraId]->isRunning();
+        if (!wasRunning) {
+            m_cameraThreads[cameraId]->startCapture(true);
+        } else {
+            // Already running, mark next frame for ROI
+            m_cameraThreads[cameraId]->startCapture(true);
+        }
+    }
+}
+
+void MainWindow::stopCameraForRoi(int cameraId) {
+    if (cameraId >= 0 && cameraId < m_cameraThreads.size()) {
+        // If the main Stop button is NOT enabled, it means we are NOT in normal detection mode.
+        // We should stop the camera to prevent it from continuously capturing ROI frames.
+        if (!m_btnStop->isEnabled()) {
+            m_cameraThreads[cameraId]->stopCapture();
+        }
     }
 }
 
@@ -345,7 +406,16 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
     // 1. 将当前相机的帧数据暂存
     m_pendingFrames[fIdx][camId] = {frame, imgBL, imgDF};
 
-    // 2. 如果同一片的两个相机数据还没凑齐，就先等待
+    // 2. 硬件掉线/触发同步异常检测机制 (Watchdog)
+    // 如果某一个相机的信号线拔掉，它的回调将停止，但另一个健康的相机会继续疯跑推图
+    // 当积压的未成对帧数超过 3 个时，判定为单边掉线或触发严重错位！
+    if (m_pendingFrames.size() > 3) {
+        onCameraError("相机触发同步异常或一侧信号掉线，已紧急停机！");
+        m_pendingFrames.clear();
+        return;
+    }
+
+    // 3. 如果同一片的两个相机数据还没凑齐，就先等待
     if (m_pendingFrames[fIdx].size() < 2) {
         return;
     }
@@ -584,13 +654,63 @@ void MainWindow::onDefectTagClicked()
     if (m_imageWidgetRight) m_imageWidgetRight->setHiddenDefects(m_hiddenDefects);
 }
 
+void MainWindow::updateStatusLight(SystemStatus status) {
+    m_currentStatus = status;
+    QString colorStr = "#777777"; // default gray
+    if (status == Status_Running) colorStr = "#00C853"; // green
+    else if (status == Status_Error) colorStr = "#E53935"; // red
+    
+    m_statusTitle->setText(QString("<font color='%1'>●</font> 当前检测 - %2")
+                           .arg(colorStr)
+                           .arg(RecipeManager::instance().getCurrentRecipeName()));
+}
+
+void MainWindow::onCameraError(QString msg) {
+    updateStatusLight(Status_Error);
+    
+    // 紧急停止所有硬件动作，防止后台继续空转推理
+    for (auto cam : m_cameraThreads) {
+        cam->stopCapture();
+    }
+    
+    // 恢复 UI 按钮的交互状态
+    QList<QPushButton*> allBtns = this->findChildren<QPushButton*>();
+    for (QPushButton* btn : allBtns) {
+        btn->setEnabled(true);
+    }
+    m_btnStop->setEnabled(false);
+    
+    // 可以在状态栏或日志中输出，或者弹窗
+    qWarning() << "[MainWindow] Error triggered:" << msg;
+    QMessageBox::critical(this, "严重错误", msg);
+}
+
 void MainWindow::onRecipeChanged(const QString& recipeName)
 {
-    m_statusTitle->setText("当前检测型号 - " + recipeName);
+    updateStatusLight(m_currentStatus);
     updateDefectTags();
     
-    // 切换型号时，必须新建一个批次，并清零计数
-    createNewBatch();
+    // 更新相机 ROI 和曝光时间
+    Recipe r = RecipeManager::instance().getRecipe(recipeName);
+    for (int i = 0; i < m_cameraThreads.size(); ++i) {
+        auto cam = m_cameraThreads[i];
+        if (cam) {
+            if (i == 0) {
+                cam->updateRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft, r.roiHeightLeft);
+                cam->updateExposure(r.exposureTimeLeft);
+            } else {
+                cam->updateRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight, r.roiHeightRight);
+                cam->updateExposure(r.exposureTimeRight);
+            }
+        }
+    }
+    
+    // 只有在真的【切换】了不同型号时，才新建批次并清零计数
+    // 如果只是在当前型号下修改了阈值并保存，不应该清零批次！
+    if (m_runningRecipeName != recipeName) {
+        m_runningRecipeName = recipeName;
+        createNewBatch();
+    }
 }
 
 void MainWindow::updateDefectTags()
