@@ -130,42 +130,66 @@ void CameraThread::run()
     int ry = (m_cameraId == 0) ? currentRecipe.offsetYLeft : currentRecipe.offsetYRight;
     float expTime = (m_cameraId == 0) ? currentRecipe.exposureTimeLeft : currentRecipe.exposureTimeRight;
     
+    m_targetWidth = rw;
+    m_targetHeight = rh;
+    m_expectedChunks = 1;
+    int m_chunkHeight = rh;
+    
+    // 按照您的要求，即使软触发也强制一镜到底，取消所有切块逻辑
+    // 如果几万行在测试时导致 IKapStartGrab failed，请自行修改系统注册表扩大 Non-Paged Pool
+    
     ItkDevSetInt64(m_hCamera, "OffsetX", 0);
     ItkDevSetInt64(m_hCamera, "OffsetY", 0);
-    ItkDevSetInt64(m_hCamera, "Width", rw);
-    ItkDevSetInt64(m_hCamera, "Height", rh);
+    ItkDevSetInt64(m_hCamera, "Width", m_targetWidth);
+    ItkDevSetInt64(m_hCamera, "Height", m_chunkHeight);
     ItkDevSetInt64(m_hCamera, "OffsetX", rx);
     ItkDevSetInt64(m_hCamera, "OffsetY", ry);
     ItkDevSetDouble(m_hCamera, "ExposureTime", expTime);
 
     // 3. 配置采集卡参数
-    IKapSetInfo(m_hBoard, IKP_IMAGE_WIDTH, rw);
-    IKapSetInfo(m_hBoard, IKP_IMAGE_HEIGHT, rh);
-    IKapSetInfo(m_hBoard, IKP_FRAME_COUNT, 10);
-    IKapSetInfo(m_hBoard, IKP_TIME_OUT, -1);
-    IKapSetInfo(m_hBoard, IKP_GRAB_MODE, IKP_GRAB_NON_BLOCK);
-
-    // 4. 设置相机软触发模式 (模拟采图)
-    // 对于线阵相机，为了在没有编码器（行信号）和外触发（帧信号）的情况下采图，
-    // 需要将行触发(LineStart)设为内部自由运行，并开启内部行频，
-    // 将帧触发(FrameStart)设为软触发。
+    int s1 = IKapSetInfo(m_hBoard, IKP_IMAGE_WIDTH, m_targetWidth);
+    int s2 = IKapSetInfo(m_hBoard, IKP_IMAGE_HEIGHT, m_chunkHeight);
+    int s3 = IKapSetInfo(m_hBoard, IKP_FRAME_COUNT, 3); // 强制申请3帧缓冲，哪怕尺寸超大也交由注册表去处理 Non-Paged Pool
+    int s4 = IKapSetInfo(m_hBoard, IKP_TIME_OUT, -1);
+    int s5 = IKapSetInfo(m_hBoard, IKP_GRAB_MODE, IKP_GRAB_NON_BLOCK);
     
-    // a. 设定行触发为内部
-    ItkDevFromString(m_hCamera, "TriggerSelector", "LineStart");
-    ItkDevFromString(m_hCamera, "TriggerMode", "Off");
-    ItkDevSetDouble(m_hCamera, "AcquisitionLineRate", ConfigManager::instance().camera.lineRate); // 使用系统配置中的模拟行频
+    qDebug() << "[CameraThread] IKapSetInfo Init Setup:" << s1 << s2 << s3 << s4 << s5;
 
-    // b. 设定帧触发为软触发
+    // 4. 设置相机触发模式 (系统配置控制)
+    ItkDevFromString(m_hCamera, "TriggerSelector", "LineStart");
+    if (ConfigManager::instance().camera.triggerMode == 2) {
+        // 模式2: 完全依赖外部硬件行脉冲 (Encoder0 / 光源控制器给出)
+        ItkDevFromString(m_hCamera, "TriggerMode", "On");
+        ItkDevFromString(m_hCamera, "TriggerSource", "Encoder0"); // 暂定 Encoder0，若为 Line2 需后续现场调换
+    } else {
+        // 模式0 和 模式1: 行触发设为内部自由运行，行频由系统配置决定
+        ItkDevFromString(m_hCamera, "TriggerMode", "Off");
+        ItkDevSetDouble(m_hCamera, "AcquisitionLineRate", ConfigManager::instance().camera.lineRate); 
+    }
+
+    // 帧触发(FrameStart)配置
     ItkDevFromString(m_hCamera, "TriggerSelector", "FrameStart");
     ItkDevFromString(m_hCamera, "TriggerMode", "On");
-    ItkDevFromString(m_hCamera, "TriggerSource", "Software");
+    
+    if (ConfigManager::instance().camera.triggerMode == 0) {
+        // 软触发 (模拟出图)
+        ItkDevFromString(m_hCamera, "TriggerSource", "Software");
+    } else {
+        // 模式1 和 模式2: 帧触发均等待硬件信号 (光耦隔离输入 Line1)
+        ItkDevFromString(m_hCamera, "TriggerSource", "Line1");
+    }
 
     // 5. 注册采图回调
     IKapRegisterCallback(m_hBoard, IKEvent_FrameReady, (HookFnPtr)OnFrameReadyCallback, this);
 
     // 6. 开启抓图流
-    IKapStartGrab(m_hBoard, 0);
-    ItkDevExecuteCommand(m_hCamera, "AcquisitionStart");
+    int startGrabRes = IKapStartGrab(m_hBoard, 0);
+    if (startGrabRes == 0) { // 0 in IKap SDK means IK_RTN_ERROR
+        qWarning() << "[CameraThread] CRITICAL ERROR: IKapStartGrab failed! This usually means the OS Non-Paged Pool (DMA memory) rejected the massive buffer allocation (e.g. 800MB). Please reduce ROI Height.";
+    }
+    
+    ITKSTATUS startRes = ItkDevExecuteCommand(m_hCamera, "AcquisitionStart");
+    qDebug() << "[CameraThread] IKapStartGrab res:" << startGrabRes << "AcquisitionStart res:" << startRes;
 
     m_isReadyForTrigger = true;
 
@@ -197,12 +221,18 @@ void CameraThread::onSoftTrigger()
     if (!m_isRunning) return;
 
     if (m_isReadyForTrigger && m_hCamera && m_hBoard != INVALID_HANDLE_VALUE) {
-        ITKSTATUS res = ItkDevExecuteCommand(m_hCamera, "TriggerSoftware");
-        qDebug() << "[CameraThread] Sending TriggerSoftware to camera" << m_cameraId << "res:" << res;
+        if (ConfigManager::instance().camera.triggerMode == 0) {
+            m_currentChunk = 0;
+            m_chunkBuffers.clear();
+            ITKSTATUS res = ItkDevExecuteCommand(m_hCamera, "TriggerSoftware");
+            qDebug() << "[CameraThread] Sending TriggerSoftware to camera" << m_cameraId << "res:" << res;
+        }
     } else {
         // 相机正在初始化中，尚未达到 AcquisitionStart 状态。100ms 后再次尝试触发！
         qDebug() << "[CameraThread] Camera" << m_cameraId << "not ready for trigger yet. Retrying in 100ms...";
-        m_softTriggerTimer->start(100);
+        if (ConfigManager::instance().camera.triggerMode == 0) {
+            m_softTriggerTimer->start(100);
+        }
     }
 }
 
@@ -223,27 +253,75 @@ void CameraThread::handleFrameReady()
         IKapGetInfo64(m_hBoard, IKP_IMAGE_HEIGHT, &h);
         
         if (pUserBuffer && w > 0 && h > 0) {
-            // 直接将内存封装为 cv::Mat 并深拷贝 (因为底层 buffer 随时会被下一次采图覆盖)
             cv::Mat img(h, w, CV_8UC1, pUserBuffer);
+            cv::Mat clonedImg = img.clone();
             
-            auto frame = std::make_shared<ImageFrame>();
-            frame->cameraId = m_cameraId;
-            frame->frameIndex = m_frameIndex++;
-            frame->exposureType = 0; 
+            // 消除软触发过曝假疵点：软触发停止再启动时，线扫相机前几行通常会因为积攒曝光而过曝
+            // 因为是双场交替采图（偶数行背光，奇数行暗场），所以必须用同光场的正确行去覆盖过曝行
+            // 不做任何图像篡改，保持原图直接放入 buffer
+            m_chunkBuffers.push_back(clonedImg);
+            m_currentChunk++;
             
-            if (m_isNextFrameForRoi.exchange(false)) {
-                frame->isForRoi = true;
-            }
+            qDebug() << "[CameraThread] Camera" << m_cameraId << "captured chunk" << m_currentChunk << "/" << m_expectedChunks 
+                     << "Size:" << w << "x" << h << "BufferIndex:" << nFrameIndex;
+                     
+            if (m_currentChunk < m_expectedChunks) {
+                // 还在采当前大图的子块，立刻发送下一次软触发
+                if (ConfigManager::instance().camera.triggerMode == 0) {
+                    ItkDevExecuteCommand(m_hCamera, "TriggerSoftware");
+                }
+            } else {
+                // 已经集齐所有子块，开始拼接大图
+                cv::Mat fullImg;
+                if (m_chunkBuffers.size() == 1) {
+                    fullImg = m_chunkBuffers[0];
+                } else {
+                    cv::vconcat(m_chunkBuffers, fullImg);
+                }
+                
+                // 如果拼接后的高度超过了真实目标高度，裁剪掉多余部分
+                if (fullImg.rows > m_targetHeight) {
+                    fullImg = fullImg(cv::Rect(0, 0, fullImg.cols, m_targetHeight)).clone();
+                }
 
-            frame->image = img.clone(); 
-            
-            emit imageCaptured(frame);
+                // [照妖镜] 打印图像最后一行中间的 10 个像素，看看是不是乱码
+                if (fullImg.rows > 0) {
+                    const uchar* lastRow = fullImg.ptr<uchar>(fullImg.rows - 1);
+                    int midX = fullImg.cols / 2;
+                    QString pixelStr = "";
+                    for (int c = 0; c < 10; ++c) {
+                        pixelStr += QString::number(lastRow[midX + c]) + " ";
+                    }
+                    qDebug() << "[CameraThread] Last Row Pixels (Middle 10):" << pixelStr;
+                }
+                
+                auto frame = std::make_shared<ImageFrame>();
+                frame->cameraId = m_cameraId;
+                frame->frameIndex = m_frameIndex++;
+                frame->exposureType = 0; 
+                
+                if (m_isNextFrameForRoi.exchange(false)) {
+                    frame->isForRoi = true;
+                }
+
+                frame->image = fullImg; 
+                
+                emit imageCaptured(frame);
+                qDebug() << "[CameraThread] Camera" << m_cameraId << "successfully stitched full frame" << (m_frameIndex - 1)
+                         << "Final Size:" << fullImg.cols << "x" << fullImg.rows;
+                         
+                // 模拟真实的流水线间隔：当前整块玻璃拍摄完成后，如果是软触发模式，等待 500ms 再触发下一片玻璃
+                if (m_isRunning && ConfigManager::instance().camera.triggerMode == 0) {
+                    QMetaObject::invokeMethod(m_softTriggerTimer, "start", Qt::QueuedConnection, Q_ARG(int, 500));
+                }
+            }
+        } else {
+            qWarning() << "[CameraThread] Camera" << m_cameraId << "capture failed! Invalid dimensions or buffer. w:" << w << "h:" << h << "pUserBuffer:" << pUserBuffer;
+            if (m_isRunning && ConfigManager::instance().camera.triggerMode == 0) { QMetaObject::invokeMethod(m_softTriggerTimer, "start", Qt::QueuedConnection, Q_ARG(int, 500)); }
         }
-    }
-    
-    // 模拟真实的流水线间隔：当前帧拍摄完成（即玻璃走完全程）后，等待 500ms 再触发下一片玻璃
-    if (m_isRunning) {
-        QMetaObject::invokeMethod(m_softTriggerTimer, "start", Qt::QueuedConnection, Q_ARG(int, 500));
+    } else {
+        qWarning() << "[CameraThread] Camera" << m_cameraId << "FrameReady event triggered but buffer status uFull is not 1! status.uFull:" << status.uFull;
+        if (m_isRunning && ConfigManager::instance().camera.triggerMode == 0) { QMetaObject::invokeMethod(m_softTriggerTimer, "start", Qt::QueuedConnection, Q_ARG(int, 500)); }
     }
 }
 
@@ -256,19 +334,30 @@ void CameraThread::updateRoi(int offsetX, int offsetY, int width, int height) {
         IKapStopGrab(m_hBoard);
     }
     
+    m_targetWidth = width;
+    m_targetHeight = height;
+    m_expectedChunks = 1;
+    int m_chunkHeight = height;
+    
+    // 取消切块逻辑
+    
     ITKSTATUS s1 = ItkDevSetInt64(m_hCamera, "OffsetX", 0);
     ITKSTATUS s2 = ItkDevSetInt64(m_hCamera, "OffsetY", 0);
-    ITKSTATUS s3 = ItkDevSetInt64(m_hCamera, "Width", width);
-    ITKSTATUS s4 = ItkDevSetInt64(m_hCamera, "Height", height);
+    ITKSTATUS s3 = ItkDevSetInt64(m_hCamera, "Width", m_targetWidth);
+    ITKSTATUS s4 = ItkDevSetInt64(m_hCamera, "Height", m_chunkHeight);
     ITKSTATUS s5 = ItkDevSetInt64(m_hCamera, "OffsetX", offsetX);
     ITKSTATUS s6 = ItkDevSetInt64(m_hCamera, "OffsetY", offsetY);
     
     if (m_hBoard != INVALID_HANDLE_VALUE) {
-        IKapSetInfo(m_hBoard, IKP_IMAGE_WIDTH, width);
-        IKapSetInfo(m_hBoard, IKP_IMAGE_HEIGHT, height);
-        IKapStartGrab(m_hBoard, 0);
+        int s7 = IKapSetInfo(m_hBoard, IKP_IMAGE_WIDTH, m_targetWidth);
+        int s8 = IKapSetInfo(m_hBoard, IKP_IMAGE_HEIGHT, m_chunkHeight);
+        IKapSetInfo(m_hBoard, IKP_FRAME_COUNT, 3);
+        
+        int s9 = IKapStartGrab(m_hBoard, 0);
+        qDebug() << "[CameraThread] IKapSetInfo ROI Update res:" << s7 << s8 << "StartGrab:" << s9;
     }
-    ItkDevExecuteCommand(m_hCamera, "AcquisitionStart");
+    ITKSTATUS s10 = ItkDevExecuteCommand(m_hCamera, "AcquisitionStart");
+    qDebug() << "[CameraThread] AcquisitionStart ROI Update res:" << s10;
 
     qDebug() << "[CameraThread] ROI updated to" << offsetX << offsetY << width << height 
              << "Status:" << s1 << s2 << s3 << s4 << s5 << s6;

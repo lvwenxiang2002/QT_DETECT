@@ -15,6 +15,8 @@
 #include <QtConcurrent>
 #include <QDir>
 #include <opencv2/opencv.hpp>
+#include <opencv2/cudawarping.hpp>
+#include <opencv2/cudaimgproc.hpp>
 #include "modules/ConfigManager.h"
 #include "widgets/Dialogs.h"
 
@@ -33,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
         m_inferThreads.push_back(inferTh);
 
         CameraThread* camThread = new CameraThread(i, this);
-        connect(camThread, &CameraThread::imageCaptured, inferTh, &InferThread::pushImage, Qt::DirectConnection);
+        connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::onRawImageCaptured, Qt::DirectConnection);
         connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::capturedForRoi, Qt::QueuedConnection);
         connect(camThread, &CameraThread::errorOccurred, this, &MainWindow::onCameraError, Qt::QueuedConnection);
         m_cameraThreads.push_back(camThread);
@@ -43,10 +45,12 @@ MainWindow::MainWindow(QWidget *parent)
     }
     
     updateDefectTags();
-    
     // 初始化时，记录当前的型号名字，并创建一个新的批次
     m_runningRecipeName = RecipeManager::instance().getCurrentRecipeName();
     createNewBatch();
+    
+    // 同步初始化界面布局（特别是中间拼图窗口的状态）
+    onRecipeChanged(m_runningRecipeName);
 }
 
 MainWindow::~MainWindow()
@@ -198,6 +202,12 @@ void MainWindow::setupUi()
     m_imageWidgetRight->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     imagesLayout->addWidget(m_imageWidgetRight, 1);
 
+    m_imageWidgetCenter = new ImageWidget(this);
+    m_imageWidgetCenter->setStyleSheet("border: 1px solid #D0D0D0; background-color: #7A7A7A;");
+    m_imageWidgetCenter->setAlignment(Qt::AlignCenter);
+    m_imageWidgetCenter->hide(); // 默认隐藏，等加载 Recipe 后再决定
+    imagesLayout->addWidget(m_imageWidgetCenter, 1);
+
     leftLayout->addLayout(imagesLayout, 1);
     
     bodyLayout->addLayout(leftLayout, 4);
@@ -308,7 +318,7 @@ void MainWindow::onStartClicked()
         
         for (int i = 0; i < 2; ++i) {
             CameraThread* camThread = new CameraThread(i, this);
-            connect(camThread, &CameraThread::imageCaptured, m_inferThreads[i], &InferThread::pushImage, Qt::DirectConnection);
+            connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::onRawImageCaptured, Qt::DirectConnection);
             connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::capturedForRoi, Qt::QueuedConnection);
             connect(camThread, &CameraThread::errorOccurred, this, &MainWindow::onCameraError, Qt::QueuedConnection);
             m_cameraThreads.push_back(camThread);
@@ -377,6 +387,183 @@ void MainWindow::stopCameraForRoi(int cameraId) {
     }
 }
 
+void MainWindow::onRawImageCaptured(std::shared_ptr<ImageFrame> frame)
+{
+    if (!frame) return;
+
+    if (frame->isForRoi) {
+        // Should not reach here because capturedForRoi is connected separately, but just in case
+        return;
+    }
+
+    int fIdx = frame->frameIndex;
+    int camId = frame->cameraId;
+
+    Recipe r = RecipeManager::instance().getRecipe(m_runningRecipeName);
+    
+    if (!r.enableStitchingMode) {
+        frame->isStitchingMode = false;
+        // 如果不拼图，直接推给对应的推理线程
+        if (camId >= 0 && camId < m_inferThreads.size()) {
+            m_inferThreads[camId]->pushImage(frame);
+        }
+        return;
+    }
+
+    // 拼图模式缓冲
+    m_rawFrames[fIdx][camId] = frame;
+
+    if (m_rawFrames[fIdx].size() == 2) {
+        auto leftFrame = m_rawFrames[fIdx][0];
+        auto rightFrame = m_rawFrames[fIdx][1];
+        
+        m_rawFrames.remove(fIdx); // 取出后立刻移除
+
+        int overlap = ConfigManager::instance().camera.overlapPixels;
+
+        // 1. 去交织 (Fast memcpy)
+        int src_w = leftFrame->image.cols;
+        int src_h = leftFrame->image.rows;
+        int split_h = src_h / 2;
+
+        cv::Mat leftBL(split_h, src_w, leftFrame->image.type());
+        cv::Mat leftDF(split_h, src_w, leftFrame->image.type());
+        cv::Mat rightBL(split_h, src_w, rightFrame->image.type());
+        cv::Mat rightDF(split_h, src_w, rightFrame->image.type());
+
+        size_t step = leftFrame->image.step;
+        size_t out_step = leftBL.step; 
+        size_t copy_bytes = src_w * leftFrame->image.elemSize();
+        for (int r = 0; r < split_h; ++r) {
+            memcpy(leftBL.data + r * out_step, leftFrame->image.data + (r * 2) * step, copy_bytes);
+            memcpy(leftDF.data + r * out_step, leftFrame->image.data + (r * 2 + 1) * step, copy_bytes);
+            memcpy(rightBL.data + r * out_step, rightFrame->image.data + (r * 2) * step, copy_bytes);
+            memcpy(rightDF.data + r * out_step, rightFrame->image.data + (r * 2 + 1) * step, copy_bytes);
+        }
+
+        // 2. 裁剪重叠区
+        int crop_w_left = src_w - overlap / 2;
+        int crop_w_right = src_w - overlap / 2;
+        int x_offset_right = overlap / 2;
+
+        if (crop_w_left <= 0 || crop_w_right <= 0) {
+            crop_w_left = src_w;
+            crop_w_right = src_w;
+            x_offset_right = 0;
+        }
+
+        cv::Mat leftBL_crop = leftBL(cv::Rect(0, 0, crop_w_left, split_h));
+        cv::Mat leftDF_crop = leftDF(cv::Rect(0, 0, crop_w_left, split_h));
+        cv::Mat rightBL_crop = rightBL(cv::Rect(x_offset_right, 0, crop_w_right, split_h));
+        cv::Mat rightDF_crop = rightDF(cv::Rect(x_offset_right, 0, crop_w_right, split_h));
+
+        // 3. 拼接 (GPU 零拷贝拼图)
+        cv::cuda::GpuMat d_stitchedBL(split_h, crop_w_left + crop_w_right, leftBL_crop.type());
+        cv::cuda::GpuMat d_stitchedDF(split_h, crop_w_left + crop_w_right, leftBL_crop.type());
+        
+        cv::cuda::GpuMat d_leftBL_crop, d_leftDF_crop, d_rightBL_crop, d_rightDF_crop;
+        d_leftBL_crop.upload(leftBL_crop);
+        d_leftDF_crop.upload(leftDF_crop);
+        d_rightBL_crop.upload(rightBL_crop);
+        d_rightDF_crop.upload(rightDF_crop);
+
+        d_leftBL_crop.copyTo(d_stitchedBL(cv::Rect(0, 0, crop_w_left, split_h)));
+        d_rightBL_crop.copyTo(d_stitchedBL(cv::Rect(crop_w_left, 0, crop_w_right, split_h)));
+        d_leftDF_crop.copyTo(d_stitchedDF(cv::Rect(0, 0, crop_w_left, split_h)));
+        d_rightDF_crop.copyTo(d_stitchedDF(cv::Rect(crop_w_left, 0, crop_w_right, split_h)));
+
+        // 4. 轮廓提取与最小外接矩形 (基于 BL 图像)
+        cv::cuda::GpuMat d_gray, d_smallGray;
+        if (d_stitchedBL.channels() == 3) {
+            cv::cuda::cvtColor(d_stitchedBL, d_gray, cv::COLOR_BGR2GRAY);
+        } else {
+            d_gray = d_stitchedBL;
+        }
+        
+        // CUDA resize instead of CPU
+        cv::cuda::resize(d_gray, d_smallGray, cv::Size(), 0.1, 0.1, cv::INTER_NEAREST);
+        
+        cv::Mat smallGray;
+        d_smallGray.download(smallGray);
+        
+        cv::Mat mask;
+        cv::threshold(smallGray, mask, 30, 255, cv::THRESH_BINARY);
+        
+        std::vector<std::vector<cv::Point>> contours;
+        cv::findContours(mask, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
+
+        cv::Mat finalBL, finalDF;
+
+        if (!contours.empty()) {
+            int maxIdx = 0;
+            double maxArea = 0;
+            for (int i = 0; i < contours.size(); ++i) {
+                double a = cv::contourArea(contours[i]);
+                if (a > maxArea) {
+                    maxArea = a;
+                    maxIdx = i;
+                }
+            }
+
+            cv::RotatedRect smallRect = cv::minAreaRect(contours[maxIdx]);
+            
+            cv::RotatedRect minRect;
+            minRect.center.x = smallRect.center.x * 10.0f;
+            minRect.center.y = smallRect.center.y * 10.0f;
+            minRect.size.width = smallRect.size.width * 10.0f;
+            minRect.size.height = smallRect.size.height * 10.0f;
+            minRect.angle = smallRect.angle;
+            
+            float angle = minRect.angle;
+            float width = minRect.size.width * 1.2f; // 拓宽 20%
+            float height = minRect.size.height * 1.2f;
+            
+            if (width > height) {
+                angle += 90.0f;
+                std::swap(width, height);
+            }
+            
+            cv::Mat M = cv::getRotationMatrix2D(minRect.center, angle, 1.0);
+            
+            // 平移修正：相当于融合了 getRectSubPix 的操作
+            M.at<double>(0, 2) -= (minRect.center.x - width / 2.0);
+            M.at<double>(1, 2) -= (minRect.center.y - height / 2.0);
+            
+            cv::cuda::GpuMat d_rotatedBL, d_rotatedDF;
+            cv::cuda::warpAffine(d_stitchedBL, d_rotatedBL, M, cv::Size(width, height), cv::INTER_CUBIC, cv::BORDER_CONSTANT, cv::Scalar(0));
+            cv::cuda::warpAffine(d_stitchedDF, d_rotatedDF, M, cv::Size(width, height), cv::INTER_CUBIC, cv::BORDER_CONSTANT, cv::Scalar(0));
+            
+            d_rotatedBL.download(finalBL);
+            d_rotatedDF.download(finalDF);
+        } else {
+            d_stitchedBL.download(finalBL);
+            d_stitchedDF.download(finalDF);
+        }
+
+        // 5. 重新交织为一张新帧 (Fast memcpy)
+        int final_w = finalBL.cols;
+        int final_h = finalBL.rows;
+        
+        cv::Mat reinterleaved(final_h * 2, final_w, finalBL.type());
+        size_t r_step = finalBL.step;
+        size_t dst_step = reinterleaved.step;
+        size_t final_copy_bytes = final_w * finalBL.elemSize();
+        for (int r = 0; r < final_h; ++r) {
+            memcpy(reinterleaved.data + (r * 2) * dst_step, finalBL.data + r * r_step, final_copy_bytes);
+            memcpy(reinterleaved.data + (r * 2 + 1) * dst_step, finalDF.data + r * r_step, final_copy_bytes);
+        }
+
+        auto newFrame = std::make_shared<ImageFrame>();
+        newFrame->cameraId = 0; // 统一用 0 通道推理
+        newFrame->frameIndex = fIdx;
+        newFrame->image = reinterleaved;
+        newFrame->exposureType = 0;
+        newFrame->isStitchingMode = true;
+
+        m_inferThreads[0]->pushImage(newFrame);
+    }
+}
+
 void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
 {
     if (!frame) return;
@@ -400,15 +587,172 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
         imgDF = frame->image.clone();
     }
     
-    int fIdx = (int)frame->frameIndex;
+    int fIdx = frame->frameIndex;
     int camId = frame->cameraId;
+
+    // 提取通用保存逻辑到一个 lambda
+    auto processSaveForCamera = [&](const std::shared_ptr<ImageFrame>& frameData, const cv::Mat& blData, const cv::Mat& dfData, ImageWidget* widget, const QString& camStr) {
+        bool isNG = false;
+        QStringList defectNames = {"崩边", "划伤", "黑划伤", "凹凸点", "不可擦拭脏污", "点伤", "异色"};
+        for (const auto& res : frameData->results) {
+            QString label = (res.class_id >= 0 && res.class_id < defectNames.size()) ? defectNames[res.class_id] : "unknown";
+            QString lfPrefix = (res.light_type == LightField::DarkField) ? "暗场-" : "背光-";
+            QString fullLabel = lfPrefix + label;
+            if (res.passedHostAppFilter && !m_hiddenDefects.contains(fullLabel)) {
+                isNG = true;
+                break;
+            }
+        }
+
+        if (isNG) {
+            m_ngFrameIndices.insert(fIdx);
+        }
+
+        if (ConfigManager::instance().storage.saveStrategy == 0 ||
+            (ConfigManager::instance().storage.saveStrategy == 1 && isNG)) 
+        {
+            QString rootPath = ConfigManager::instance().storage.savePath; 
+            QString dateStr = QDateTime::currentDateTime().toString("yyyy-MM-dd");
+            QString timestamp = QDateTime::currentDateTime().toString("HHmmss_zzz");
+            QString seqStr = QString("%1").arg(m_totalCount + 1, 5, 10, QChar('0'));
+            QString batchStr = m_currentBatchDir;
+            
+            static QThreadPool compressPool;
+            static QThreadPool diskPool;
+            static bool poolInit = false;
+            if (!poolInit) {
+                compressPool.setMaxThreadCount(6);
+                diskPool.setMaxThreadCount(6);
+                poolInit = true;
+            }
+
+            // 将耗时的保存任务扔给后台
+            QtConcurrent::run(&compressPool, [frame = frameData, rootPath, dateStr, batchStr, timestamp, seqStr, isNG, camStr, imgBL = blData, imgDF = dfData]() {
+                auto saveField = [&](const cv::Mat& img, LightField lf, const QString& lfStr) {
+                    if (img.empty()) return;
+                        
+                    QString oriDir = isNG ? QString("%1/%2/%3/NG_ori/%4").arg(rootPath).arg(dateStr).arg(batchStr).arg(lfStr)
+                                          : QString("%1/%2/%3/OK_ori/%4").arg(rootPath).arg(dateStr).arg(batchStr).arg(lfStr);
+                    QDir().mkpath(oriDir);
+                    
+                    QString filenameBase;
+                    if (camStr.isEmpty()) {
+                        filenameBase = QString("%1_%2_%3_%4").arg(seqStr).arg(timestamp).arg(lfStr).arg(isNG ? "NG" : "OK");
+                    } else {
+                        filenameBase = QString("%1_%2_%3_%4_%5").arg(seqStr).arg(camStr).arg(timestamp).arg(lfStr).arg(isNG ? "NG" : "OK");
+                    }
+                    
+                    QString oriFile = QString("%1/%2.png").arg(oriDir).arg(filenameBase);
+                    std::vector<int> compression_params = {cv::IMWRITE_PNG_COMPRESSION, 1};
+                    
+                    std::vector<uchar> oriBuffer;
+                    cv::imencode(".png", img, oriBuffer, compression_params);
+                    
+                    QtConcurrent::run(&diskPool, [oriFile, buffer = std::move(oriBuffer)]() {
+                        QFile file(oriFile);
+                        if (file.open(QIODevice::WriteOnly)) {
+                            file.write((const char*)buffer.data(), buffer.size());
+                            file.close();
+                        }
+                    });
+                };
+                
+                saveField(imgBL, LightField::Backlight, "Backlight");
+                saveField(imgDF, LightField::DarkField, "Darkfield");
+
+                if (isNG && !imgBL.empty()) {
+                    QString resultDir = QString("%1/%2/%3/NG_result").arg(rootPath).arg(dateStr).arg(batchStr);
+                    QDir().mkpath(resultDir);
+                    QString filenameBase;
+                    if (camStr.isEmpty()) {
+                        filenameBase = QString("%1_%2_Result_NG").arg(seqStr).arg(timestamp);
+                    } else {
+                        filenameBase = QString("%1_%2_%3_Result_NG").arg(seqStr).arg(camStr).arg(timestamp);
+                    }
+                    QString resultFile = QString("%1/%2.jpg").arg(resultDir).arg(filenameBase);
+                    
+                    // 1. Convert to color for drawing
+                    cv::Mat annotatedBL;
+                    if (imgBL.channels() == 1) {
+                        cv::cvtColor(imgBL, annotatedBL, cv::COLOR_GRAY2BGR);
+                    } else {
+                        annotatedBL = imgBL.clone();
+                    }
+                    
+                    // 2. Draw defects
+                    QStringList defectNames = {"崩边", "划伤", "黑划伤", "凹凸点", "不可擦拭脏污", "点伤", "异色"};
+                    std::vector<cv::Scalar> defectColors = {
+                        cv::Scalar(255, 255, 0),   // Cyan (BGR)
+                        cv::Scalar(255, 0, 255),   // Magenta
+                        cv::Scalar(226, 43, 138),  // BlueViolet
+                        cv::Scalar(0, 165, 255),   // Orange
+                        cv::Scalar(19, 69, 139),   // SaddleBrown
+                        cv::Scalar(180, 105, 255), // HotPink
+                        cv::Scalar(50, 205, 50)    // LimeGreen
+                    };
+                    
+                    for (const auto& box : frame->results) {
+                        if (!box.passedHostAppFilter) continue; // 不画被过滤的伪影
+                        
+                        cv::Scalar color = (box.class_id >= 0 && box.class_id < defectColors.size()) ? defectColors[box.class_id] : cv::Scalar(255,255,255);
+                        
+                        cv::Rect rect(box.x1, box.y1, box.x2 - box.x1, box.y2 - box.y1);
+                        cv::rectangle(annotatedBL, rect, color, 8); // 使用较粗的线条，因为是几万行的大图
+                        
+                        QString label = (box.class_id >= 0 && box.class_id < defectNames.size()) ? defectNames[box.class_id] : "unknown";
+                        QString lfPrefix = (box.light_type == LightField::DarkField) ? "DF-" : "BL-";
+                        QString text = QString("%1%2 %3%").arg(lfPrefix).arg(label).arg((int)(box.confidence * 100));
+                        
+                        cv::putText(annotatedBL, text.toLocal8Bit().data(), cv::Point(box.x1, std::max(0.0f, box.y1 - 15.0f)), 
+                                    cv::FONT_HERSHEY_SIMPLEX, 4.0, color, 6);
+                    }
+                    
+                    // 3. Compress to JPG
+                    std::vector<uchar> resultBuffer;
+                    cv::imencode(".jpg", annotatedBL, resultBuffer, {cv::IMWRITE_JPEG_QUALITY, 80});
+                    
+                    // 4. Save to disk
+                    QtConcurrent::run(&diskPool, [resultFile, buffer = std::move(resultBuffer)]() {
+                        QFile file(resultFile);
+                        if (file.open(QIODevice::WriteOnly)) {
+                            file.write((const char*)buffer.data(), buffer.size());
+                            file.close();
+                        }
+                    });
+                }
+            });
+        }
+    };
     
+    // 取决于帧产生时的状态，而非当前的全局 Recipe 设置，避免运行时切换模式导致管线错乱
+    if (frame->isStitchingMode) {
+        m_imageWidgetCenter->updateImage(frame, imgBL, imgDF);
+        processSaveForCamera(frame, imgBL, imgDF, m_imageWidgetCenter, "");
+        
+        bool pieceIsNG = m_ngFrameIndices.contains(fIdx);
+        m_currentFrameIndex = fIdx;
+        m_totalCount++;
+        if (pieceIsNG) m_ngCount++;
+        
+        m_lblPieceCount->setText(QString("第%1片\n(%2 ms)").arg(m_totalCount).arg(frame->processTimeMs));
+        m_lblPieceCount->setStyleSheet("font-size: 28px; color: #333333; border: none;");
+        m_lblTotal->setText(QString("%1片").arg(m_totalCount));
+        m_pieChart->setStats(m_ngCount, m_totalCount - m_ngCount);
+
+        if (pieceIsNG) {
+            m_lblStatus->setText("NG");
+            m_lblStatus->setStyleSheet("font-size: 80px; font-weight: bold; color: #E53935; border: none;");
+        } else {
+            m_lblStatus->setText("OK");
+            m_lblStatus->setStyleSheet("font-size: 80px; font-weight: bold; color: #00C853; border: none;");
+        }
+        return;
+    }
+
     // 1. 将当前相机的帧数据暂存
     m_pendingFrames[fIdx][camId] = {frame, imgBL, imgDF};
 
     // 2. 硬件掉线/触发同步异常检测机制 (Watchdog)
-    // 如果某一个相机的信号线拔掉，它的回调将停止，但另一个健康的相机会继续疯跑推图
-    // 当积压的未成对帧数超过 3 个时，判定为单边掉线或触发严重错位！
     if (m_pendingFrames.size() > 3) {
         onCameraError("相机触发同步异常或一侧信号掉线，已紧急停机！");
         m_pendingFrames.clear();
@@ -429,103 +773,9 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
     m_imageWidgetLeft->updateImage(data0.frame, data0.imgBL, data0.imgDF);
     m_imageWidgetRight->updateImage(data1.frame, data1.imgBL, data1.imgDF);
 
-    // 提取通用保存逻辑到一个 lambda
-    auto processSaveForCamera = [&](const PendingFrameData& data, ImageWidget* widget) {
-        bool isNG = false;
-        QStringList defectNames = {"崩边", "划伤", "黑划伤", "凹凸点", "不可擦拭脏污", "点伤", "异色"};
-        for (const auto& res : data.frame->results) {
-            QString label = (res.class_id >= 0 && res.class_id < defectNames.size()) ? defectNames[res.class_id] : "unknown";
-            QString lfPrefix = (res.light_type == LightField::DarkField) ? "暗场-" : "背光-";
-            QString fullLabel = lfPrefix + label;
-            if (res.passedHostAppFilter && !m_hiddenDefects.contains(fullLabel)) {
-                isNG = true;
-                break;
-            }
-        }
-
-        if (isNG) {
-            m_ngFrameIndices.insert(fIdx);
-        }
-
-        if (ConfigManager::instance().storage.saveStrategy == 0 ||
-            (ConfigManager::instance().storage.saveStrategy == 1 && isNG)) 
-        {
-            QString rootPath = ConfigManager::instance().storage.savePath; 
-            QString dateStr = QDateTime::currentDateTime().toString("yyyy-MM-dd");
-            QString timestamp = QDateTime::currentDateTime().toString("HHmmss_zzz");
-            QString camStr = QString("Camera_%1").arg(data.frame->cameraId);
-            QString seqStr = QString("%1").arg(m_totalCount + 1, 5, 10, QChar('0'));
-            QString batchStr = m_currentBatchDir;
-            
-            static QThreadPool compressPool;
-            static QThreadPool diskPool;
-            static bool poolInit = false;
-            if (!poolInit) {
-                compressPool.setMaxThreadCount(6);
-                diskPool.setMaxThreadCount(6);
-                poolInit = true;
-            }
-
-            QImage uiImage;
-            if (isNG) {
-                // 在主线程同步截取刚更新好的 UI 画面
-                uiImage = widget->grabSceneImage();
-            }
-
-            // 将耗时的保存任务扔给后台
-            QtConcurrent::run(&compressPool, [frame = data.frame, rootPath, dateStr, batchStr, timestamp, seqStr, isNG, camStr, imgBL = data.imgBL, imgDF = data.imgDF, uiImage]() {
-                auto saveField = [&](const cv::Mat& img, LightField lf, const QString& lfStr) {
-                    if (img.empty()) return;
-                        
-                    QString oriDir = isNG ? QString("%1/%2/%3/NG_ori/%4").arg(rootPath).arg(dateStr).arg(batchStr).arg(lfStr)
-                                          : QString("%1/%2/%3/OK_ori/%4").arg(rootPath).arg(dateStr).arg(batchStr).arg(lfStr);
-                    QDir().mkpath(oriDir);
-                    QString filenameBase = QString("%1_%2_%3_%4_%5").arg(seqStr).arg(camStr).arg(timestamp).arg(lfStr).arg(isNG ? "NG" : "OK");
-                    
-                    QString oriFile = QString("%1/%2.png").arg(oriDir).arg(filenameBase);
-                    std::vector<int> compression_params = {cv::IMWRITE_PNG_COMPRESSION, 1};
-                    
-                    std::vector<uchar> oriBuffer;
-                    cv::imencode(".png", img, oriBuffer, compression_params);
-                    
-                    QtConcurrent::run(&diskPool, [oriFile, buffer = std::move(oriBuffer)]() {
-                        QFile file(oriFile);
-                        if (file.open(QIODevice::WriteOnly)) {
-                            file.write((const char*)buffer.data(), buffer.size());
-                            file.close();
-                        }
-                    });
-                };
-                
-                saveField(imgBL, LightField::Backlight, "Backlight");
-                saveField(imgDF, LightField::DarkField, "Darkfield");
-
-                if (isNG && !uiImage.isNull()) {
-                    QString resultDir = QString("%1/%2/%3/NG_result").arg(rootPath).arg(dateStr).arg(batchStr);
-                    QDir().mkpath(resultDir);
-                    QString filenameBase = QString("%1_%2_%3_Result_NG").arg(seqStr).arg(camStr).arg(timestamp);
-                    QString resultFile = QString("%1/%2.jpg").arg(resultDir).arg(filenameBase);
-                    
-                    QByteArray ba;
-                    QBuffer buffer(&ba);
-                    buffer.open(QIODevice::WriteOnly);
-                    uiImage.save(&buffer, "JPG", 80); 
-                    
-                    QtConcurrent::run(&diskPool, [resultFile, data = std::move(ba)]() {
-                        QFile file(resultFile);
-                        if (file.open(QIODevice::WriteOnly)) {
-                            file.write(data);
-                            file.close();
-                        }
-                    });
-                }
-            });
-        }
-    };
-
     // 4. 同步触发两张图的保存和 NG 检测
-    processSaveForCamera(data0, m_imageWidgetLeft);
-    processSaveForCamera(data1, m_imageWidgetRight);
+    processSaveForCamera(data0.frame, data0.imgBL, data0.imgDF, m_imageWidgetLeft, QString("Camera_%1").arg(data0.frame->cameraId));
+    processSaveForCamera(data1.frame, data1.imgBL, data1.imgDF, m_imageWidgetRight, QString("Camera_%1").arg(data1.frame->cameraId));
 
     // 5. 统一更新计数器和饼图
     m_totalCount++;
@@ -551,7 +801,6 @@ void MainWindow::onImageProcessed(std::shared_ptr<ImageFrame> frame)
             m_lblStatus->setText("OK");
             m_lblStatus->setStyleSheet("font-size: 80px; font-weight: bold; color: #00C853; border: none;");
         }
-
 }
 
 void MainWindow::onMenuConfigClicked()
@@ -692,6 +941,18 @@ void MainWindow::onRecipeChanged(const QString& recipeName)
     
     // 更新相机 ROI 和曝光时间
     Recipe r = RecipeManager::instance().getRecipe(recipeName);
+    
+    // 切换 UI 拼图模式
+    if (r.enableStitchingMode) {
+        if (m_imageWidgetLeft) m_imageWidgetLeft->hide();
+        if (m_imageWidgetRight) m_imageWidgetRight->hide();
+        if (m_imageWidgetCenter) m_imageWidgetCenter->show();
+    } else {
+        if (m_imageWidgetLeft) m_imageWidgetLeft->show();
+        if (m_imageWidgetRight) m_imageWidgetRight->show();
+        if (m_imageWidgetCenter) m_imageWidgetCenter->hide();
+    }
+
     for (int i = 0; i < m_cameraThreads.size(); ++i) {
         auto cam = m_cameraThreads[i];
         if (cam) {

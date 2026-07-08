@@ -22,6 +22,7 @@ SOURCES += \
     widgets/ImageWidget.cpp \
     widgets/PieChartWidget.cpp \
     widgets/Dialogs.cpp \
+    widgets/RoiSettingDialog.cpp \
     modules/CameraThread.cpp \
     modules/InferThread.cpp \
     modules/RecipeManager.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     widgets/ImageWidget.h \
     widgets/PieChartWidget.h \
     widgets/Dialogs.h \
+    widgets/RoiSettingDialog.h \
     modules/CameraThread.h \
     modules/InferThread.h \
     modules/RecipeManager.h \
@@ -53,9 +55,10 @@ INCLUDEPATH += "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.8/include
 LIBS += -L"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.8/lib/x64" \
         -lcudart -lcublas -lcudnn -lcurand
 
-# TODO: Add MVS SDK include & lib paths here
-# INCLUDEPATH += ...
-# LIBS += ...
+# --- I-TEK Camera SDK (IKap) ---
+INCLUDEPATH += "C:/Program Files/I-TEK OptoElectronics/IKapLibrary/Include"
+LIBS += -L"C:/Program Files/I-TEK OptoElectronics/IKapLibrary/Lib/x64" \
+        -lIKapBoard -lIKapC
 
 # --- NVCC CUDA Compiler Configuration ---
 CUDA_SOURCES += modules/InferKernels.cu

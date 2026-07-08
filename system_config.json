@@ -2,7 +2,7 @@
     "camera": {
         "exposureTime": 5000,
         "gain": 1,
-        "lineRate": 10000,
+        "lineRate": 20000,
         "reconnectRetries": 3,
         "serialNumberLeft": "",
         "serialNumberRight": "",
@@ -11,14 +11,6 @@
     "general": {
         "autoStart": false,
         "permissionLevel": 0
-    },
-    "light": {
-        "baudRate": 115200,
-        "comPort": "COM1",
-        "commType": 0,
-        "ipAddress": "192.168.1.101",
-        "port": 5000,
-        "protocol": 0
     },
     "plc": {
         "heartbeatInterval": 1000,

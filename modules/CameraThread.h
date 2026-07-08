@@ -50,6 +50,13 @@ private:
     
     QTimer* m_softTriggerTimer;
 
+    // 分块取图相关变量
+    int m_expectedChunks = 1;
+    int m_currentChunk = 0;
+    std::vector<cv::Mat> m_chunkBuffers;
+    int m_targetHeight = 0;
+    int m_targetWidth = 0;
+
 private slots:
     void onSoftTrigger();
 };

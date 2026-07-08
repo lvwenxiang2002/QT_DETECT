@@ -7,7 +7,7 @@ __global__ void fused_preprocess_kernel(
     const uint8_t* __restrict__ src,
     int src_width, int src_height,
     int crop_x, int crop_y, int crop_size, int overlap,
-    float* __restrict__ dst, int dst_size,
+    float* __restrict__ dst, int dst_width, int dst_height,
     int light_field, // 0: Backlight (Odd lines, pad 255), 1: DarkField (Even lines, pad 0)
     int pad_value,
     int channels
@@ -15,10 +15,10 @@ __global__ void fused_preprocess_kernel(
     int dx = blockIdx.x * blockDim.x + threadIdx.x;
     int dy = blockIdx.y * blockDim.y + threadIdx.y;
 
-    if (dx >= dst_size || dy >= dst_size) return;
+    if (dx >= dst_width || dy >= dst_height) return;
 
-    // 映射回裁切图 (1280x1280) 中的坐标 (浮点，当尺寸相同时插值退化为一一对应)
-    float scale = (float)crop_size / (float)dst_size;
+    // 映射回裁切图 (1280x1280) 中的坐标 (默认 width 映射)
+    float scale = (float)crop_size / (float)dst_width;
     float cx = dx * scale;
     float cy = dy * scale;
 
@@ -38,12 +38,11 @@ __global__ void fused_preprocess_kernel(
     int split_height = src_height / 2;
 
     auto get_pixel = [&](int x, int y) -> float {
-        if (x < 0 || x >= src_width || y < 0 || y >= split_height) {
-            return (float)pad_value;
-        }
-        // 根据硬件实际输出，背光 (light_field=0) 在偶数行，暗场 (light_field=1) 在奇数行
-        int mapped_y = y * 2 + (light_field == 0 ? 0 : 1);
-        return (float)src[mapped_y * src_width + x];
+        // 使用边缘像素重复 (Replicate Padding) 替代常量 Padding，防止由于填充 255 导致的假性横向划伤/边缘过检
+        int clamp_x = max(0, min(x, src_width - 1));
+        int clamp_y = max(0, min(y, split_height - 1));
+        int mapped_y = clamp_y * 2 + (light_field == 0 ? 0 : 1);
+        return (float)src[mapped_y * src_width + clamp_x];
     };
 
     float p00 = get_pixel(x0, y0);
@@ -60,8 +59,13 @@ __global__ void fused_preprocess_kernel(
     val = val / 255.0f;
 
     // 写入 NCHW 内存
-    for (int c = 0; c < channels; ++c) {
-        dst[c * (dst_size * dst_size) + dy * dst_size + dx] = val;
+    // NCHW layout
+    if (channels == 3) {
+        dst[0 * dst_height * dst_width + dy * dst_width + dx] = val; // R
+        dst[1 * dst_height * dst_width + dy * dst_width + dx] = val; // G
+        dst[2 * dst_height * dst_width + dy * dst_width + dx] = val; // B
+    } else {
+        dst[dy * dst_width + dx] = val;
     }
 }
 
@@ -69,21 +73,22 @@ void launch_fused_preprocess_kernel(
     const uint8_t* d_src_interleaved,
     int src_width, int src_height,
     int crop_x, int crop_y, int crop_size, int overlap,
-    float* d_dst_float, int dst_size,
+    float* d_dst_float, int dst_width, int dst_height,
     int light_field,
     cudaStream_t stream,
     int channels
 ) {
-    int pad_value = (light_field == 0) ? 255 : 0;
-
     dim3 block(16, 16);
-    dim3 grid((dst_size + block.x - 1) / block.x, (dst_size + block.y - 1) / block.y);
+    dim3 grid((dst_width + block.x - 1) / block.x,
+              (dst_height + block.y - 1) / block.y);
+
+    int pad_value = (light_field == 0) ? 255 : 0;
 
     fused_preprocess_kernel<<<grid, block, 0, stream>>>(
         d_src_interleaved,
         src_width, src_height,
         crop_x, crop_y, crop_size, overlap,
-        d_dst_float, dst_size,
+        d_dst_float, dst_width, dst_height,
         light_field,
         pad_value,
         channels

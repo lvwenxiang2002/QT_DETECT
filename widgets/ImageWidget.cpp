@@ -11,12 +11,6 @@ ImageWidget::ImageWidget(QWidget *parent)
     m_scene = new QGraphicsScene(this);
     setScene(m_scene);
 
-    m_pixmapItemBL = new QGraphicsPixmapItem();
-    m_scene->addItem(m_pixmapItemBL);
-    
-    m_pixmapItemDF = new QGraphicsPixmapItem();
-    m_scene->addItem(m_pixmapItemDF);
-
     setRenderHint(QPainter::Antialiasing);
     setRenderHint(QPainter::SmoothPixmapTransform);
     setDragMode(QGraphicsView::NoDrag); 
@@ -32,27 +26,23 @@ void ImageWidget::updateImage(std::shared_ptr<ImageFrame> frame, const cv::Mat& 
 {
     if (!frame) return;
 
-    // 清除上一次的绘制框
-    QList<QGraphicsItem*> items = m_scene->items();
-    for (QGraphicsItem* item : items) {
-        if (item != m_pixmapItemBL && item != m_pixmapItemDF) {
-            m_scene->removeItem(item);
-            delete item;
-        }
-    }
+    // 清空场景（包括旧的图片分片和所有检测框）
+    m_scene->clear();
 
     if (!imgBL.empty()) {
-        QImage qimgBL(imgBL.data, imgBL.cols, imgBL.rows, imgBL.step, QImage::Format_Grayscale8);
-        m_pixmapItemBL->setPixmap(QPixmap::fromImage(qimgBL.copy()));
-        m_pixmapItemBL->setPos(0, 0);
+        // 由于 Windows GDI 中 QPixmap 存在 32767 的高度限制，对于超大图进行分片切图加载
+        int max_h = 30000;
+        for (int y = 0; y < imgBL.rows; y += max_h) {
+            int h = std::min(max_h, imgBL.rows - y);
+            cv::Mat slice = imgBL.rowRange(y, y + h);
+            QImage qimg(slice.data, slice.cols, slice.rows, slice.step, QImage::Format_Grayscale8);
+            QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(qimg.copy()));
+            item->setPos(0, y);
+            m_scene->addItem(item);
+        }
     }
     
-    // Do not display imgDF in the UI, as requested by the user.
-    if (m_pixmapItemDF) {
-        m_pixmapItemDF->setVisible(false);
-    }
-    
-    QRectF totalRect = m_pixmapItemBL->boundingRect();
+    QRectF totalRect(0, 0, imgBL.cols, imgBL.rows);
     m_scene->setSceneRect(totalRect);
     
     // Fit the entire 16K image in the view so we don't just see the top-left black corner
@@ -151,8 +141,9 @@ void ImageWidget::updateImage(std::shared_ptr<ImageFrame> frame, const cv::Mat& 
 
         // Big Box logic
         if (box.passedHostAppFilter) {
-            float big_draw_w = box_w * 5.0f;
-            float big_draw_h = box_h * 5.0f;
+            // 上下左右各拓宽百分之十 (总共拓宽 20%)
+            float big_draw_w = box_w * 1.2f;
+            float big_draw_h = box_h * 1.2f;
             float big_draw_x = center_x - big_draw_w / 2.0f;
             float big_draw_y = center_y - big_draw_h / 2.0f;
 

@@ -1,11 +1,16 @@
 #include "InferThread.h"
 #include "InferKernels.h"
 #include "RecipeManager.h"
+#include "ConfigManager.h"
 #include <QDebug>
 #include <QElapsedTimer>
 #include <QCoreApplication>
+#include <QDir>
+#include <QDateTime>
 #include <fstream>
 #include <iostream>
+#include <QFuture>
+#include <QtConcurrent>
 
 using namespace nvinfer1;
 
@@ -37,22 +42,28 @@ void InferThread::initMemoryPool()
     cudaMalloc((void**)&m_dImageBuffer, max_image_size);
 
     // TRT 输入 1 * 3 * 1280 * 1280 float (支持 1 或 3 通道)
-    cudaMalloc((void**)&m_dInputBuffer, 1 * 3 * 1280 * 1280 * sizeof(float));
-
-    // TRT 输出假设: YOLOv11 1280 尺寸，通常输出维度为 [1, 12, 33600] (4 个坐标 + 8 个类别)
-    // 分配稍微充裕一些的内存，最大按 1 * 32 * 33600 float 算
+    size_t in_size = 1 * 3 * 1280 * 1280 * sizeof(float);
     size_t out_size = 1 * 32 * 33600 * sizeof(float);
-    cudaMalloc((void**)&m_dOutputBuffer, out_size);
-    cudaHostAlloc((void**)&m_hOutputBuffer, out_size, cudaHostAllocDefault);
+    
+    for (int i = 0; i < NUM_BUFFERS; ++i) {
+        cudaMalloc((void**)&m_dInputBuffers[i], in_size);
+        cudaMalloc((void**)&m_dOutputBuffers[i], out_size);
+        cudaHostAlloc((void**)&m_hOutputBuffers[i], out_size, cudaHostAllocDefault);
+        cudaEventCreate(&m_events[i]);
+    }
 }
 
 void InferThread::releaseMemoryPool()
 {
     if (m_hImagePool) cudaFreeHost(m_hImagePool);
     if (m_dImageBuffer) cudaFree(m_dImageBuffer);
-    if (m_dInputBuffer) cudaFree(m_dInputBuffer);
-    if (m_dOutputBuffer) cudaFree(m_dOutputBuffer);
-    if (m_hOutputBuffer) cudaFreeHost(m_hOutputBuffer);
+    
+    for (int i = 0; i < NUM_BUFFERS; ++i) {
+        if (m_dInputBuffers[i]) cudaFree(m_dInputBuffers[i]);
+        if (m_dOutputBuffers[i]) cudaFree(m_dOutputBuffers[i]);
+        if (m_hOutputBuffers[i]) cudaFreeHost(m_hOutputBuffers[i]);
+        if (m_events[i]) cudaEventDestroy(m_events[i]);
+    }
 }
 
 bool InferThread::initializeTRT(const QString& engineBacklightPath, const QString& engineDarkfieldPath)
@@ -143,17 +154,28 @@ void InferThread::processFrame(std::shared_ptr<ImageFrame> frame)
     int crop_size = 1280;
     int overlap = 20;
     int step = crop_size - overlap;
+    
+    QFuture<void> buffer_futures[NUM_BUFFERS];
+    bool buffer_active[NUM_BUFFERS] = {false};
+    int crop_idx = 0;
 
     // 分别处理两个光场
     for (int lf = 0; lf < 2; ++lf) {
         LightField current_lf = (lf == 0) ? LightField::Backlight : LightField::DarkField;
 
         // 遍历所有切图
-        for (int y = 0; y < split_h; y += step) {
-            for (int x = 0; x < src_w; x += step) {
+        for (int y = 0; y < split_h; ) {
+            int current_y = y;
+            if (current_y + crop_size > split_h) current_y = std::max(0, split_h - crop_size);
+
+            for (int x = 0; x < src_w; ) {
+                int current_x = x;
+                if (current_x + crop_size > src_w) current_x = std::max(0, src_w - crop_size);
                 nvinfer1::IExecutionContext* current_context = (lf == 0) ? m_contextBacklight : m_contextDarkfield;
                 nvinfer1::ICudaEngine* current_engine = (lf == 0) ? m_engineBacklight : m_engineDarkfield;
                 if (current_context && current_engine) {
+                    int engine_h = 1280;
+                    int engine_w = 1280;
                     int channels = 1; // Default to 1
 
                     // 动态解析所有输入并填充具体尺寸
@@ -165,52 +187,85 @@ void InferThread::processFrame(std::shared_ptr<ImageFrame> frame)
                                 if (dims.d[j] == -1) {
                                     if (j == 0) dims.d[j] = 1;         // batch size
                                     else if (j == 1) dims.d[j] = 1;    // channels
-                                    else dims.d[j] = 1280;             // spatial width/height
+                                    else dims.d[j] = crop_size;        // spatial width/height (match cropSize)
                                 }
                             }
                             if (dims.nbDims >= 4) {
                                 channels = dims.d[1]; // Use the explicitly defined or resolved channels
+                                engine_h = dims.d[2];
+                                engine_w = dims.d[3];
                             }
                             current_context->setBindingDimensions(i, dims);
                         }
                     }
 
-                    // 2. 调用极致融合 Kernel
-                    hpc_vision::launch_fused_preprocess_kernel(
-                        m_dImageBuffer, src_w, src_h,
-                        x, y, crop_size, overlap,
-                        m_dInputBuffer, 1280,
-                        lf, m_stream,
-                        channels
-                    );
+                    bool skip_inference = false;
+                    // （已移除容易被全局噪点干扰的粗放前处理过滤）
 
-                    void* bindings[] = {m_dInputBuffer, m_dOutputBuffer};
-                    current_context->enqueueV2(bindings, m_stream, nullptr);
-
-                    // 4. 将结果异步拷回 Host
-                    // 动态查找输出 Binding 的索引
-                    int out_idx = 1;
-                    for (int i = 0; i < nbBindings; ++i) {
-                        if (!current_engine->bindingIsInput(i)) {
-                            out_idx = i;
-                            break;
+                    if (!skip_inference) {
+                        int b = crop_idx % NUM_BUFFERS;
+                        
+                        // Wait for previous background thread on this buffer to finish
+                        if (buffer_active[b]) {
+                            buffer_futures[b].waitForFinished();
                         }
-                    }
 
-                    nvinfer1::Dims out_dims = current_context->getBindingDimensions(out_idx);
-                    int out_size = 1;
-                    for (int i = 0; i < out_dims.nbDims; ++i) {
-                        out_size *= out_dims.d[i];
-                    }
-                    
-                    cudaMemcpyAsync(m_hOutputBuffer, m_dOutputBuffer, out_size * sizeof(float), cudaMemcpyDeviceToHost, m_stream);
-                    cudaStreamSynchronize(m_stream); // 等待结果
+                        // 3. 调用极致融合 Kernel
+                        hpc_vision::launch_fused_preprocess_kernel(
+                            m_dImageBuffer, src_w, src_h,
+                            current_x, current_y, crop_size, overlap,
+                            m_dInputBuffers[b], engine_w, engine_h, // Pass actual dimensions
+                            lf, m_stream,
+                            channels
+                        );
 
-                    // 5. 后处理与坐标映射
-                    // 传入获取到的 out_dims 方便后续处理
-                    postProcess(frame, m_hOutputBuffer, out_dims, x, y, current_lf);
+                        void* bindings[] = {m_dInputBuffers[b], m_dOutputBuffers[b]};
+                        current_context->enqueueV2(bindings, m_stream, nullptr);
+
+                        // 4. 将结果异步拷回 Host
+                        int out_idx = 1;
+                        for (int i = 0; i < nbBindings; ++i) {
+                            if (!current_engine->bindingIsInput(i)) {
+                                out_idx = i;
+                                break;
+                            }
+                        }
+
+                        nvinfer1::Dims out_dims = current_context->getBindingDimensions(out_idx);
+                        int out_size = 1;
+                        for (int i = 0; i < out_dims.nbDims; ++i) {
+                            out_size *= out_dims.d[i];
+                        }
+                        
+                        cudaMemcpyAsync(m_hOutputBuffers[b], m_dOutputBuffers[b], out_size * sizeof(float), cudaMemcpyDeviceToHost, m_stream);
+                        cudaEventRecord(m_events[b], m_stream);
+
+                        // 5. 剥离后处理到后台线程池并发执行
+                        float* h_out = m_hOutputBuffers[b];
+                        cudaEvent_t event = m_events[b];
+                        
+                        buffer_futures[b] = QtConcurrent::run([this, frame, h_out, out_dims, current_x, current_y, current_lf, event]() {
+                            cudaEventSynchronize(event); // 等待该切块在 GPU 上的处理完全结束
+                            postProcess(frame, h_out, out_dims, current_x, current_y, current_lf);
+                        });
+                        buffer_active[b] = true;
+                        
+                        crop_idx++;
+                    }
                 }
+                
+                if (current_x == std::max(0, src_w - crop_size)) break;
+                x += step;
             }
+            if (current_y == std::max(0, split_h - crop_size)) break;
+            y += step;
+        }
+    }
+    
+    // 整个大图遍历完成后，主线程必须等待所有正在飞行的后台任务完成
+    for (int i = 0; i < NUM_BUFFERS; ++i) {
+        if (buffer_active[i]) {
+            buffer_futures[i].waitForFinished();
         }
     }
 }
@@ -301,7 +356,6 @@ void InferThread::postProcess(std::shared_ptr<ImageFrame> frame, float* h_out, n
         // Apply Recipe Rules
         if (best_class >= 0 && best_class < defectNames.size()) {
             bool confOk = (max_conf >= recipe.globalInferConfidence);
-            
             if (confOk) {
                 // 转换为左上角坐标 (在 1280x1280 坐标系下)
                 float x1 = cx - w / 2.0f;
@@ -389,7 +443,6 @@ void InferThread::postProcess(std::shared_ptr<ImageFrame> frame, float* h_out, n
         }
     }
 
-    // 保存结果
     for (int idx : indices) {
         cv::Rect box = boxes[idx];
         
@@ -418,6 +471,53 @@ void InferThread::postProcess(std::shared_ptr<ImageFrame> frame, float* h_out, n
             passedHostAppFilter = confOk && areaOk && diagOk;
         }
 
+        int local_max_val = 0;
+        float local_mean_val = 0.0f;
+        
+        // 🌟 物理降维打击：局部精准复核 (Ghost Box Killer)
+        // 现已对暗场和背光同时生效！因为在镜头遮盖（纯黑）的极端测试下，背光模型也会在边缘产生卷积伪影
+        if (passedHostAppFilter) {
+            int ghost_thresh = ConfigManager::instance().general.ghostMaxValThreshold;
+            int split_h = frame->image.rows / 2;
+            int src_w = frame->image.cols;
+            
+            // 将 bounding box 映射到对应的光场行
+            int bx1 = std::max(0, (int)std::floor(abs_x1));
+            int by1 = std::max(0, (int)std::floor(abs_y1));
+            int bx2 = std::min(src_w - 1, (int)std::ceil(abs_x2));
+            int by2 = std::min(split_h - 1, (int)std::ceil(abs_y2));
+            
+            long long sum_val = 0;
+            int count_val = 0;
+            for (int y = by1; y <= by2; ++y) {
+                int mapped_y = y * 2 + (lf == LightField::Backlight ? 0 : 1); // 背光偶数行，暗场奇数行
+                const uchar* row_ptr = frame->image.ptr<uchar>(mapped_y);
+                for (int x = bx1; x <= bx2; ++x) {
+                    int val = row_ptr[x];
+                    if (val > local_max_val) local_max_val = val;
+                    sum_val += val;
+                    count_val++;
+                }
+            }
+            
+            local_mean_val = count_val > 0 ? (float)sum_val / count_val : 0.0f;
+            float ghost_mean_thresh = ConfigManager::instance().general.ghostMeanValThreshold;
+            
+            // 使用配置系统中的阈值进行拦截 (需同时满足最高亮度和平均亮度限制)
+            if (local_max_val <= ghost_thresh && local_mean_val <= ghost_mean_thresh) {
+                passedHostAppFilter = false;
+                QString logStr = QString("  -> [GhostFilter] KILLED Fake Box | Class: %1 | Conf: %2 | Rect:[%3, %4, %5, %6] | Max: %7 | Mean: %8")
+                                     .arg(class_ids[idx]).arg(confidences[idx], 0, 'f', 2)
+                                     .arg(std::floor(abs_x1)).arg(std::floor(abs_y1)).arg(std::ceil(abs_x2)).arg(std::ceil(abs_y2))
+                                     .arg(local_max_val).arg(local_mean_val, 0, 'f', 2);
+                {
+                    std::lock_guard<std::mutex> lock(frame->resultsMutex);
+                    frame->killedLogs.push_back(logStr);
+                }
+                continue; // 彻底物理消灭，不存入结果数组，连日志和半透明框都不会有！
+            }
+        }
+
         DefectResult res;
         res.class_id = class_ids[idx];
         res.confidence = confidences[idx];
@@ -429,8 +529,13 @@ void InferThread::postProcess(std::shared_ptr<ImageFrame> frame, float* h_out, n
         res.diagonal = std::sqrt(scaled_w * scaled_w + scaled_h * scaled_h);
         res.light_type = lf;
         res.passedHostAppFilter = passedHostAppFilter;
+        res.max_val = local_max_val;
+        res.mean_val = local_mean_val;
 
-        frame->results.push_back(res);
+        {
+            std::lock_guard<std::mutex> lock(frame->resultsMutex);
+            frame->results.push_back(res);
+        }
     }
 }
 
@@ -474,10 +579,17 @@ void InferThread::run()
             const auto& res = frame->results[i];
             QString lightStr = (res.light_type == LightField::Backlight) ? "Backlight" : "Darkfield";
             qDebug() << "  -> Defect" << i+1 
-                     << "| Light:" << lightStr 
+                     << "| Light:" << lightStr.toStdString().c_str()
                      << "| ClassID:" << res.class_id 
-                     << "| Conf:" << QString::number(res.confidence, 'f', 2) 
-                     << "| Rect: [" << res.x1 << "," << res.y1 << "," << res.x2 << "," << res.y2 << "]";
+                     << "| Conf:" << QString::number(res.confidence, 'f', 2).toStdString().c_str()
+                     << "| Rect: [" << res.x1 << "," << res.y1 << "," << res.x2 << "," << res.y2 << "]"
+                     << "| Max:" << res.max_val 
+                     << "| Mean:" << QString::number(res.mean_val, 'f', 2).toStdString().c_str();
+        }
+
+        // 汇总打印被 Ghost Filter 杀死的框
+        for (const QString& log : frame->killedLogs) {
+            qDebug().noquote() << log;
         }
         qDebug() << "-----------------------------------------";
         

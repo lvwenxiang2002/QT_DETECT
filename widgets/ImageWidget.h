@@ -32,8 +32,6 @@ protected:
 
 private:
     QGraphicsScene *m_scene;
-    QGraphicsPixmapItem *m_pixmapItemBL;
-    QGraphicsPixmapItem *m_pixmapItemDF;
     QPoint m_lastMousePos;
     bool m_isPanning;
     qreal m_scaleFactor;

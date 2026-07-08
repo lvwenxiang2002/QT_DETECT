@@ -30,6 +30,7 @@ private:
     QComboBox *m_comboTriggerMode;
     QSpinBox *m_spinReconnect;
     QDoubleSpinBox *m_spinLineRate;
+    QSpinBox *m_spinOverlapPixels;
 
     // PLC tab
     QComboBox *m_comboProtocol;
@@ -37,13 +38,6 @@ private:
     QSpinBox *m_spinPort;
     QSpinBox *m_spinHeartbeat;
 
-    // Light Controller tab
-    QComboBox *m_comboLightCommType;
-    QLineEdit *m_editLightIp;
-    QSpinBox *m_spinLightPort;
-    QLineEdit *m_editLightComPort;
-    QComboBox *m_comboLightBaudRate;
-    QComboBox *m_comboLightProtocol;
 
     // Storage tab
     QComboBox *m_comboSaveStrategy;
@@ -53,6 +47,8 @@ private:
     // General tab
     QCheckBox *m_checkAutoStart;
     QComboBox *m_comboPermission;
+    QSpinBox *m_spinGhostMaxValThreshold;
+    QDoubleSpinBox *m_spinGhostMeanValThreshold;
 };
 
 #include <QListWidget>
@@ -84,6 +80,7 @@ private:
     QListWidget *m_recipeList;
     QPushButton *m_btnSetRoiLeft;
     QPushButton *m_btnSetRoiRight;
+    QCheckBox *m_checkStitchingMode;
     
     QDoubleSpinBox *m_spinGlobalInferConf;
     

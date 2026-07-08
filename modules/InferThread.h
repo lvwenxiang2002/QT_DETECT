@@ -62,11 +62,12 @@ private:
     // CUDA & Memory Pool
     cudaStream_t m_stream;
     
-    // 我们假设大图被拆解成 N 个 2048x2048 的 patch
-    // 为了最大化吞吐，我们可以一次推一个 batch。这里为了简单，单 stream 循环 enqueue
-    float* m_dInputBuffer = nullptr;  // TensorRT 输入 (1x1x1280x1280, device)
-    float* m_dOutputBuffer = nullptr; // TensorRT 输出 (例如: 1xNumBoxesx6, device)
-    float* m_hOutputBuffer = nullptr; // TensorRT 输出 (Host, Pinned)
+    // 异步流水线 (Ring Buffer) 设置
+    static const int NUM_BUFFERS = 4;
+    float* m_dInputBuffers[NUM_BUFFERS] = {nullptr};
+    float* m_dOutputBuffers[NUM_BUFFERS] = {nullptr};
+    float* m_hOutputBuffers[NUM_BUFFERS] = {nullptr};
+    cudaEvent_t m_events[NUM_BUFFERS] = {nullptr};
     
     // 相机过来的大图如果还没有锁页，可以在这里预先分配 Pinned Memory 用于中转
     uint8_t* m_hImagePool = nullptr;

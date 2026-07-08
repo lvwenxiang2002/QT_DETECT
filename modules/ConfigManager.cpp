@@ -45,16 +45,6 @@ void ConfigManager::load(const QString& filePath) {
         general.autoStart = genObj["autoStart"].toBool(false);
         general.permissionLevel = genObj["permissionLevel"].toInt(0);
     }
-
-    if (root.contains("light")) {
-        QJsonObject lObj = root["light"].toObject();
-        light.commType = lObj["commType"].toInt(0);
-        light.ipAddress = lObj["ipAddress"].toString("192.168.1.101");
-        light.port = lObj["port"].toInt(5000);
-        light.comPort = lObj["comPort"].toString("COM1");
-        light.baudRate = lObj["baudRate"].toInt(115200);
-        light.protocol = lObj["protocol"].toInt(0);
-    }
 }
 
 void ConfigManager::save(const QString& filePath) {
@@ -87,15 +77,6 @@ void ConfigManager::save(const QString& filePath) {
     genObj["autoStart"] = general.autoStart;
     genObj["permissionLevel"] = general.permissionLevel;
     root["general"] = genObj;
-
-    QJsonObject lObj;
-    lObj["commType"] = light.commType;
-    lObj["ipAddress"] = light.ipAddress;
-    lObj["port"] = light.port;
-    lObj["comPort"] = light.comPort;
-    lObj["baudRate"] = light.baudRate;
-    lObj["protocol"] = light.protocol;
-    root["light"] = lObj;
 
     QJsonDocument doc(root);
     QFile file(filePath);

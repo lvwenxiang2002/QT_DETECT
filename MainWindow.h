@@ -40,6 +40,7 @@ private slots:
     void onStartClicked();
     void onStopClicked();
     void onCameraError(QString msg);
+    void onRawImageCaptured(std::shared_ptr<ImageFrame> frame);
     void onImageProcessed(std::shared_ptr<ImageFrame> frame);
 
     // New slots for interaction
@@ -66,6 +67,7 @@ private:
 
     ImageWidget* m_imageWidgetLeft;
     ImageWidget* m_imageWidgetRight;
+    ImageWidget* m_imageWidgetCenter;
     PieChartWidget* m_pieChart;
 
     SystemStatus m_currentStatus = Status_Stopped;
@@ -90,6 +92,7 @@ private:
         cv::Mat imgDF;
     };
     QMap<int, QMap<int, PendingFrameData>> m_pendingFrames;
+    QMap<int, QMap<int, std::shared_ptr<ImageFrame>>> m_rawFrames;
     QSet<int> m_ngFrameIndices;
     int m_currentFrameIndex;
     QString m_currentBatchDir;

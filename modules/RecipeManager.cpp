@@ -31,6 +31,7 @@ void RecipeManager::load(const QString& filePath) {
         Recipe r;
         r.name = obj["name"].toString();
         r.globalInferConfidence = obj["globalInferConfidence"].toDouble(0.25);
+        r.enableStitchingMode = obj["enableStitchingMode"].toBool(false);
         r.roiWidthLeft = obj["roiWidthLeft"].toInt(16384);
         r.roiHeightLeft = obj["roiHeightLeft"].toInt(8192);
         r.offsetXLeft = obj["offsetXLeft"].toInt(0);
@@ -75,6 +76,7 @@ void RecipeManager::save(const QString& filePath) {
         QJsonObject obj;
         obj["name"] = r.name;
         obj["globalInferConfidence"] = r.globalInferConfidence;
+        obj["enableStitchingMode"] = r.enableStitchingMode;
         obj["roiWidthLeft"] = r.roiWidthLeft;
         obj["roiHeightLeft"] = r.roiHeightLeft;
         obj["offsetXLeft"] = r.offsetXLeft;

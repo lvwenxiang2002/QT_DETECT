@@ -22,13 +22,15 @@ namespace hpc_vision {
 // overlap: 重叠像素 (通常 20)
 // d_dst_float: 目标显存，TensorRT 输入 Buffer (float, 尺寸 1*1*1280*1280)
 // dst_size: 缩放目标尺寸 (通常 1280)
+// dst_width: 缩放目标宽
+// dst_height: 缩放目标高
 // light_field: 0-背光 (提取奇数行, 边缘用255填充), 1-暗场 (提取偶数行, 边缘用0填充)
 // stream: 绑定的 CUDA Stream
 void launch_fused_preprocess_kernel(
     const uint8_t* d_src_interleaved,
     int src_width, int src_height,
     int crop_x, int crop_y, int crop_size, int overlap,
-    float* d_dst_float, int dst_size,
+    float* d_dst_float, int dst_width, int dst_height,
     int light_field,
     cudaStream_t stream,
     int channels = 1

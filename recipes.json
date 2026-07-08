@@ -2,6 +2,7 @@
     "currentRecipe": "0624",
     "recipes": [
         {
+            "enableStitchingMode": false,
             "exposureTimeLeft": 1000,
             "exposureTimeRight": 1000,
             "globalInferConfidence": 0.25,
@@ -166,6 +167,7 @@
             "roiWidthRight": 16384
         },
         {
+            "enableStitchingMode": false,
             "exposureTimeLeft": 1000,
             "exposureTimeRight": 1000,
             "globalInferConfidence": 0.25,
@@ -312,6 +314,7 @@
             "roiWidthRight": 16384
         },
         {
+            "enableStitchingMode": false,
             "exposureTimeLeft": 1000,
             "exposureTimeRight": 1000,
             "globalInferConfidence": 0.8500000238418579,
@@ -458,8 +461,9 @@
             "roiWidthRight": 6000
         },
         {
-            "exposureTimeLeft": 50,
-            "exposureTimeRight": 50,
+            "enableStitchingMode": false,
+            "exposureTimeLeft": 2,
+            "exposureTimeRight": 2,
             "globalInferConfidence": 0.25,
             "lightFields": {
                 "暗场": {
@@ -486,7 +490,7 @@
                         "maxConfidence": 0,
                         "maxDiagonal": 0,
                         "minArea": 0,
-                        "minConfidence": 0.6,
+                        "minConfidence": 0.25,
                         "minDiagonal": 0,
                         "uiState": 1
                     },
@@ -594,16 +598,17 @@
                 }
             },
             "name": "0624",
-            "offsetXLeft": 0,
-            "offsetXRight": 0,
+            "offsetXLeft": 192,
+            "offsetXRight": 192,
             "offsetYLeft": 0,
             "offsetYRight": 0,
-            "roiHeightLeft": 50000,
-            "roiHeightRight": 50000,
-            "roiWidthLeft": 8000,
-            "roiWidthRight": 8000
+            "roiHeightLeft": 100000,
+            "roiHeightRight": 100000,
+            "roiWidthLeft": 16000,
+            "roiWidthRight": 16000
         },
         {
+            "enableStitchingMode": false,
             "exposureTimeLeft": 50,
             "exposureTimeRight": 50,
             "globalInferConfidence": 0.25,
@@ -744,12 +749,13 @@
             "offsetXRight": 0,
             "offsetYLeft": 0,
             "offsetYRight": 0,
-            "roiHeightLeft": 30000,
-            "roiHeightRight": 30000,
+            "roiHeightLeft": 100000,
+            "roiHeightRight": 100000,
             "roiWidthLeft": 8192,
             "roiWidthRight": 8192
         },
         {
+            "enableStitchingMode": false,
             "exposureTimeLeft": 50,
             "exposureTimeRight": 1000,
             "globalInferConfidence": 0.25,

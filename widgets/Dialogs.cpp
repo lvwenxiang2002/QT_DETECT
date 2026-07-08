@@ -27,7 +27,7 @@ ConfigDialog::ConfigDialog(QWidget *parent) : QDialog(parent) {
     QWidget *tabCamera = new QWidget();
     QFormLayout *formCam = new QFormLayout(tabCamera);
     m_comboTriggerMode = new QComboBox(this);
-    m_comboTriggerMode->addItems({"行频触发 (Line Rate)", "编码器触发 (Encoder)", "自由采集 (Free Run)"});
+    m_comboTriggerMode->addItems({"软触发 (内部行频)", "帧触发 (硬件外触发+内部行频)", "帧加行触发 (完全受控于硬件脉冲)"});
     m_editSerialLeft = new QLineEdit(this);
     m_editSerialLeft->setPlaceholderText("左相机 SN");
     m_editSerialRight = new QLineEdit(this);
@@ -39,10 +39,13 @@ ConfigDialog::ConfigDialog(QWidget *parent) : QDialog(parent) {
     m_spinLineRate = new QDoubleSpinBox(this);
     m_spinLineRate->setRange(100.0, 100000.0);
     m_spinLineRate->setDecimals(1);
+    m_spinOverlapPixels = new QSpinBox(this);
+    m_spinOverlapPixels->setRange(0, 16384);
     formCam->addRow("左相机 SN:", m_editSerialLeft);
     formCam->addRow("右相机 SN:", m_editSerialRight);
     formCam->addRow("触发模式:", m_comboTriggerMode);
     formCam->addRow("模拟软触发行频:", m_spinLineRate);
+    formCam->addRow("相机重叠区(像素):", m_spinOverlapPixels);
     formCam->addRow("增益:", m_spinGain);
     formCam->addRow("掉线重试次数:", m_spinReconnect);
     m_tabWidget->addTab(tabCamera, "📷 相机配置");
@@ -63,28 +66,6 @@ ConfigDialog::ConfigDialog(QWidget *parent) : QDialog(parent) {
     formPlc->addRow("心跳包间隔(ms):", m_spinHeartbeat);
     m_tabWidget->addTab(tabPlc, "🔌 PLC配置");
 
-    // 2.5 Light Controller Tab
-    QWidget *tabLight = new QWidget();
-    QFormLayout *formLight = new QFormLayout(tabLight);
-    m_comboLightCommType = new QComboBox(this);
-    m_comboLightCommType->addItems({"串口 (RS232)", "网口 (TCP/IP)"});
-    m_editLightIp = new QLineEdit(this);
-    m_spinLightPort = new QSpinBox(this);
-    m_spinLightPort->setRange(1, 65535);
-    m_editLightComPort = new QLineEdit(this);
-    m_comboLightBaudRate = new QComboBox(this);
-    m_comboLightBaudRate->addItems({"9600", "19200", "38400", "57600", "115200"});
-    m_comboLightProtocol = new QComboBox(this);
-    m_comboLightProtocol->addItems({"OPT 奥普特", "CST", "Wordop", "自定义"});
-    
-    formLight->addRow("通信接口类型:", m_comboLightCommType);
-    formLight->addRow("IP 地址(网口):", m_editLightIp);
-    formLight->addRow("端口号(网口):", m_spinLightPort);
-    formLight->addRow("COM口(串口):", m_editLightComPort);
-    formLight->addRow("波特率(串口):", m_comboLightBaudRate);
-    formLight->addRow("控制器协议厂商:", m_comboLightProtocol);
-    m_tabWidget->addTab(tabLight, "💡 光源配置");
-
     // 3. Storage Tab
     QWidget *tabStorage = new QWidget();
     QFormLayout *formStorage = new QFormLayout(tabStorage);
@@ -104,8 +85,19 @@ ConfigDialog::ConfigDialog(QWidget *parent) : QDialog(parent) {
     m_checkAutoStart = new QCheckBox("开机自动启动上位机程序", this);
     m_comboPermission = new QComboBox(this);
     m_comboPermission->addItems({"普通操作员", "技术员", "系统管理员"});
+    m_spinGhostMaxValThreshold = new QSpinBox(this);
+    m_spinGhostMaxValThreshold->setRange(0, 255);
+    m_spinGhostMaxValThreshold->setToolTip("暗场黑图伪影过滤阈值(0-255)。若发现边缘内存乱码或者误检，可适当调高此值。");
+    
+    m_spinGhostMeanValThreshold = new QDoubleSpinBox(this);
+    m_spinGhostMeanValThreshold->setRange(0.0, 255.0);
+    m_spinGhostMeanValThreshold->setSingleStep(0.1);
+    m_spinGhostMeanValThreshold->setToolTip("黑图平均亮度阈值。只有最高亮度和平均亮度都低于阈值时，才会触发斩杀。");
+
     formGeneral->addRow("运行设置:", m_checkAutoStart);
     formGeneral->addRow("默认权限:", m_comboPermission);
+    formGeneral->addRow("黑图伪影过滤阈值(MaxVal):", m_spinGhostMaxValThreshold);
+    formGeneral->addRow("黑图伪影过滤阈值(MeanVal):", m_spinGhostMeanValThreshold);
     m_tabWidget->addTab(tabGeneral, "⚙️ 系统通用");
     
     mainLayout->addWidget(m_tabWidget);
@@ -127,7 +119,6 @@ void ConfigDialog::loadConfig() {
     const auto& p = ConfigManager::instance().plc;
     const auto& s = ConfigManager::instance().storage;
     const auto& g = ConfigManager::instance().general;
-    const auto& l = ConfigManager::instance().light;
 
     m_editSerialLeft->setText(c.serialNumberLeft);
     m_editSerialRight->setText(c.serialNumberRight);
@@ -135,19 +126,13 @@ void ConfigDialog::loadConfig() {
     m_comboTriggerMode->setCurrentIndex(c.triggerMode);
     m_spinReconnect->setValue(c.reconnectRetries);
     m_spinLineRate->setValue(c.lineRate);
+    m_spinOverlapPixels->setValue(c.overlapPixels);
 
     m_comboProtocol->setCurrentIndex(p.protocol);
     m_editIpAddress->setText(p.ipAddress);
     m_spinPort->setValue(p.port);
     m_spinHeartbeat->setValue(p.heartbeatInterval);
 
-    m_comboLightCommType->setCurrentIndex(l.commType);
-    m_editLightIp->setText(l.ipAddress);
-    m_spinLightPort->setValue(l.port);
-    m_editLightComPort->setText(l.comPort);
-    m_comboLightProtocol->setCurrentIndex(l.protocol);
-    int baudIdx = m_comboLightBaudRate->findText(QString::number(l.baudRate));
-    if (baudIdx >= 0) m_comboLightBaudRate->setCurrentIndex(baudIdx);
 
     m_comboSaveStrategy->setCurrentIndex(s.saveStrategy);
     m_editSavePath->setText(s.savePath);
@@ -155,6 +140,8 @@ void ConfigDialog::loadConfig() {
 
     m_checkAutoStart->setChecked(g.autoStart);
     m_comboPermission->setCurrentIndex(g.permissionLevel);
+    m_spinGhostMaxValThreshold->setValue(g.ghostMaxValThreshold);
+    m_spinGhostMeanValThreshold->setValue(g.ghostMeanValThreshold);
 }
 
 void ConfigDialog::onSaveConfig() {
@@ -162,7 +149,6 @@ void ConfigDialog::onSaveConfig() {
     auto& p = ConfigManager::instance().plc;
     auto& s = ConfigManager::instance().storage;
     auto& g = ConfigManager::instance().general;
-    auto& l = ConfigManager::instance().light;
 
     c.serialNumberLeft = m_editSerialLeft->text().trimmed();
     c.serialNumberRight = m_editSerialRight->text().trimmed();
@@ -170,18 +156,13 @@ void ConfigDialog::onSaveConfig() {
     c.triggerMode = m_comboTriggerMode->currentIndex();
     c.reconnectRetries = m_spinReconnect->value();
     c.lineRate = m_spinLineRate->value();
+    c.overlapPixels = m_spinOverlapPixels->value();
 
     p.protocol = m_comboProtocol->currentIndex();
     p.ipAddress = m_editIpAddress->text();
     p.port = m_spinPort->value();
     p.heartbeatInterval = m_spinHeartbeat->value();
 
-    l.commType = m_comboLightCommType->currentIndex();
-    l.ipAddress = m_editLightIp->text().trimmed();
-    l.port = m_spinLightPort->value();
-    l.comPort = m_editLightComPort->text().trimmed();
-    l.baudRate = m_comboLightBaudRate->currentText().toInt();
-    l.protocol = m_comboLightProtocol->currentIndex();
 
     s.saveStrategy = m_comboSaveStrategy->currentIndex();
     s.savePath = m_editSavePath->text();
@@ -189,8 +170,11 @@ void ConfigDialog::onSaveConfig() {
 
     g.autoStart = m_checkAutoStart->isChecked();
     g.permissionLevel = m_comboPermission->currentIndex();
+    g.ghostMaxValThreshold = m_spinGhostMaxValThreshold->value();
+    g.ghostMeanValThreshold = m_spinGhostMeanValThreshold->value();
 
     ConfigManager::instance().save();
+    
     QMessageBox::information(this, "成功", "系统配置保存成功！");
     accept();
 }
@@ -236,6 +220,11 @@ DetectDialog::DetectDialog(QWidget *parent) : QDialog(parent) {
     m_spinGlobalInferConf->setValue(0.25);
     confLayout->addWidget(lblGlobalConf);
     confLayout->addWidget(m_spinGlobalInferConf);
+    
+    m_checkStitchingMode = new QCheckBox("开启双相机拼图与提取模式", this);
+    confLayout->addSpacing(20);
+    confLayout->addWidget(m_checkStitchingMode);
+    
     confLayout->addStretch();
     rightLayout->addLayout(confLayout);
     
@@ -302,6 +291,7 @@ void DetectDialog::populateTable() {
     Recipe r = RecipeManager::instance().getRecipe(name);
     
     m_spinGlobalInferConf->setValue(r.globalInferConfidence);
+    m_checkStitchingMode->setChecked(r.enableStitchingMode);
     
     for (const QString& lfName : m_lfTables.keys()) {
         LightFieldParam lfParam = r.lightFields.value(lfName);
@@ -376,6 +366,7 @@ void DetectDialog::onSaveRecipe() {
     
     Recipe r = RecipeManager::instance().getRecipe(name);
     r.globalInferConfidence = m_spinGlobalInferConf->value();
+    r.enableStitchingMode = m_checkStitchingMode->isChecked();
     
     for (const QString& lfName : m_lfTables.keys()) {
         QTableWidget *table = m_lfTables[lfName];

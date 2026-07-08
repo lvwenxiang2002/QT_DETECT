@@ -27,6 +27,7 @@ struct LightFieldParam {
 struct Recipe {
     QString name;
     float globalInferConfidence = 0.25f; // 统一的底层推理库置信度过滤阈值
+    bool enableStitchingMode = false; // 是否开启双相机拼图与提取模式
     QMap<QString, LightFieldParam> lightFields;
     
     // Camera Left Settings

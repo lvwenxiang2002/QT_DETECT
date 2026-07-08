@@ -14,16 +14,9 @@ struct CameraConfig {
     int triggerMode = 0; // 0: Line rate, 1: Encoder, 2: Free
     int reconnectRetries = 3;
     double lineRate = 5000.0; // 软触发模拟行频
+    int overlapPixels = 100; // 相机重叠区像素
 };
 
-struct LightControllerConfig {
-    int commType = 0; // 0: RS232, 1: TCP/IP
-    QString ipAddress = "192.168.1.101";
-    int port = 5000;
-    QString comPort = "COM1";
-    int baudRate = 115200;
-    int protocol = 0; // 0: OPT, 1: CST, 2: Wordop
-};
 
 struct PlcConfig {
     int protocol = 0; // 0: TCP Server, 1: TCP Client, 2: Modbus TCP
@@ -42,6 +35,8 @@ struct GeneralConfig {
     bool autoStart = false;
     int permissionLevel = 0;
     QString simulationDir = "E:/BLL_QT_detect/test_images";
+    int ghostMaxValThreshold = 3;
+    double ghostMeanValThreshold = 2.0;
 };
 
 class ConfigManager {
@@ -58,7 +53,6 @@ public:
     PlcConfig plc;
     StorageConfig storage;
     GeneralConfig general;
-    LightControllerConfig light;
 
 private:
     ConfigManager() = default;

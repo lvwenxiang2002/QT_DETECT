@@ -9,6 +9,7 @@
 
 #include "IKapC.h"
 #include "IKapBoard.h"
+#include "modules/ConfigManager.h"
 
 int main(int argc, char *argv[])
 {
@@ -31,6 +32,9 @@ int main(int argc, char *argv[])
     
     // 注册自定义类型以便跨线程信号槽传递
     qRegisterMetaType<std::shared_ptr<ImageFrame>>("std::shared_ptr<ImageFrame>");
+
+    // 应用程序启动时全局加载系统配置
+    ConfigManager::instance().load();
 
     MainWindow w;
     w.resize(1600, 900); // 默认窗口大小
