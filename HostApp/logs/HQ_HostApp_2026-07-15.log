@@ -1,0 +1,114 @@
+[2026-07-15 09:03:46.019] [DEBUG] [T:35cc] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-15 09:03:46.410] [DEBUG] [T:34ec] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-15 09:03:46.419] [DEBUG] [T:35cc] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-15 09:03:46.536] [DEBUG] [T:1d18] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-15 09:03:46.538] [WARN ] [T:35cc] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-15 09:03:46.538] [DEBUG] [T:35cc] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-15 09:03:46.699] [DEBUG] [T:35cc] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-15 09:03:47.800] [DEBUG] [T:34ec] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-15 09:03:49.171] [DEBUG] [T:1d18] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-15 09:03:49.398] [DEBUG] [T:1d18] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-15 09:03:49.403] [DEBUG] [T:1d18] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-15 09:03:49.493] [DEBUG] [T:34ec] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-15 09:03:49.497] [DEBUG] [T:34ec] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-15 09:03:57.150] [DEBUG] [T:35cc] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 60000 Hex: "8101010000ea60050e"
+[2026-07-15 09:03:57.208] [DEBUG] [T:35cc] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:03:57.213] [DEBUG] [T:35cc] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:03:57.213] [DEBUG] [T:35cc] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:03:57.269] [DEBUG] [T:35cc] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:03:57.273] [DEBUG] [T:35cc] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:03:57.274] [DEBUG] [T:35cc] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:03:59.247] [DEBUG] [T:35cc] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 60000 Hex: "8101010000ea60050e"
+[2026-07-15 09:03:59.305] [DEBUG] [T:35cc] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:03:59.309] [DEBUG] [T:35cc] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:03:59.309] [DEBUG] [T:35cc] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:03:59.365] [DEBUG] [T:35cc] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:03:59.370] [DEBUG] [T:35cc] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:03:59.370] [DEBUG] [T:35cc] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:04:10.011] [DEBUG] [T:1db4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3840 ms. Total valid defects: 0
+[2026-07-15 09:04:10.014] [DEBUG] [T:e94] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3967 ms. Total valid defects: 0
+[2026-07-15 09:04:16.509] [DEBUG] [T:1db4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3703 ms. Total valid defects: 0
+[2026-07-15 09:04:16.512] [DEBUG] [T:e94] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3800 ms. Total valid defects: 0
+[2026-07-15 09:04:23.127] [DEBUG] [T:1db4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3736 ms. Total valid defects: 0
+[2026-07-15 09:04:23.129] [DEBUG] [T:e94] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3803 ms. Total valid defects: 0
+[2026-07-15 09:09:13.457] [DEBUG] [T:163c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-15 09:09:13.653] [DEBUG] [T:3870] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-15 09:09:13.662] [DEBUG] [T:163c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-15 09:09:13.785] [DEBUG] [T:690] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-15 09:09:13.785] [WARN ] [T:163c] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-15 09:09:13.786] [DEBUG] [T:163c] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-15 09:09:13.932] [DEBUG] [T:163c] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-15 09:09:15.035] [DEBUG] [T:3870] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-15 09:09:16.036] [DEBUG] [T:3870] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-15 09:09:16.040] [DEBUG] [T:3870] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-15 09:09:16.397] [DEBUG] [T:690] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-15 09:09:16.599] [DEBUG] [T:690] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-15 09:09:16.603] [DEBUG] [T:690] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-15 09:09:28.911] [DEBUG] [T:163c] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 6000 Hex: "8101010000177005e3"
+[2026-07-15 09:09:28.970] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:09:28.974] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:09:28.974] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:09:29.032] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:09:29.036] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:09:29.036] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:10:01.690] [DEBUG] [T:38e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3860 ms. Total valid defects: 0
+[2026-07-15 09:10:01.693] [DEBUG] [T:1924] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3808 ms. Total valid defects: 0
+[2026-07-15 09:10:18.688] [DEBUG] [T:38e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3773 ms. Total valid defects: 0
+[2026-07-15 09:10:18.691] [DEBUG] [T:1924] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3788 ms. Total valid defects: 0
+[2026-07-15 09:10:33.194] [DEBUG] [T:38e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3767 ms. Total valid defects: 0
+[2026-07-15 09:10:33.197] [DEBUG] [T:1924] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3786 ms. Total valid defects: 0
+[2026-07-15 09:10:57.319] [DEBUG] [T:163c] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 5000 Hex: "81010100001388051f"
+[2026-07-15 09:10:57.593] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:10:57.597] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:10:57.597] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:10:57.848] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:10:57.852] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:10:57.852] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:11:05.383] [DEBUG] [T:163c] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-15 09:11:05.438] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:11:05.442] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:11:05.442] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:11:05.604] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:11:05.608] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:11:05.608] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:11:07.048] [DEBUG] [T:163c] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-15 09:11:07.103] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:11:07.108] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:11:07.108] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:11:07.162] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:11:07.166] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:11:07.166] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:12:20.147] [DEBUG] [T:38e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1353 ms. Total valid defects: 0
+[2026-07-15 09:12:20.150] [DEBUG] [T:1924] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1335 ms. Total valid defects: 0
+[2026-07-15 09:12:59.870] [DEBUG] [T:163c] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-15 09:13:00.053] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:13:00.057] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:13:00.058] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:13:00.112] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:13:00.117] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:13:00.117] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:13:09.183] [DEBUG] [T:163c] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-15 09:13:09.241] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:13:09.245] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:13:09.246] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:13:09.412] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:13:09.415] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:13:09.416] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:13:11.744] [DEBUG] [T:163c] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-15 09:13:11.801] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:13:11.806] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:13:11.806] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:13:11.863] [DEBUG] [T:163c] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-15 09:13:11.867] [DEBUG] [T:163c] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-15 09:13:11.868] [DEBUG] [T:163c] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-15 09:14:00.965] [DEBUG] [T:38e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2531 ms. Total valid defects: 0
+[2026-07-15 09:14:00.968] [DEBUG] [T:1924] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2525 ms. Total valid defects: 0
+[2026-07-15 09:15:22.839] [DEBUG] [T:1924] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2555 ms. Total valid defects: 0
+[2026-07-15 09:15:22.842] [DEBUG] [T:38e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2551 ms. Total valid defects: 0
+[2026-07-15 09:15:47.580] [DEBUG] [T:38e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2526 ms. Total valid defects: 0
+[2026-07-15 09:15:47.583] [DEBUG] [T:1924] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2504 ms. Total valid defects: 0
+[2026-07-15 09:16:00.585] [DEBUG] [T:38e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2521 ms. Total valid defects: 0
+[2026-07-15 09:16:00.588] [DEBUG] [T:1924] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2522 ms. Total valid defects: 0
+[2026-07-15 09:16:14.352] [DEBUG] [T:1924] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2519 ms. Total valid defects: 0
+[2026-07-15 09:16:14.355] [DEBUG] [T:38e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2524 ms. Total valid defects: 0
+[2026-07-15 09:27:43.044] [WARN ] [T:163c] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...

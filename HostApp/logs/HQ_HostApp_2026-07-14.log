@@ -1,0 +1,868 @@
+[2026-07-14 09:40:51.141] [DEBUG] [T:2140] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 09:40:51.488] [DEBUG] [T:888] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 09:40:51.495] [DEBUG] [T:2140] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 09:40:51.596] [DEBUG] [T:336c] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 09:40:51.598] [DEBUG] [T:2140] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 09:40:51.758] [DEBUG] [T:2140] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 09:40:52.886] [DEBUG] [T:888] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 09:40:53.892] [DEBUG] [T:888] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 09:40:53.897] [DEBUG] [T:888] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 09:40:54.241] [DEBUG] [T:336c] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 09:40:54.481] [DEBUG] [T:336c] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 09:40:54.485] [DEBUG] [T:336c] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 09:41:15.552] [DEBUG] [T:2140] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:41:15.556] [DEBUG] [T:2140] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:41:15.556] [DEBUG] [T:2140] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 30000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:41:15.951] [DEBUG] [T:2140] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:41:15.955] [DEBUG] [T:2140] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:41:15.955] [DEBUG] [T:2140] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 70000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:41:25.576] [DEBUG] [T:2140] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:41:25.580] [DEBUG] [T:2140] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:41:25.580] [DEBUG] [T:2140] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 30000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:41:25.838] [DEBUG] [T:2140] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:41:25.842] [DEBUG] [T:2140] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:41:25.842] [DEBUG] [T:2140] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 30000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:41:28.023] [DEBUG] [T:2140] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:41:28.027] [DEBUG] [T:2140] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:41:28.028] [DEBUG] [T:2140] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 30000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:41:28.082] [DEBUG] [T:2140] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:41:28.087] [DEBUG] [T:2140] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:41:28.087] [DEBUG] [T:2140] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 30000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:41:33.452] [DEBUG] [T:1a04] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1992 ms. Total valid defects: 0
+[2026-07-14 09:41:33.455] [DEBUG] [T:1ef8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2044 ms. Total valid defects: 0
+[2026-07-14 09:41:36.584] [DEBUG] [T:1ef8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1876 ms. Total valid defects: 0
+[2026-07-14 09:41:36.595] [DEBUG] [T:1a04] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1827 ms. Total valid defects: 0
+[2026-07-14 09:41:39.927] [DEBUG] [T:1a04] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1854 ms. Total valid defects: 0
+[2026-07-14 09:41:39.933] [DEBUG] [T:1ef8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1902 ms. Total valid defects: 0
+[2026-07-14 09:41:43.176] [DEBUG] [T:1ef8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1861 ms. Total valid defects: 0
+[2026-07-14 09:41:43.213] [DEBUG] [T:1a04] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1821 ms. Total valid defects: 0
+[2026-07-14 09:41:46.501] [DEBUG] [T:1ef8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1871 ms. Total valid defects: 0
+[2026-07-14 09:41:46.522] [DEBUG] [T:1a04] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1827 ms. Total valid defects: 0
+[2026-07-14 09:41:49.735] [DEBUG] [T:1ef8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1841 ms. Total valid defects: 0
+[2026-07-14 09:41:49.789] [DEBUG] [T:1a04] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1800 ms. Total valid defects: 0
+[2026-07-14 09:41:52.466] [WARN ] [T:4574] [Unknown:0] - QObject::~QObject: Timers cannot be stopped from another thread
+[2026-07-14 09:43:21.245] [DEBUG] [T:10a0] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 09:43:21.443] [DEBUG] [T:3918] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 09:43:21.449] [DEBUG] [T:10a0] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 09:43:21.550] [DEBUG] [T:4408] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 09:43:21.552] [DEBUG] [T:10a0] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 09:43:21.698] [DEBUG] [T:10a0] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 09:43:22.797] [DEBUG] [T:3918] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 09:43:23.740] [DEBUG] [T:3918] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 09:43:23.744] [DEBUG] [T:3918] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 09:43:24.161] [DEBUG] [T:4408] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 09:43:24.330] [DEBUG] [T:4408] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 09:43:24.334] [DEBUG] [T:4408] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 09:43:53.888] [DEBUG] [T:2fd0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1975 ms. Total valid defects: 0
+[2026-07-14 09:43:53.891] [DEBUG] [T:4634] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1964 ms. Total valid defects: 0
+[2026-07-14 09:44:09.356] [DEBUG] [T:2fd0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1897 ms. Total valid defects: 0
+[2026-07-14 09:44:09.359] [DEBUG] [T:4634] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1872 ms. Total valid defects: 0
+[2026-07-14 09:44:32.498] [DEBUG] [T:10a0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:44:32.502] [DEBUG] [T:10a0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:44:32.502] [DEBUG] [T:10a0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:44:32.558] [DEBUG] [T:10a0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:44:32.563] [DEBUG] [T:10a0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:44:32.563] [DEBUG] [T:10a0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 30000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:44:39.025] [DEBUG] [T:10a0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:44:39.029] [DEBUG] [T:10a0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:44:39.030] [DEBUG] [T:10a0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:44:39.299] [DEBUG] [T:10a0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:44:39.303] [DEBUG] [T:10a0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:44:39.304] [DEBUG] [T:10a0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:44:41.234] [DEBUG] [T:10a0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:44:41.239] [DEBUG] [T:10a0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:44:41.239] [DEBUG] [T:10a0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:44:41.296] [DEBUG] [T:10a0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 09:44:41.301] [DEBUG] [T:10a0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 09:44:41.301] [DEBUG] [T:10a0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 09:45:27.360] [WARN ] [T:10a0] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-14 09:47:56.546] [DEBUG] [T:584] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 09:47:56.744] [DEBUG] [T:31a4] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 09:47:56.752] [DEBUG] [T:584] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 09:47:56.851] [DEBUG] [T:4460] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 09:47:56.851] [DEBUG] [T:584] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 09:47:57.032] [DEBUG] [T:584] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 09:47:58.100] [DEBUG] [T:31a4] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 09:47:59.078] [DEBUG] [T:31a4] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 09:47:59.082] [DEBUG] [T:31a4] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 09:47:59.454] [DEBUG] [T:4460] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 09:47:59.663] [DEBUG] [T:4460] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 09:47:59.668] [DEBUG] [T:4460] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 09:48:19.344] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 81% | Area: 3.64 mm2 | Diag: 4.97 mm
+[2026-07-14 09:48:19.345] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 78% | Area: 4.12 mm2 | Diag: 5.10 mm
+[2026-07-14 09:48:19.345] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 73% | Area: 3.04 mm2 | Diag: 4.39 mm
+[2026-07-14 09:48:19.345] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 62% | Area: 6.23 mm2 | Diag: 7.65 mm
+[2026-07-14 09:48:19.346] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 61% | Area: 5.61 mm2 | Diag: 7.60 mm
+[2026-07-14 09:48:19.346] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 1.14 mm2 | Diag: 2.04 mm
+[2026-07-14 09:48:19.346] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 67% | Area: 3.02 mm2 | Diag: 4.88 mm
+[2026-07-14 09:48:19.346] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 83% | Area: 6.29 mm2 | Diag: 7.73 mm
+[2026-07-14 09:48:19.347] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 78% | Area: 4.69 mm2 | Diag: 5.30 mm
+[2026-07-14 09:48:19.347] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 65% | Area: 4.34 mm2 | Diag: 5.37 mm
+[2026-07-14 09:48:19.347] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 68% | Area: 1.16 mm2 | Diag: 1.67 mm
+[2026-07-14 09:48:19.347] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 82% | Area: 3.64 mm2 | Diag: 4.97 mm
+[2026-07-14 09:48:19.348] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 60% | Area: 2.12 mm2 | Diag: 3.45 mm
+[2026-07-14 09:48:19.348] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 78% | Area: 3.73 mm2 | Diag: 5.09 mm
+[2026-07-14 09:48:19.348] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 64% (Allowed: 80~100) | Area: 90.36 mm2 (Allowed: 0.00~INF) | Diag: 13.80 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.348] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 76% | Area: 3.04 mm2 | Diag: 4.39 mm
+[2026-07-14 09:48:19.348] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 62% (Allowed: 80~100) | Area: 112.86 mm2 (Allowed: 0.00~INF) | Diag: 15.96 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.349] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 75% | Area: 3.61 mm2 | Diag: 4.93 mm
+[2026-07-14 09:48:19.349] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 66% (Allowed: 80~100) | Area: 126.52 mm2 (Allowed: 0.00~INF) | Diag: 17.53 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.349] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 64% | Area: 6.23 mm2 | Diag: 7.65 mm
+[2026-07-14 09:48:19.349] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.61 mm2 | Diag: 5.17 mm
+[2026-07-14 09:48:19.349] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 60% | Area: 5.58 mm2 | Diag: 7.56 mm
+[2026-07-14 09:48:19.350] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 2.77 mm2 | Diag: 5.10 mm
+[2026-07-14 09:48:19.350] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 67% | Area: 1.14 mm2 | Diag: 2.04 mm
+[2026-07-14 09:48:19.350] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 70% | Area: 2.70 mm2 | Diag: 4.98 mm
+[2026-07-14 09:48:19.350] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 2.99 mm2 | Diag: 4.84 mm
+[2026-07-14 09:48:19.351] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:48:19.351] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 82% | Area: 3.79 mm2 | Diag: 5.16 mm
+[2026-07-14 09:48:19.351] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 1.83 mm2 | Diag: 3.40 mm
+[2026-07-14 09:48:19.351] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 75% | Area: 3.79 mm2 | Diag: 5.16 mm
+[2026-07-14 09:48:19.351] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 74% | Area: 2.75 mm2 | Diag: 5.06 mm
+[2026-07-14 09:48:19.352] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 80% | Area: 6.32 mm2 | Diag: 7.77 mm
+[2026-07-14 09:48:19.352] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 72% | Area: 1.98 mm2 | Diag: 3.67 mm
+[2026-07-14 09:48:19.352] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 74% | Area: 3.72 mm2 | Diag: 5.66 mm
+[2026-07-14 09:48:19.352] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.99 mm2 | Diag: 5.14 mm
+[2026-07-14 09:48:19.352] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 64% | Area: 3.90 mm2 | Diag: 7.70 mm
+[2026-07-14 09:48:19.352] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:48:19.353] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 84% | Area: 4.65 mm2 | Diag: 5.26 mm
+[2026-07-14 09:48:19.353] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 76% | Area: 3.72 mm2 | Diag: 6.38 mm
+[2026-07-14 09:48:19.353] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 4.25 mm2 | Diag: 5.25 mm
+[2026-07-14 09:48:19.353] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 3.65 mm2 | Diag: 6.27 mm
+[2026-07-14 09:48:19.353] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 64% | Area: 4.56 mm2 | Diag: 4.46 mm
+[2026-07-14 09:48:19.354] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:48:19.354] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 62% | Area: 1.51 mm2 | Diag: 2.50 mm
+[2026-07-14 09:48:19.354] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:48:19.354] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 79% | Area: 2.15 mm2 | Diag: 3.30 mm
+[2026-07-14 09:48:19.354] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 83% | Area: 3.39 mm2 | Diag: 5.15 mm
+[2026-07-14 09:48:19.355] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 74% | Area: 2.09 mm2 | Diag: 3.23 mm
+[2026-07-14 09:48:19.355] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 3.21 mm2 | Diag: 5.19 mm
+[2026-07-14 09:48:19.355] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 69% | Area: 2.12 mm2 | Diag: 3.27 mm
+[2026-07-14 09:48:19.355] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 80% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:48:19.355] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 0.61 mm2 (Allowed: 0.00~INF) | Diag: 1.16 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.355] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 79% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:48:19.356] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 64% (Allowed: 80~100) | Area: 0.52 mm2 (Allowed: 0.00~INF) | Diag: 1.07 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.356] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.55 mm2 | Diag: 5.06 mm
+[2026-07-14 09:48:19.356] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 66% (Allowed: 80~100) | Area: 87.21 mm2 (Allowed: 0.00~INF) | Diag: 13.49 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.356] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 2.77 mm2 | Diag: 5.10 mm
+[2026-07-14 09:48:19.356] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 72% (Allowed: 80~100) | Area: 99.02 mm2 (Allowed: 0.00~INF) | Diag: 14.66 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.357] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 74% | Area: 3.77 mm2 | Diag: 4.90 mm
+[2026-07-14 09:48:19.357] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 68% (Allowed: 80~100) | Area: 99.49 mm2 (Allowed: 0.00~INF) | Diag: 14.73 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.357] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 7.95 mm2 | Diag: 7.90 mm
+[2026-07-14 09:48:19.357] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 74% (Allowed: 80~100) | Area: 82.33 mm2 (Allowed: 0.00~INF) | Diag: 12.98 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.357] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 7.87 mm2 | Diag: 7.83 mm
+[2026-07-14 09:48:19.358] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 70% (Allowed: 80~100) | Area: 78.52 mm2 (Allowed: 0.00~INF) | Diag: 12.62 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.358] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 84% | Area: 3.35 mm2 | Diag: 4.36 mm
+[2026-07-14 09:48:19.358] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 74% (Allowed: 80~100) | Area: 104.40 mm2 (Allowed: 0.00~INF) | Diag: 15.21 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.358] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 70% | Area: 2.37 mm2 | Diag: 3.28 mm
+[2026-07-14 09:48:19.359] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 65% (Allowed: 80~100) | Area: 104.13 mm2 (Allowed: 0.00~INF) | Diag: 15.12 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.359] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 69% | Area: 9.05 mm2 | Diag: 7.58 mm
+[2026-07-14 09:48:19.359] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 101.87 mm2 (Allowed: 0.00~INF) | Diag: 14.95 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.359] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 69% | Area: 3.80 mm2 | Diag: 3.88 mm
+[2026-07-14 09:48:19.359] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 73% (Allowed: 80~100) | Area: 99.34 mm2 (Allowed: 0.00~INF) | Diag: 14.69 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.360] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 60% (Allowed: 80~100) | Area: 98.55 mm2 (Allowed: 0.00~INF) | Diag: 14.64 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.360] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 69% (Allowed: 80~100) | Area: 104.90 mm2 (Allowed: 0.00~INF) | Diag: 15.23 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.360] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 63% (Allowed: 80~100) | Area: 104.72 mm2 (Allowed: 0.00~INF) | Diag: 15.25 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.360] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.61 mm2 | Diag: 5.17 mm
+[2026-07-14 09:48:19.360] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 61% (Allowed: 80~100) | Area: 98.14 mm2 (Allowed: 0.00~INF) | Diag: 14.77 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.361] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 2.77 mm2 | Diag: 5.10 mm
+[2026-07-14 09:48:19.361] [DEBUG] [T:3f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3697 ms. Total valid defects: 38
+[2026-07-14 09:48:19.361] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 70% | Area: 2.70 mm2 | Diag: 4.98 mm
+[2026-07-14 09:48:19.362] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:48:19.362] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 1.83 mm2 | Diag: 3.40 mm
+[2026-07-14 09:48:19.362] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 74% | Area: 2.75 mm2 | Diag: 5.06 mm
+[2026-07-14 09:48:19.362] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 72% | Area: 1.98 mm2 | Diag: 3.67 mm
+[2026-07-14 09:48:19.363] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.99 mm2 | Diag: 5.14 mm
+[2026-07-14 09:48:19.363] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:48:19.363] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 76% | Area: 3.72 mm2 | Diag: 6.38 mm
+[2026-07-14 09:48:19.363] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 3.65 mm2 | Diag: 6.27 mm
+[2026-07-14 09:48:19.363] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:48:19.363] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:48:19.364] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 83% | Area: 3.39 mm2 | Diag: 5.15 mm
+[2026-07-14 09:48:19.364] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 3.41 mm2 | Diag: 5.19 mm
+[2026-07-14 09:48:19.364] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 80% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:48:19.365] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 79% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:48:19.365] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.55 mm2 | Diag: 5.06 mm
+[2026-07-14 09:48:19.365] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 67% | Area: 1.37 mm2 | Diag: 2.07 mm
+[2026-07-14 09:48:19.365] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 8.42 mm2 | Diag: 8.06 mm
+[2026-07-14 09:48:19.365] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 62% | Area: 7.99 mm2 | Diag: 7.94 mm
+[2026-07-14 09:48:19.366] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 61% | Area: 1.11 mm2 | Diag: 1.80 mm
+[2026-07-14 09:48:19.367] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 83% | Area: 3.41 mm2 | Diag: 4.44 mm
+[2026-07-14 09:48:19.367] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 71% | Area: 3.80 mm2 | Diag: 3.88 mm
+[2026-07-14 09:48:19.367] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 72% (Allowed: 80~100) | Area: 96.81 mm2 (Allowed: 0.00~INF) | Diag: 14.43 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.367] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 74% (Allowed: 80~100) | Area: 104.59 mm2 (Allowed: 0.00~INF) | Diag: 15.20 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.367] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 61% (Allowed: 80~100) | Area: 105.28 mm2 (Allowed: 0.00~INF) | Diag: 15.37 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.368] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 73% (Allowed: 80~100) | Area: 106.93 mm2 (Allowed: 0.00~INF) | Diag: 15.48 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.368] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 76% (Allowed: 80~100) | Area: 108.72 mm2 (Allowed: 0.00~INF) | Diag: 15.63 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.368] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 103.58 mm2 (Allowed: 0.00~INF) | Diag: 15.16 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.368] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 68% (Allowed: 80~100) | Area: 91.87 mm2 (Allowed: 0.00~INF) | Diag: 14.07 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.368] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 65% (Allowed: 80~100) | Area: 118.12 mm2 (Allowed: 0.00~INF) | Diag: 16.75 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.368] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 97.12 mm2 (Allowed: 0.00~INF) | Diag: 14.57 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.369] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 73% (Allowed: 80~100) | Area: 113.89 mm2 (Allowed: 0.00~INF) | Diag: 16.21 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.369] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 62% (Allowed: 80~100) | Area: 95.25 mm2 (Allowed: 0.00~INF) | Diag: 14.32 mm (Allowed: 0.00~INF)
+[2026-07-14 09:48:19.369] [DEBUG] [T:4780] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3644 ms. Total valid defects: 44
+[2026-07-14 09:50:03.457] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 82% | Area: 3.64 mm2 | Diag: 4.97 mm
+[2026-07-14 09:50:03.458] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 78% | Area: 4.12 mm2 | Diag: 5.10 mm
+[2026-07-14 09:50:03.458] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 76% | Area: 3.61 mm2 | Diag: 4.93 mm
+[2026-07-14 09:50:03.458] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 75% | Area: 3.04 mm2 | Diag: 4.39 mm
+[2026-07-14 09:50:03.458] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 63% | Area: 6.23 mm2 | Diag: 7.65 mm
+[2026-07-14 09:50:03.459] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 62% | Area: 5.66 mm2 | Diag: 7.68 mm
+[2026-07-14 09:50:03.459] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 1.14 mm2 | Diag: 2.04 mm
+[2026-07-14 09:50:03.459] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 2.99 mm2 | Diag: 4.84 mm
+[2026-07-14 09:50:03.459] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 86% | Area: 3.35 mm2 | Diag: 4.58 mm
+[2026-07-14 09:50:03.460] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 63% | Area: 2.41 mm2 | Diag: 3.50 mm
+[2026-07-14 09:50:03.460] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 85% | Area: 4.02 mm2 | Diag: 5.21 mm
+[2026-07-14 09:50:03.460] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 83% | Area: 3.99 mm2 | Diag: 5.17 mm
+[2026-07-14 09:50:03.461] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 78% | Area: 3.32 mm2 | Diag: 4.32 mm
+[2026-07-14 09:50:03.461] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 73% | Area: 4.48 mm2 | Diag: 5.30 mm
+[2026-07-14 09:50:03.461] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 60% | Area: 3.81 mm2 | Diag: 5.20 mm
+[2026-07-14 09:50:03.461] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 70% | Area: 5.63 mm2 | Diag: 6.34 mm
+[2026-07-14 09:50:03.461] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 60% | Area: 1.30 mm2 | Diag: 2.44 mm
+[2026-07-14 09:50:03.461] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 70% | Area: 2.35 mm2 | Diag: 3.61 mm
+[2026-07-14 09:50:03.462] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 64% (Allowed: 80~100) | Area: 90.36 mm2 (Allowed: 0.00~INF) | Diag: 13.80 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.462] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 62% (Allowed: 80~100) | Area: 112.86 mm2 (Allowed: 0.00~INF) | Diag: 15.96 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.462] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 66% (Allowed: 80~100) | Area: 126.52 mm2 (Allowed: 0.00~INF) | Diag: 17.53 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.463] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.81 mm2 | Diag: 5.18 mm
+[2026-07-14 09:50:03.463] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 2.77 mm2 | Diag: 5.10 mm
+[2026-07-14 09:50:03.463] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 70% | Area: 2.70 mm2 | Diag: 4.98 mm
+[2026-07-14 09:50:03.463] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:50:03.464] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 1.83 mm2 | Diag: 3.40 mm
+[2026-07-14 09:50:03.464] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 74% | Area: 2.75 mm2 | Diag: 5.06 mm
+[2026-07-14 09:50:03.464] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 72% | Area: 1.98 mm2 | Diag: 3.67 mm
+[2026-07-14 09:50:03.464] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.99 mm2 | Diag: 5.14 mm
+[2026-07-14 09:50:03.464] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:50:03.465] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 76% | Area: 3.72 mm2 | Diag: 6.38 mm
+[2026-07-14 09:50:03.465] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 3.65 mm2 | Diag: 6.27 mm
+[2026-07-14 09:50:03.465] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:50:03.465] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:50:03.465] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 83% | Area: 3.39 mm2 | Diag: 5.15 mm
+[2026-07-14 09:50:03.466] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 3.21 mm2 | Diag: 5.19 mm
+[2026-07-14 09:50:03.466] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 80% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:50:03.466] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 79% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:50:03.466] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.55 mm2 | Diag: 5.06 mm
+[2026-07-14 09:50:03.466] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 62% | Area: 2.79 mm2 | Diag: 5.14 mm
+[2026-07-14 09:50:03.466] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 3.86 mm2 | Diag: 5.01 mm
+[2026-07-14 09:50:03.467] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 3.01 mm2 | Diag: 3.94 mm
+[2026-07-14 09:50:03.467] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 65% | Area: 1.09 mm2 | Diag: 1.77 mm
+[2026-07-14 09:50:03.467] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 75% | Area: 3.27 mm2 | Diag: 4.47 mm
+[2026-07-14 09:50:03.467] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 62% | Area: 0.63 mm2 | Diag: 1.14 mm
+[2026-07-14 09:50:03.468] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 61% | Area: 0.63 mm2 | Diag: 1.14 mm
+[2026-07-14 09:50:03.468] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 3.80 mm2 | Diag: 3.88 mm
+[2026-07-14 09:50:03.468] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 2.63 mm2 | Diag: 3.63 mm
+[2026-07-14 09:50:03.468] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 60% (Allowed: 80~100) | Area: 98.23 mm2 (Allowed: 0.00~INF) | Diag: 14.60 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.468] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 63% (Allowed: 80~100) | Area: 104.72 mm2 (Allowed: 0.00~INF) | Diag: 15.25 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.469] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 61% (Allowed: 80~100) | Area: 97.83 mm2 (Allowed: 0.00~INF) | Diag: 14.74 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.469] [DEBUG] [T:3f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3602 ms. Total valid defects: 45
+[2026-07-14 09:50:03.475] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 80% | Area: 3.64 mm2 | Diag: 4.97 mm
+[2026-07-14 09:50:03.476] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 78% | Area: 3.92 mm2 | Diag: 5.09 mm
+[2026-07-14 09:50:03.477] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 73% | Area: 2.98 mm2 | Diag: 4.31 mm
+[2026-07-14 09:50:03.477] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 64% | Area: 6.23 mm2 | Diag: 7.65 mm
+[2026-07-14 09:50:03.477] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 60% | Area: 5.61 mm2 | Diag: 7.60 mm
+[2026-07-14 09:50:03.477] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 60% | Area: 3.70 mm2 | Diag: 5.05 mm
+[2026-07-14 09:50:03.478] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 1.14 mm2 | Diag: 2.04 mm
+[2026-07-14 09:50:03.478] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 3.02 mm2 | Diag: 4.88 mm
+[2026-07-14 09:50:03.478] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 60% | Area: 0.88 mm2 | Diag: 1.54 mm
+[2026-07-14 09:50:03.478] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 82% | Area: 6.32 mm2 | Diag: 7.77 mm
+[2026-07-14 09:50:03.478] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 69% | Area: 4.38 mm2 | Diag: 5.67 mm
+[2026-07-14 09:50:03.479] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 64% | Area: 2.02 mm2 | Diag: 4.01 mm
+[2026-07-14 09:50:03.479] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 63% | Area: 3.72 mm2 | Diag: 5.35 mm
+[2026-07-14 09:50:03.479] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 77% | Area: 4.45 mm2 | Diag: 5.26 mm
+[2026-07-14 09:50:03.479] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 5.67 mm2 | Diag: 6.38 mm
+[2026-07-14 09:50:03.479] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 63% | Area: 4.48 mm2 | Diag: 4.38 mm
+[2026-07-14 09:50:03.480] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 66% (Allowed: 80~100) | Area: 87.21 mm2 (Allowed: 0.00~INF) | Diag: 13.49 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.480] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 72% (Allowed: 80~100) | Area: 99.02 mm2 (Allowed: 0.00~INF) | Diag: 14.66 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.480] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 68% (Allowed: 80~100) | Area: 99.49 mm2 (Allowed: 0.00~INF) | Diag: 14.73 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.480] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 74% (Allowed: 80~100) | Area: 82.33 mm2 (Allowed: 0.00~INF) | Diag: 12.98 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.480] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 70% (Allowed: 80~100) | Area: 78.52 mm2 (Allowed: 0.00~INF) | Diag: 12.62 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.481] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 74% (Allowed: 80~100) | Area: 104.40 mm2 (Allowed: 0.00~INF) | Diag: 15.21 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.481] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 65% (Allowed: 80~100) | Area: 104.13 mm2 (Allowed: 0.00~INF) | Diag: 15.12 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.481] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 101.87 mm2 (Allowed: 0.00~INF) | Diag: 14.95 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.481] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 73% (Allowed: 80~100) | Area: 99.34 mm2 (Allowed: 0.00~INF) | Diag: 14.69 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.481] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 69% (Allowed: 80~100) | Area: 104.90 mm2 (Allowed: 0.00~INF) | Diag: 15.23 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.482] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 2.77 mm2 | Diag: 5.10 mm
+[2026-07-14 09:50:03.482] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 70% | Area: 2.70 mm2 | Diag: 4.98 mm
+[2026-07-14 09:50:03.482] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:50:03.482] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 1.83 mm2 | Diag: 3.40 mm
+[2026-07-14 09:50:03.482] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 74% | Area: 2.75 mm2 | Diag: 5.06 mm
+[2026-07-14 09:50:03.483] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 72% | Area: 1.98 mm2 | Diag: 3.67 mm
+[2026-07-14 09:50:03.483] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.99 mm2 | Diag: 5.14 mm
+[2026-07-14 09:50:03.483] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:50:03.483] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 76% | Area: 3.72 mm2 | Diag: 6.38 mm
+[2026-07-14 09:50:03.483] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 3.65 mm2 | Diag: 6.27 mm
+[2026-07-14 09:50:03.484] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:50:03.484] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:50:03.484] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 83% | Area: 3.39 mm2 | Diag: 5.15 mm
+[2026-07-14 09:50:03.484] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 3.41 mm2 | Diag: 5.19 mm
+[2026-07-14 09:50:03.484] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 80% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:50:03.484] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 79% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:50:03.485] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.55 mm2 | Diag: 5.06 mm
+[2026-07-14 09:50:03.485] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.55 mm2 | Diag: 3.69 mm
+[2026-07-14 09:50:03.485] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 61% | Area: 2.79 mm2 | Diag: 5.14 mm
+[2026-07-14 09:50:03.485] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 68% | Area: 3.89 mm2 | Diag: 5.05 mm
+[2026-07-14 09:50:03.485] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 82% | Area: 4.93 mm2 | Diag: 5.35 mm
+[2026-07-14 09:50:03.486] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 73% | Area: 3.41 mm2 | Diag: 4.66 mm
+[2026-07-14 09:50:03.486] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 80% | Area: 3.41 mm2 | Diag: 4.44 mm
+[2026-07-14 09:50:03.486] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 77% | Area: 3.80 mm2 | Diag: 3.88 mm
+[2026-07-14 09:50:03.486] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 0.60 mm2 | Diag: 1.11 mm
+[2026-07-14 09:50:03.486] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 2.54 mm2 | Diag: 3.51 mm
+[2026-07-14 09:50:03.487] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 8.05 mm2 | Diag: 7.45 mm
+[2026-07-14 09:50:03.487] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 72% (Allowed: 80~100) | Area: 96.81 mm2 (Allowed: 0.00~INF) | Diag: 14.43 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.487] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 74% (Allowed: 80~100) | Area: 104.59 mm2 (Allowed: 0.00~INF) | Diag: 15.20 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.487] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 61% (Allowed: 80~100) | Area: 105.28 mm2 (Allowed: 0.00~INF) | Diag: 15.37 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.487] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 73% (Allowed: 80~100) | Area: 106.93 mm2 (Allowed: 0.00~INF) | Diag: 15.48 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.488] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 76% (Allowed: 80~100) | Area: 108.72 mm2 (Allowed: 0.00~INF) | Diag: 15.63 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.488] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 103.58 mm2 (Allowed: 0.00~INF) | Diag: 15.16 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.488] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 68% (Allowed: 80~100) | Area: 91.87 mm2 (Allowed: 0.00~INF) | Diag: 14.07 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.488] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 65% (Allowed: 80~100) | Area: 118.12 mm2 (Allowed: 0.00~INF) | Diag: 16.75 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.488] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 97.12 mm2 (Allowed: 0.00~INF) | Diag: 14.57 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.489] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 73% (Allowed: 80~100) | Area: 113.89 mm2 (Allowed: 0.00~INF) | Diag: 16.21 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.489] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 62% (Allowed: 80~100) | Area: 95.25 mm2 (Allowed: 0.00~INF) | Diag: 14.32 mm (Allowed: 0.00~INF)
+[2026-07-14 09:50:03.489] [DEBUG] [T:4780] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3613 ms. Total valid defects: 43
+[2026-07-14 09:51:04.968] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 81% | Area: 3.67 mm2 | Diag: 5.01 mm
+[2026-07-14 09:51:04.969] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 78% | Area: 3.73 mm2 | Diag: 5.09 mm
+[2026-07-14 09:51:04.970] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 78% | Area: 3.04 mm2 | Diag: 4.39 mm
+[2026-07-14 09:51:04.970] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 62% | Area: 3.67 mm2 | Diag: 5.01 mm
+[2026-07-14 09:51:04.970] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 62% | Area: 6.23 mm2 | Diag: 7.65 mm
+[2026-07-14 09:51:04.971] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 61% | Area: 5.64 mm2 | Diag: 7.64 mm
+[2026-07-14 09:51:04.971] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 67% | Area: 1.14 mm2 | Diag: 2.04 mm
+[2026-07-14 09:51:04.972] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 67% | Area: 2.99 mm2 | Diag: 4.84 mm
+[2026-07-14 09:51:04.973] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 83% | Area: 3.79 mm2 | Diag: 5.16 mm
+[2026-07-14 09:51:04.973] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 81% | Area: 3.84 mm2 | Diag: 5.24 mm
+[2026-07-14 09:51:04.973] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 77% | Area: 2.85 mm2 | Diag: 5.64 mm
+[2026-07-14 09:51:04.974] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 68% | Area: 5.99 mm2 | Diag: 7.03 mm
+[2026-07-14 09:51:04.974] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 77% | Area: 4.45 mm2 | Diag: 5.26 mm
+[2026-07-14 09:51:04.974] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 5.67 mm2 | Diag: 6.38 mm
+[2026-07-14 09:51:04.975] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 63% | Area: 4.48 mm2 | Diag: 4.38 mm
+[2026-07-14 09:51:04.975] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 72% | Area: 2.38 mm2 | Diag: 3.65 mm
+[2026-07-14 09:51:04.976] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 68% | Area: 4.50 mm2 | Diag: 5.56 mm
+[2026-07-14 09:51:04.976] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 66% (Allowed: 80~100) | Area: 87.21 mm2 (Allowed: 0.00~INF) | Diag: 13.49 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.976] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 72% (Allowed: 80~100) | Area: 99.02 mm2 (Allowed: 0.00~INF) | Diag: 14.66 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.977] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 68% (Allowed: 80~100) | Area: 99.49 mm2 (Allowed: 0.00~INF) | Diag: 14.73 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.977] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 81% | Area: 3.64 mm2 | Diag: 4.97 mm
+[2026-07-14 09:51:04.977] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 74% (Allowed: 80~100) | Area: 82.33 mm2 (Allowed: 0.00~INF) | Diag: 12.98 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.978] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 79% | Area: 4.12 mm2 | Diag: 5.10 mm
+[2026-07-14 09:51:04.978] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 70% (Allowed: 80~100) | Area: 78.52 mm2 (Allowed: 0.00~INF) | Diag: 12.62 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.979] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 77% | Area: 3.04 mm2 | Diag: 4.39 mm
+[2026-07-14 09:51:04.979] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 74% (Allowed: 80~100) | Area: 104.40 mm2 (Allowed: 0.00~INF) | Diag: 15.21 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.979] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 65% | Area: 6.23 mm2 | Diag: 7.65 mm
+[2026-07-14 09:51:04.980] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 65% (Allowed: 80~100) | Area: 104.13 mm2 (Allowed: 0.00~INF) | Diag: 15.12 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.980] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 62% | Area: 5.64 mm2 | Diag: 7.64 mm
+[2026-07-14 09:51:04.981] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 101.87 mm2 (Allowed: 0.00~INF) | Diag: 14.95 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.981] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 60% | Area: 3.39 mm2 | Diag: 4.89 mm
+[2026-07-14 09:51:04.981] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 73% (Allowed: 80~100) | Area: 99.34 mm2 (Allowed: 0.00~INF) | Diag: 14.69 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.982] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 66% | Area: 1.14 mm2 | Diag: 2.04 mm
+[2026-07-14 09:51:04.982] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 69% (Allowed: 80~100) | Area: 104.90 mm2 (Allowed: 0.00~INF) | Diag: 15.23 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.982] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 67% | Area: 3.02 mm2 | Diag: 4.88 mm
+[2026-07-14 09:51:04.983] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.61 mm2 | Diag: 5.17 mm
+[2026-07-14 09:51:04.983] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 60% | Area: 1.63 mm2 | Diag: 2.54 mm
+[2026-07-14 09:51:04.984] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 2.77 mm2 | Diag: 5.10 mm
+[2026-07-14 09:51:04.984] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 81% | Area: 6.26 mm2 | Diag: 7.69 mm
+[2026-07-14 09:51:04.984] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 70% | Area: 2.70 mm2 | Diag: 4.98 mm
+[2026-07-14 09:51:04.985] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 76% | Area: 4.63 mm2 | Diag: 5.71 mm
+[2026-07-14 09:51:04.985] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:51:04.985] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 83% | Area: 3.64 mm2 | Diag: 5.23 mm
+[2026-07-14 09:51:04.986] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 1.83 mm2 | Diag: 3.40 mm
+[2026-07-14 09:51:04.986] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 83% | Area: 3.67 mm2 | Diag: 5.27 mm
+[2026-07-14 09:51:04.986] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 74% | Area: 2.75 mm2 | Diag: 5.06 mm
+[2026-07-14 09:51:04.987] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 81% | Area: 4.45 mm2 | Diag: 5.26 mm
+[2026-07-14 09:51:04.987] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 72% | Area: 1.98 mm2 | Diag: 3.67 mm
+[2026-07-14 09:51:04.988] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 71% | Area: 4.28 mm2 | Diag: 5.29 mm
+[2026-07-14 09:51:04.988] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.99 mm2 | Diag: 5.14 mm
+[2026-07-14 09:51:04.988] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 69% | Area: 4.65 mm2 | Diag: 5.49 mm
+[2026-07-14 09:51:04.989] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:51:04.990] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 67% | Area: 4.72 mm2 | Diag: 4.32 mm
+[2026-07-14 09:51:04.990] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 76% | Area: 3.72 mm2 | Diag: 6.38 mm
+[2026-07-14 09:51:04.990] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 61% | Area: 5.67 mm2 | Diag: 6.38 mm
+[2026-07-14 09:51:04.991] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 3.65 mm2 | Diag: 6.27 mm
+[2026-07-14 09:51:04.991] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 72% (Allowed: 80~100) | Area: 0.57 mm2 (Allowed: 0.00~INF) | Diag: 1.14 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.991] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:51:04.992] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 70% (Allowed: 80~100) | Area: 0.50 mm2 (Allowed: 0.00~INF) | Diag: 1.04 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.992] [DEBUG] [T:4780] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 85% | min:0 max:5 mean:1.8
+[2026-07-14 09:51:04.992] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 64% | Area: 0.49 mm2 | Diag: 0.99 mm
+[2026-07-14 09:51:04.993] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 83% | Area: 3.39 mm2 | Diag: 5.15 mm
+[2026-07-14 09:51:04.993] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 63% (Allowed: 80~100) | Area: 0.63 mm2 (Allowed: 0.00~INF) | Diag: 1.19 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.993] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 3.21 mm2 | Diag: 5.19 mm
+[2026-07-14 09:51:04.994] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 64% (Allowed: 80~100) | Area: 90.36 mm2 (Allowed: 0.00~INF) | Diag: 13.80 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.994] [DEBUG] [T:4780] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 80% | min:0 max:4 mean:1.5
+[2026-07-14 09:51:04.995] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 62% (Allowed: 80~100) | Area: 112.86 mm2 (Allowed: 0.00~INF) | Diag: 15.96 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.995] [DEBUG] [T:4780] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 79% | min:0 max:4 mean:1.6
+[2026-07-14 09:51:04.995] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 背光-不可擦拭脏污 | Conf: 66% (Allowed: 80~100) | Area: 126.52 mm2 (Allowed: 0.00~INF) | Diag: 17.53 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:04.996] [DEBUG] [T:4780] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 64% | min:0 max:4 mean:1.7
+[2026-07-14 09:51:04.996] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.61 mm2 | Diag: 5.17 mm
+[2026-07-14 09:51:04.996] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 2.55 mm2 | Diag: 3.69 mm
+[2026-07-14 09:51:04.997] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 2.77 mm2 | Diag: 5.10 mm
+[2026-07-14 09:51:04.997] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 2.77 mm2 | Diag: 5.10 mm
+[2026-07-14 09:51:04.997] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 70% | Area: 2.70 mm2 | Diag: 4.98 mm
+[2026-07-14 09:51:04.998] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 70% | Area: 3.35 mm2 | Diag: 4.58 mm
+[2026-07-14 09:51:04.998] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:51:04.998] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 8.34 mm2 | Diag: 8.29 mm
+[2026-07-14 09:51:04.999] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 1.83 mm2 | Diag: 3.40 mm
+[2026-07-14 09:51:04.999] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 3.62 mm2 | Diag: 4.71 mm
+[2026-07-14 09:51:05.000] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 74% | Area: 2.75 mm2 | Diag: 5.06 mm
+[2026-07-14 09:51:05.000] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 3.80 mm2 | Diag: 3.88 mm
+[2026-07-14 09:51:05.000] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 72% | Area: 1.98 mm2 | Diag: 3.67 mm
+[2026-07-14 09:51:05.001] [DEBUG] [T:4780] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 3.99 mm2 | Diag: 4.07 mm
+[2026-07-14 09:51:05.001] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.99 mm2 | Diag: 5.14 mm
+[2026-07-14 09:51:05.001] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 72% (Allowed: 80~100) | Area: 96.81 mm2 (Allowed: 0.00~INF) | Diag: 14.43 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.002] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 63% | Area: 2.68 mm2 | Diag: 4.94 mm
+[2026-07-14 09:51:05.002] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 74% (Allowed: 80~100) | Area: 104.59 mm2 (Allowed: 0.00~INF) | Diag: 15.20 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.002] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 76% | Area: 3.72 mm2 | Diag: 6.38 mm
+[2026-07-14 09:51:05.003] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 61% (Allowed: 80~100) | Area: 105.28 mm2 (Allowed: 0.00~INF) | Diag: 15.37 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.003] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 66% | Area: 3.65 mm2 | Diag: 6.27 mm
+[2026-07-14 09:51:05.004] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 73% (Allowed: 80~100) | Area: 106.93 mm2 (Allowed: 0.00~INF) | Diag: 15.48 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.006] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:51:05.006] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 76% (Allowed: 80~100) | Area: 108.72 mm2 (Allowed: 0.00~INF) | Diag: 15.63 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.006] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 85% | Area: 3.19 mm2 | Diag: 5.15 mm
+[2026-07-14 09:51:05.007] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 103.58 mm2 (Allowed: 0.00~INF) | Diag: 15.16 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.007] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 83% | Area: 3.39 mm2 | Diag: 5.15 mm
+[2026-07-14 09:51:05.007] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 68% (Allowed: 80~100) | Area: 91.87 mm2 (Allowed: 0.00~INF) | Diag: 14.07 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.008] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 81% | Area: 3.21 mm2 | Diag: 5.19 mm
+[2026-07-14 09:51:05.008] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 65% (Allowed: 80~100) | Area: 118.12 mm2 (Allowed: 0.00~INF) | Diag: 16.75 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.008] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 80% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:51:05.009] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 67% (Allowed: 80~100) | Area: 97.12 mm2 (Allowed: 0.00~INF) | Diag: 14.57 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.009] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 79% | Area: 2.57 mm2 | Diag: 5.10 mm
+[2026-07-14 09:51:05.009] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 73% (Allowed: 80~100) | Area: 113.89 mm2 (Allowed: 0.00~INF) | Diag: 16.21 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.010] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 2.55 mm2 | Diag: 5.06 mm
+[2026-07-14 09:51:05.010] [DEBUG] [T:4780] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 62% (Allowed: 80~100) | Area: 95.25 mm2 (Allowed: 0.00~INF) | Diag: 14.32 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.010] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 60% | Area: 2.55 mm2 | Diag: 3.69 mm
+[2026-07-14 09:51:05.011] [DEBUG] [T:4780] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3690 ms. Total valid defects: 38
+[2026-07-14 09:51:05.011] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 77% | Area: 3.03 mm2 | Diag: 4.16 mm
+[2026-07-14 09:51:05.011] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 72% | Area: 2.92 mm2 | Diag: 4.01 mm
+[2026-07-14 09:51:05.012] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 71% | Area: 3.35 mm2 | Diag: 4.58 mm
+[2026-07-14 09:51:05.012] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 64% | Area: 3.80 mm2 | Diag: 3.88 mm
+[2026-07-14 09:51:05.012] [DEBUG] [T:3f0] [InferThread.cpp:243] - [Defect DETECTED] 暗场-划伤 | Conf: 61% | Area: 2.57 mm2 | Diag: 3.55 mm
+[2026-07-14 09:51:05.013] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 60% (Allowed: 80~100) | Area: 98.55 mm2 (Allowed: 0.00~INF) | Diag: 14.64 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.013] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 63% (Allowed: 80~100) | Area: 104.72 mm2 (Allowed: 0.00~INF) | Diag: 15.25 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.013] [DEBUG] [T:3f0] [InferThread.cpp:247] - [Defect FILTERED] 暗场-不可擦拭脏污 | Conf: 61% (Allowed: 80~100) | Area: 97.83 mm2 (Allowed: 0.00~INF) | Diag: 14.74 mm (Allowed: 0.00~INF)
+[2026-07-14 09:51:05.014] [DEBUG] [T:3f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3690 ms. Total valid defects: 43
+[2026-07-14 09:52:14.895] [DEBUG] [T:318c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 09:52:15.091] [DEBUG] [T:2a48] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 09:52:15.102] [DEBUG] [T:318c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 09:52:15.222] [DEBUG] [T:3954] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 09:52:15.223] [DEBUG] [T:318c] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 09:52:15.380] [DEBUG] [T:318c] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 09:52:16.434] [DEBUG] [T:2a48] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 09:52:17.404] [DEBUG] [T:2a48] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 09:52:17.408] [DEBUG] [T:2a48] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 09:52:17.780] [DEBUG] [T:3954] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 09:52:17.985] [DEBUG] [T:3954] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 09:52:17.989] [DEBUG] [T:3954] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 09:52:36.371] [DEBUG] [T:aac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3912 ms. Total valid defects: 0
+[2026-07-14 09:52:36.374] [DEBUG] [T:29e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3863 ms. Total valid defects: 0
+[2026-07-14 09:52:46.226] [DEBUG] [T:aac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3788 ms. Total valid defects: 0
+[2026-07-14 09:52:46.229] [DEBUG] [T:29e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3797 ms. Total valid defects: 0
+[2026-07-14 09:52:53.539] [DEBUG] [T:aac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3798 ms. Total valid defects: 0
+[2026-07-14 09:52:53.542] [DEBUG] [T:29e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3796 ms. Total valid defects: 0
+[2026-07-14 09:53:01.520] [DEBUG] [T:29e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3782 ms. Total valid defects: 0
+[2026-07-14 09:53:01.523] [DEBUG] [T:aac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3732 ms. Total valid defects: 0
+[2026-07-14 09:53:08.478] [DEBUG] [T:aac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3785 ms. Total valid defects: 0
+[2026-07-14 09:53:08.487] [DEBUG] [T:29e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3789 ms. Total valid defects: 0
+[2026-07-14 09:53:18.993] [WARN ] [T:318c] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-14 10:06:34.486] [DEBUG] [T:1ac0] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:06:34.681] [DEBUG] [T:2c80] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 10:06:34.692] [DEBUG] [T:1ac0] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:06:34.813] [DEBUG] [T:186c] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 10:06:34.813] [WARN ] [T:1ac0] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 10:06:34.814] [DEBUG] [T:1ac0] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 10:06:34.975] [DEBUG] [T:1ac0] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 10:06:36.027] [DEBUG] [T:2c80] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 10:06:37.013] [DEBUG] [T:2c80] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:06:37.017] [DEBUG] [T:2c80] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:06:37.373] [DEBUG] [T:186c] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 10:06:37.583] [DEBUG] [T:186c] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:06:37.587] [DEBUG] [T:186c] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:06:48.169] [DEBUG] [T:1ac0] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 600 Hex: "810101000002580005de"
+[2026-07-14 10:06:48.400] [DEBUG] [T:1ac0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:06:48.404] [DEBUG] [T:1ac0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:06:48.404] [DEBUG] [T:1ac0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 1305 0 6000 6000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:06:48.601] [DEBUG] [T:1ac0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:06:48.605] [DEBUG] [T:1ac0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:06:48.605] [DEBUG] [T:1ac0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 6000 6000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:07:01.866] [DEBUG] [T:1ac0] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 600 Hex: "810101000002580005de"
+[2026-07-14 10:07:01.919] [DEBUG] [T:1ac0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:07:01.923] [DEBUG] [T:1ac0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:07:01.924] [DEBUG] [T:1ac0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 1305 0 6000 6000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:07:01.976] [DEBUG] [T:1ac0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:07:01.980] [DEBUG] [T:1ac0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:07:01.980] [DEBUG] [T:1ac0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 6000 6000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:07:04.166] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 199 ms. Total valid defects: 0
+[2026-07-14 10:07:04.169] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 259 ms. Total valid defects: 0
+[2026-07-14 10:07:04.689] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 120 ms. Total valid defects: 0
+[2026-07-14 10:07:04.748] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 122 ms. Total valid defects: 0
+[2026-07-14 10:07:05.342] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 112 ms. Total valid defects: 0
+[2026-07-14 10:07:05.407] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 117 ms. Total valid defects: 0
+[2026-07-14 10:07:06.005] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 116 ms. Total valid defects: 0
+[2026-07-14 10:07:06.067] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 121 ms. Total valid defects: 0
+[2026-07-14 10:07:06.661] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 113 ms. Total valid defects: 0
+[2026-07-14 10:07:06.726] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 120 ms. Total valid defects: 0
+[2026-07-14 10:07:07.325] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 115 ms. Total valid defects: 0
+[2026-07-14 10:07:07.386] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 121 ms. Total valid defects: 0
+[2026-07-14 10:07:07.986] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 117 ms. Total valid defects: 0
+[2026-07-14 10:07:08.047] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 121 ms. Total valid defects: 0
+[2026-07-14 10:07:08.645] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 116 ms. Total valid defects: 0
+[2026-07-14 10:07:08.708] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 122 ms. Total valid defects: 0
+[2026-07-14 10:07:09.302] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 112 ms. Total valid defects: 0
+[2026-07-14 10:07:09.366] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 120 ms. Total valid defects: 0
+[2026-07-14 10:07:09.965] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 116 ms. Total valid defects: 0
+[2026-07-14 10:07:10.026] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 122 ms. Total valid defects: 0
+[2026-07-14 10:07:10.613] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 105 ms. Total valid defects: 0
+[2026-07-14 10:07:10.686] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 116 ms. Total valid defects: 0
+[2026-07-14 10:07:11.279] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 111 ms. Total valid defects: 0
+[2026-07-14 10:07:11.346] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 120 ms. Total valid defects: 0
+[2026-07-14 10:07:11.920] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 92 ms. Total valid defects: 0
+[2026-07-14 10:07:23.165] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 117 ms. Total valid defects: 0
+[2026-07-14 10:07:23.233] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 125 ms. Total valid defects: 0
+[2026-07-14 10:07:23.821] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 113 ms. Total valid defects: 0
+[2026-07-14 10:07:23.886] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 122 ms. Total valid defects: 0
+[2026-07-14 10:07:40.625] [DEBUG] [T:1ac0] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:07:40.788] [DEBUG] [T:1ac0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:07:40.792] [DEBUG] [T:1ac0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:07:40.792] [DEBUG] [T:1ac0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:07:40.954] [DEBUG] [T:1ac0] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:07:40.958] [DEBUG] [T:1ac0] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:07:40.958] [DEBUG] [T:1ac0] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:07:51.274] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3735 ms. Total valid defects: 0
+[2026-07-14 10:07:51.342] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3645 ms. Total valid defects: 0
+[2026-07-14 10:07:57.985] [DEBUG] [T:17c4] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3791 ms. Total valid defects: 0
+[2026-07-14 10:07:58.000] [DEBUG] [T:15cc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3693 ms. Total valid defects: 0
+[2026-07-14 10:08:41.949] [WARN ] [T:1ac0] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-14 10:09:46.693] [DEBUG] [T:688] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:09:46.892] [DEBUG] [T:3be8] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 10:09:46.901] [DEBUG] [T:688] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:09:47.019] [DEBUG] [T:4708] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 10:09:47.019] [WARN ] [T:688] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 10:09:47.020] [DEBUG] [T:688] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 10:09:47.173] [DEBUG] [T:688] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 10:09:48.253] [DEBUG] [T:3be8] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 10:09:49.234] [DEBUG] [T:3be8] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:09:49.239] [DEBUG] [T:3be8] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:09:49.616] [DEBUG] [T:4708] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 10:09:49.823] [DEBUG] [T:4708] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:09:49.827] [DEBUG] [T:4708] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:12:14.050] [DEBUG] [T:688] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:12:14.247] [DEBUG] [T:3930] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 10:12:14.256] [DEBUG] [T:688] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:12:14.375] [DEBUG] [T:47cc] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 10:12:14.375] [WARN ] [T:688] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 10:12:14.376] [DEBUG] [T:688] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 10:12:14.527] [DEBUG] [T:688] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 10:12:15.609] [DEBUG] [T:3930] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 10:12:16.950] [DEBUG] [T:47cc] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 10:12:17.179] [DEBUG] [T:47cc] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:12:17.183] [DEBUG] [T:47cc] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:12:17.274] [DEBUG] [T:3930] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:12:17.278] [DEBUG] [T:3930] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:12:36.266] [DEBUG] [T:b10] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3877 ms. Total valid defects: 0
+[2026-07-14 10:12:36.269] [DEBUG] [T:3160] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3855 ms. Total valid defects: 0
+[2026-07-14 10:12:53.258] [DEBUG] [T:688] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 600 Hex: "810101000002580005de"
+[2026-07-14 10:12:53.448] [DEBUG] [T:688] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:12:53.452] [DEBUG] [T:688] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:12:53.452] [DEBUG] [T:688] [CameraThread.cpp:310] - [CameraThread] ROI updated to 1305 0 6000 6000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:12:53.684] [DEBUG] [T:688] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:12:53.688] [DEBUG] [T:688] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:12:53.688] [DEBUG] [T:688] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 6000 6000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:13:57.281] [DEBUG] [T:688] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:13:57.444] [DEBUG] [T:688] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:13:57.448] [DEBUG] [T:688] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:13:57.448] [DEBUG] [T:688] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:13:57.612] [DEBUG] [T:688] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:13:57.616] [DEBUG] [T:688] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:13:57.617] [DEBUG] [T:688] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:16:04.953] [DEBUG] [T:5ac] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:16:05.151] [DEBUG] [T:34d4] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 10:16:05.160] [DEBUG] [T:5ac] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:16:05.279] [DEBUG] [T:1380] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 10:16:05.279] [WARN ] [T:5ac] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 10:16:05.280] [DEBUG] [T:5ac] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 10:16:05.431] [DEBUG] [T:5ac] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 10:16:06.499] [DEBUG] [T:34d4] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 10:16:07.414] [DEBUG] [T:34d4] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:16:07.418] [DEBUG] [T:34d4] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:16:07.814] [DEBUG] [T:1380] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 10:16:08.013] [DEBUG] [T:1380] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:16:08.017] [DEBUG] [T:1380] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:16:32.072] [DEBUG] [T:5ac] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:16:32.130] [DEBUG] [T:5ac] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:16:32.134] [DEBUG] [T:5ac] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:16:32.134] [DEBUG] [T:5ac] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:16:32.191] [DEBUG] [T:5ac] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:16:32.196] [DEBUG] [T:5ac] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:16:32.196] [DEBUG] [T:5ac] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:17:09.372] [WARN ] [T:2c20] [Unknown:0] - QObject::~QObject: Timers cannot be stopped from another thread
+[2026-07-14 10:26:23.686] [DEBUG] [T:1348] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:26:23.892] [DEBUG] [T:4ab8] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 10:26:23.901] [DEBUG] [T:1348] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:26:24.021] [DEBUG] [T:514] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 10:26:24.022] [WARN ] [T:1348] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 10:26:24.022] [DEBUG] [T:1348] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 10:26:24.169] [DEBUG] [T:1348] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 10:26:25.254] [DEBUG] [T:4ab8] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 10:26:26.604] [DEBUG] [T:514] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 10:26:26.814] [DEBUG] [T:514] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:26:26.818] [DEBUG] [T:514] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:26:26.926] [DEBUG] [T:4ab8] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:26:26.930] [DEBUG] [T:4ab8] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:26:46.227] [DEBUG] [T:4a28] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3802 ms. Total valid defects: 0
+[2026-07-14 10:26:46.230] [DEBUG] [T:4a50] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3866 ms. Total valid defects: 0
+[2026-07-14 10:27:04.220] [DEBUG] [T:4a28] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3789 ms. Total valid defects: 0
+[2026-07-14 10:27:04.226] [DEBUG] [T:4a50] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3791 ms. Total valid defects: 0
+[2026-07-14 10:27:45.409] [DEBUG] [T:1348] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:27:45.684] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:27:45.688] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:27:45.688] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:27:45.992] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:27:45.997] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:27:45.997] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 8192 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:07.665] [DEBUG] [T:1348] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:28:07.721] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:07.725] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:07.725] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:07.857] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:07.861] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:07.861] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:14.488] [DEBUG] [T:1348] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:28:14.544] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:14.548] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:14.549] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:14.603] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:14.608] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:14.608] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:17.264] [DEBUG] [T:1348] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:28:17.321] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:17.325] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:17.326] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:17.380] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:17.384] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:17.384] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:18.834] [DEBUG] [T:1348] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:28:18.890] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:18.894] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:18.895] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:18.950] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:18.955] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:18.955] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:23.394] [DEBUG] [T:1348] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:28:23.449] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:23.454] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:23.454] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:28:23.509] [DEBUG] [T:1348] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:28:23.514] [DEBUG] [T:1348] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:28:23.514] [DEBUG] [T:1348] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:38:01.413] [WARN ] [T:1348] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-14 10:40:05.995] [DEBUG] [T:e18] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:40:06.193] [DEBUG] [T:42b0] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 10:40:06.203] [DEBUG] [T:e18] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 10:40:06.324] [DEBUG] [T:4384] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 10:40:06.325] [WARN ] [T:e18] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 10:40:06.325] [DEBUG] [T:e18] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 10:40:06.504] [DEBUG] [T:e18] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 10:40:07.542] [DEBUG] [T:42b0] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 10:40:08.466] [DEBUG] [T:42b0] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:40:08.470] [DEBUG] [T:42b0] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:40:08.889] [DEBUG] [T:4384] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 10:40:09.066] [DEBUG] [T:4384] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 10:40:09.070] [DEBUG] [T:4384] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 10:40:42.570] [DEBUG] [T:e18] [MainWindow.cpp:404] - [LightController] Sent 0x81 command, SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 10:40:42.626] [DEBUG] [T:e18] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:40:42.630] [DEBUG] [T:e18] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:40:42.630] [DEBUG] [T:e18] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:40:42.684] [DEBUG] [T:e18] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 10:40:42.688] [DEBUG] [T:e18] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 10:40:42.688] [DEBUG] [T:e18] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 10:41:33.726] [WARN ] [T:e18] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-14 11:06:50.200] [DEBUG] [T:1a70] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 11:06:50.399] [DEBUG] [T:2fd0] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 11:06:50.408] [DEBUG] [T:1a70] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 11:06:50.527] [DEBUG] [T:4c2c] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 11:06:50.528] [WARN ] [T:1a70] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 11:06:50.528] [DEBUG] [T:1a70] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 11:06:50.692] [DEBUG] [T:1a70] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 11:06:51.764] [DEBUG] [T:2fd0] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 11:06:52.690] [DEBUG] [T:2fd0] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 11:06:52.694] [DEBUG] [T:2fd0] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 11:06:53.125] [DEBUG] [T:4c2c] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 11:06:53.308] [DEBUG] [T:4c2c] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 11:06:53.312] [DEBUG] [T:4c2c] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 11:07:07.578] [DEBUG] [T:1a70] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 1 SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 11:07:07.589] [DEBUG] [T:1a70] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 2 SignalCount = 6000 Hex: "810102000017700005e0"
+[2026-07-14 11:07:07.764] [DEBUG] [T:1a70] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:07:07.768] [DEBUG] [T:1a70] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:07:07.768] [DEBUG] [T:1a70] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:07:07.823] [DEBUG] [T:1a70] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:07:07.827] [DEBUG] [T:1a70] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:07:07.827] [DEBUG] [T:1a70] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:07:16.827] [DEBUG] [T:1a70] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 1 SignalCount = 5000 Hex: "8101010000138800051f"
+[2026-07-14 11:07:16.838] [DEBUG] [T:1a70] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 2 SignalCount = 5000 Hex: "8101020000138800051c"
+[2026-07-14 11:07:16.903] [DEBUG] [T:1a70] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:07:16.907] [DEBUG] [T:1a70] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:07:16.908] [DEBUG] [T:1a70] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:07:17.070] [DEBUG] [T:1a70] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:07:17.074] [DEBUG] [T:1a70] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:07:17.074] [DEBUG] [T:1a70] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:07:19.434] [DEBUG] [T:1a70] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 1 SignalCount = 5000 Hex: "8101010000138800051f"
+[2026-07-14 11:07:19.446] [DEBUG] [T:1a70] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 2 SignalCount = 5000 Hex: "8101020000138800051c"
+[2026-07-14 11:07:19.512] [DEBUG] [T:1a70] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:07:19.516] [DEBUG] [T:1a70] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:07:19.516] [DEBUG] [T:1a70] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:07:19.570] [DEBUG] [T:1a70] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:07:19.575] [DEBUG] [T:1a70] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:07:19.575] [DEBUG] [T:1a70] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:09:14.239] [WARN ] [T:4da0] [Unknown:0] - QObject::~QObject: Timers cannot be stopped from another thread
+[2026-07-14 11:12:34.773] [DEBUG] [T:4868] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 11:12:34.972] [DEBUG] [T:3e08] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 11:12:34.981] [DEBUG] [T:4868] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 11:12:35.104] [DEBUG] [T:3d40] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 11:12:35.106] [WARN ] [T:4868] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 11:12:35.106] [DEBUG] [T:4868] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 11:12:35.295] [DEBUG] [T:4868] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 11:12:36.317] [DEBUG] [T:3e08] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 11:12:37.256] [DEBUG] [T:3e08] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 11:12:37.260] [DEBUG] [T:3e08] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 11:12:37.677] [DEBUG] [T:3d40] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 11:12:37.843] [DEBUG] [T:3d40] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 11:12:37.847] [DEBUG] [T:3d40] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 11:13:23.228] [DEBUG] [T:46a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1757 ms. Total valid defects: 0
+[2026-07-14 11:13:23.231] [DEBUG] [T:c34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1752 ms. Total valid defects: 0
+[2026-07-14 11:13:34.603] [DEBUG] [T:c34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1645 ms. Total valid defects: 0
+[2026-07-14 11:13:34.609] [DEBUG] [T:46a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1688 ms. Total valid defects: 0
+[2026-07-14 11:13:44.116] [DEBUG] [T:46a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1687 ms. Total valid defects: 0
+[2026-07-14 11:13:44.119] [DEBUG] [T:c34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1655 ms. Total valid defects: 0
+[2026-07-14 11:13:52.388] [DEBUG] [T:4868] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 1 SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 11:13:52.400] [DEBUG] [T:4868] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 2 SignalCount = 6000 Hex: "810102000017700005e0"
+[2026-07-14 11:13:52.637] [DEBUG] [T:4868] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:13:52.641] [DEBUG] [T:4868] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:13:52.641] [DEBUG] [T:4868] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:13:52.876] [DEBUG] [T:4868] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:13:52.880] [DEBUG] [T:4868] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:13:52.880] [DEBUG] [T:4868] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:15:04.944] [DEBUG] [T:46a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1950 ms. Total valid defects: 0
+[2026-07-14 11:15:24.521] [DEBUG] [T:46a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3780 ms. Total valid defects: 0
+[2026-07-14 11:15:24.524] [DEBUG] [T:c34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3731 ms. Total valid defects: 0
+[2026-07-14 11:15:44.182] [DEBUG] [T:46a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3770 ms. Total valid defects: 0
+[2026-07-14 11:15:44.185] [DEBUG] [T:c34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3773 ms. Total valid defects: 0
+[2026-07-14 11:17:00.316] [DEBUG] [T:4868] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 1 SignalCount = 5000 Hex: "8101010000138800051f"
+[2026-07-14 11:17:00.327] [DEBUG] [T:4868] [MainWindow.cpp:406] - [LightController] Sent 0x81 to Station 2 SignalCount = 5000 Hex: "8101020000138800051c"
+[2026-07-14 11:17:00.574] [DEBUG] [T:4868] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:17:00.578] [DEBUG] [T:4868] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:17:00.579] [DEBUG] [T:4868] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:17:00.827] [DEBUG] [T:4868] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:17:00.831] [DEBUG] [T:4868] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:17:00.832] [DEBUG] [T:4868] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:17:57.008] [DEBUG] [T:46a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 867 ms. Total valid defects: 0
+[2026-07-14 11:18:15.243] [DEBUG] [T:46a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1657 ms. Total valid defects: 0
+[2026-07-14 11:18:15.246] [DEBUG] [T:c34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1694 ms. Total valid defects: 0
+[2026-07-14 11:21:04.519] [WARN ] [T:4868] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-14 11:25:36.080] [DEBUG] [T:4df4] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 11:25:36.277] [DEBUG] [T:48d4] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 11:25:36.285] [DEBUG] [T:4df4] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 11:25:36.408] [DEBUG] [T:1774] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 11:25:36.410] [WARN ] [T:4df4] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 11:25:36.410] [DEBUG] [T:4df4] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 11:25:36.573] [DEBUG] [T:4df4] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 11:25:37.624] [DEBUG] [T:48d4] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 11:25:38.974] [DEBUG] [T:1774] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 11:25:39.134] [DEBUG] [T:1774] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 11:25:39.139] [DEBUG] [T:1774] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 11:25:39.185] [DEBUG] [T:48d4] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 11:25:39.189] [DEBUG] [T:48d4] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 11:25:51.417] [DEBUG] [T:4b78] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1774 ms. Total valid defects: 0
+[2026-07-14 11:25:51.420] [DEBUG] [T:2968] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1771 ms. Total valid defects: 0
+[2026-07-14 11:26:11.763] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 1 SignalCount = 6000 Hex: "810101000070170500e3"
+[2026-07-14 11:26:11.775] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 2 SignalCount = 6000 Hex: "810102000070170500e0"
+[2026-07-14 11:26:11.994] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:26:11.998] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:26:11.998] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:26:12.221] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:26:12.225] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:26:12.225] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:26:24.996] [DEBUG] [T:4b78] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1939 ms. Total valid defects: 0
+[2026-07-14 11:27:33.053] [DEBUG] [T:2968] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3784 ms. Total valid defects: 0
+[2026-07-14 11:27:33.056] [DEBUG] [T:4b78] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3788 ms. Total valid defects: 0
+[2026-07-14 11:28:21.429] [DEBUG] [T:4b78] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3760 ms. Total valid defects: 0
+[2026-07-14 11:28:21.432] [DEBUG] [T:2968] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3698 ms. Total valid defects: 0
+[2026-07-14 11:29:03.599] [DEBUG] [T:4b78] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3766 ms. Total valid defects: 0
+[2026-07-14 11:29:03.602] [DEBUG] [T:2968] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3729 ms. Total valid defects: 0
+[2026-07-14 11:29:40.931] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 1 SignalCount = 6000 Hex: "810101000070170500e3"
+[2026-07-14 11:29:40.942] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 2 SignalCount = 6000 Hex: "810102000070170500e0"
+[2026-07-14 11:29:41.010] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:29:41.014] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:29:41.015] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:29:41.073] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:29:41.077] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:29:41.077] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:29:43.554] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 1 SignalCount = 6000 Hex: "810101000070170500e3"
+[2026-07-14 11:29:43.566] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 2 SignalCount = 6000 Hex: "810102000070170500e0"
+[2026-07-14 11:29:43.634] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:29:43.639] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:29:43.639] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:29:43.697] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:29:43.701] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:29:43.701] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:29:44.978] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 1 SignalCount = 6000 Hex: "810101000070170500e3"
+[2026-07-14 11:29:44.990] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 2 SignalCount = 6000 Hex: "810102000070170500e0"
+[2026-07-14 11:29:45.059] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:29:45.063] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:29:45.064] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:29:45.121] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:29:45.125] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:29:45.125] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:31:38.644] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 1 SignalCount = 6000 Hex: "810101000070170500e3"
+[2026-07-14 11:31:38.656] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 2 SignalCount = 6000 Hex: "810102000070170500e0"
+[2026-07-14 11:31:38.724] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:31:38.729] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:31:38.729] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:31:38.788] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:31:38.791] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:31:38.792] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:31:40.275] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 1 SignalCount = 6000 Hex: "810101000070170500e3"
+[2026-07-14 11:31:40.287] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 2 SignalCount = 6000 Hex: "810102000070170500e0"
+[2026-07-14 11:31:40.356] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:31:40.361] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:31:40.361] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:31:40.418] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:31:40.422] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:31:40.422] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:31:42.995] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 1 SignalCount = 5000 Hex: "8101010000881305001f"
+[2026-07-14 11:31:43.007] [DEBUG] [T:4df4] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Little Endian) to Station 2 SignalCount = 5000 Hex: "8101020000881305001c"
+[2026-07-14 11:31:43.260] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:31:43.264] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:31:43.264] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:31:43.514] [DEBUG] [T:4df4] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:31:43.518] [DEBUG] [T:4df4] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:31:43.519] [DEBUG] [T:4df4] [CameraThread.cpp:310] - [CameraThread] ROI updated to 4096 0 8192 50000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:37:43.394] [DEBUG] [T:3104] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 11:37:43.591] [DEBUG] [T:43e0] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-14 11:37:43.600] [DEBUG] [T:3104] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-14 11:37:43.719] [DEBUG] [T:898] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-14 11:37:43.721] [WARN ] [T:3104] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-14 11:37:43.721] [DEBUG] [T:3104] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-14 11:37:43.885] [DEBUG] [T:3104] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-14 11:37:44.975] [DEBUG] [T:43e0] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-14 11:37:45.943] [DEBUG] [T:43e0] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 11:37:45.948] [DEBUG] [T:43e0] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 11:37:46.319] [DEBUG] [T:898] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-14 11:37:46.531] [DEBUG] [T:898] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-14 11:37:46.535] [DEBUG] [T:898] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-14 11:38:05.665] [DEBUG] [T:4320] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3832 ms. Total valid defects: 0
+[2026-07-14 11:38:05.668] [DEBUG] [T:2b80] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3831 ms. Total valid defects: 0
+[2026-07-14 11:38:42.403] [DEBUG] [T:3104] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Big Endian) to Station 1 SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 11:38:42.415] [DEBUG] [T:3104] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Big Endian) to Station 2 SignalCount = 6000 Hex: "810102000017700005e0"
+[2026-07-14 11:38:42.484] [DEBUG] [T:3104] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:38:42.488] [DEBUG] [T:3104] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:38:42.488] [DEBUG] [T:3104] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:38:42.546] [DEBUG] [T:3104] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:38:42.551] [DEBUG] [T:3104] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:38:42.552] [DEBUG] [T:3104] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:40:13.628] [DEBUG] [T:3104] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Big Endian) to Station 1 SignalCount = 6000 Hex: "810101000017700005e3"
+[2026-07-14 11:40:13.639] [DEBUG] [T:3104] [MainWindow.cpp:408] - [LightController] Sent 0x81 (Big Endian) to Station 2 SignalCount = 6000 Hex: "810102000017700005e0"
+[2026-07-14 11:40:13.708] [DEBUG] [T:3104] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:40:13.712] [DEBUG] [T:3104] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:40:13.712] [DEBUG] [T:3104] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:40:13.769] [DEBUG] [T:3104] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-14 11:40:13.773] [DEBUG] [T:3104] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-14 11:40:13.774] [DEBUG] [T:3104] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 60000 Status: 0 9502734 0 0 0 9502734
+[2026-07-14 11:40:59.053] [DEBUG] [T:2b80] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3752 ms. Total valid defects: 0
+[2026-07-14 11:40:59.056] [DEBUG] [T:4320] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3772 ms. Total valid defects: 0
+[2026-07-14 11:41:08.941] [DEBUG] [T:4320] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3809 ms. Total valid defects: 0
+[2026-07-14 11:41:08.943] [DEBUG] [T:2b80] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3806 ms. Total valid defects: 0
+[2026-07-14 11:41:10.514] [WARN ] [T:3104] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...

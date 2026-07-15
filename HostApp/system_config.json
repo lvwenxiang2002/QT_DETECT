@@ -1,0 +1,30 @@
+{
+    "camera": {
+        "gain": 1,
+        "reconnectRetries": 3,
+        "serialNumberLeft": "",
+        "serialNumberRight": ""
+    },
+    "general": {
+        "autoStart": false,
+        "ghostMaxValThreshold": 3,
+        "ghostMeanValThreshold": 2,
+        "permissionLevel": 0,
+        "simulationDir": "E:/BLL_QT_detect/test_images"
+    },
+    "lightCtrl": {
+        "ipAddress": "192.168.1.208",
+        "port": 6600
+    },
+    "plc": {
+        "heartbeatInterval": 1000,
+        "ipAddress": "192.168.1.100",
+        "port": 5000,
+        "protocol": 0
+    },
+    "storage": {
+        "autoDeleteDays": 30,
+        "savePath": "D:/Data",
+        "saveStrategy": 0
+    }
+}
