@@ -123,14 +123,15 @@ void CameraThread::run()
     // Apply settings from Recipe
     Recipe currentRecipe = RecipeManager::instance().getRecipe(RecipeManager::instance().getCurrentRecipeName());
     int rw = (m_cameraId == 0) ? currentRecipe.roiWidthLeft : currentRecipe.roiWidthRight;
-    int rh = (m_cameraId == 0) ? currentRecipe.roiHeightLeft : currentRecipe.roiHeightRight;
+    // 不定行高模式：物理 Buffer 给到一个安全最大值，实际高度由硬件 VFL 决定
+    int maxVflHeight = 120000;
     int rx = (m_cameraId == 0) ? currentRecipe.offsetXLeft : currentRecipe.offsetXRight;
     int ry = (m_cameraId == 0) ? currentRecipe.offsetYLeft : currentRecipe.offsetYRight;
     
     m_targetWidth = rw;
-    m_targetHeight = rh;
+    m_targetHeight = maxVflHeight;
     m_expectedChunks = 1;
-    int m_chunkHeight = rh;
+    int m_chunkHeight = maxVflHeight;
     
     // 按照您的要求，即使软触发也强制一镜到底，取消所有切块逻辑
     // 如果几万行在测试时导致 IKapStartGrab failed，请自行修改系统注册表扩大 Non-Paged Pool
@@ -210,61 +211,41 @@ void CameraThread::handleFrameReady()
         IKapGetInfo64(m_hBoard, IKP_IMAGE_HEIGHT, &h);
         
         if (pUserBuffer && w > 0 && h > 0) {
-            cv::Mat img(h, w, CV_8UC1, pUserBuffer);
-            cv::Mat clonedImg = img.clone();
-            
-            // 消除软触发过曝假疵点：软触发停止再启动时，线扫相机前几行通常会因为积攒曝光而过曝
-            // 因为是双场交替采图（偶数行背光，奇数行暗场），所以必须用同光场的正确行去覆盖过曝行
-            // 不做任何图像篡改，保持原图直接放入 buffer
-            m_chunkBuffers.push_back(clonedImg);
-            m_currentChunk++;
-            
-            // qDebug() << "[CameraThread] Camera" << m_cameraId << "captured chunk" << m_currentChunk << "/" << m_expectedChunks 
-            //          << "Size:" << w << "x" << h << "BufferIndex:" << nFrameIndex;
-                     
-            if (m_currentChunk < m_expectedChunks) {
-                // 还在采当前大图的子块，等待下一个硬件触发
-            } else {
-                // 已经集齐所有子块，开始拼接大图
-                cv::Mat fullImg;
-                if (m_chunkBuffers.size() == 1) {
-                    fullImg = m_chunkBuffers[0];
-                } else {
-                    cv::vconcat(m_chunkBuffers, fullImg);
-                }
-                
-                // 如果拼接后的高度超过了真实目标高度，裁剪掉多余部分
-                if (fullImg.rows > m_targetHeight) {
-                    fullImg = fullImg(cv::Rect(0, 0, fullImg.cols, m_targetHeight)).clone();
-                }
-
-                // [照妖镜] 打印图像最后一行中间的 10 个像素，看看是不是乱码
-                if (fullImg.rows > 0) {
-                    const uchar* lastRow = fullImg.ptr<uchar>(fullImg.rows - 1);
-                    int midX = fullImg.cols / 2;
-                    QString pixelStr = "";
-                    for (int c = 0; c < 10; ++c) {
-                        pixelStr += QString::number(lastRow[midX + c]) + " ";
-                    }
-                    // qDebug() << "[CameraThread] Last Row Pixels (Middle 10):" << pixelStr;
-                }
-                
-                auto frame = std::make_shared<ImageFrame>();
-                frame->cameraId = m_cameraId;
-                frame->frameIndex = m_frameIndex++;
-                frame->exposureType = 0; 
-                
-                if (m_isNextFrameForRoi.exchange(false)) {
-                    frame->isForRoi = true;
-                }
-
-                frame->image = fullImg; 
-                
-                emit imageCaptured(frame);
-                m_chunkBuffers.clear(); // Free cached chunks to save memory
-                // qDebug() << "[CameraThread] Camera" << m_cameraId << "successfully stitched full frame" << (m_frameIndex - 1)
-                //          << "Final Size:" << fullImg.cols << "x" << fullImg.rows;
+            // VFL 模式下，实际采到的有效行数在 status.uLineNum
+            int actualHeight = status.uLineNum;
+            if (actualHeight <= 0 || actualHeight > h) {
+                actualHeight = h; // Fallback 如果硬件未正确返回有效行，则使用最大值
             }
+
+            // 直接根据实际高度截取图像，不需要切块拼接
+            cv::Mat img(actualHeight, w, CV_8UC1, pUserBuffer);
+            cv::Mat fullImg = img.clone();
+            
+            // [照妖镜] 打印图像最后一行中间的 10 个像素，看看是不是乱码
+            if (fullImg.rows > 0) {
+                const uchar* lastRow = fullImg.ptr<uchar>(fullImg.rows - 1);
+                int midX = fullImg.cols / 2;
+                QString pixelStr = "";
+                for (int c = 0; c < 10; ++c) {
+                    pixelStr += QString::number(lastRow[midX + c]) + " ";
+                }
+                // qDebug() << "[CameraThread] Last Row Pixels (Middle 10):" << pixelStr;
+            }
+            
+            auto frame = std::make_shared<ImageFrame>();
+            frame->cameraId = m_cameraId;
+            frame->frameIndex = m_frameIndex++;
+            frame->exposureType = 0; 
+            
+            if (m_isNextFrameForRoi.exchange(false)) {
+                frame->isForRoi = true;
+            }
+
+            frame->image = fullImg; 
+            
+            emit imageCaptured(frame);
+            // qDebug() << "[CameraThread] Camera" << m_cameraId << "successfully captured VFL frame" << (m_frameIndex - 1)
+            //          << "Final Size:" << fullImg.cols << "x" << fullImg.rows;
         } else {
             qWarning() << "[CameraThread] Camera" << m_cameraId << "capture failed! Invalid dimensions or buffer. w:" << w << "h:" << h << "pUserBuffer:" << pUserBuffer;
         }
@@ -273,7 +254,7 @@ void CameraThread::handleFrameReady()
     }
 }
 
-void CameraThread::updateRoi(int offsetX, int offsetY, int width, int height) {
+void CameraThread::updateRoi(int offsetX, int offsetY, int width) {
     if (!m_hCamera) return;
     
     // Always stop grab before changing resolution to prevent buffer mismatch
@@ -283,9 +264,10 @@ void CameraThread::updateRoi(int offsetX, int offsetY, int width, int height) {
     }
     
     m_targetWidth = width;
-    m_targetHeight = height;
+    // 不定行高模式：物理 Buffer 始终为安全最大值
+    m_targetHeight = 120000;
     m_expectedChunks = 1;
-    int m_chunkHeight = height;
+    int m_chunkHeight = 120000;
     
     // 取消切块逻辑
     
@@ -307,6 +289,6 @@ void CameraThread::updateRoi(int offsetX, int offsetY, int width, int height) {
     ITKSTATUS s10 = ItkDevExecuteCommand(m_hCamera, "AcquisitionStart");
     qDebug() << "[CameraThread] AcquisitionStart ROI Update res:" << s10;
 
-    qDebug() << "[CameraThread] ROI updated to" << offsetX << offsetY << width << height 
+    qDebug() << "[CameraThread] ROI updated to" << offsetX << offsetY << width
              << "Status:" << s1 << s2 << s3 << s4 << s5 << s6;
 }

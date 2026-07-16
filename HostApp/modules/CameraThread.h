@@ -21,7 +21,7 @@ public:
     void startCapture(bool isForRoi = false);
     void stopCapture();
     void resetFrameCounter() { m_frameIndex = 0; }
-    void updateRoi(int offsetX, int offsetY, int width, int height);
+    void updateRoi(int offsetX, int offsetY, int width);
 
 signals:
     // 将采集到的图像发送给推理线程处理

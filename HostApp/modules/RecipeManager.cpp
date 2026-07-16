@@ -33,12 +33,10 @@ void RecipeManager::load(const QString& filePath) {
         r.globalInferConfidence = obj["globalInferConfidence"].toDouble(0.25);
         r.enableStitchingMode = obj["enableStitchingMode"].toBool(false);
         r.roiWidthLeft = obj["roiWidthLeft"].toInt(16384);
-        r.roiHeightLeft = obj["roiHeightLeft"].toInt(8192);
         r.offsetXLeft = obj["offsetXLeft"].toInt(0);
         r.offsetYLeft = obj["offsetYLeft"].toInt(0);
 
         r.roiWidthRight = obj["roiWidthRight"].toInt(16384);
-        r.roiHeightRight = obj["roiHeightRight"].toInt(8192);
         r.offsetXRight = obj["offsetXRight"].toInt(0);
         r.offsetYRight = obj["offsetYRight"].toInt(0);
         
@@ -76,12 +74,10 @@ void RecipeManager::save(const QString& filePath) {
         obj["globalInferConfidence"] = r.globalInferConfidence;
         obj["enableStitchingMode"] = r.enableStitchingMode;
         obj["roiWidthLeft"] = r.roiWidthLeft;
-        obj["roiHeightLeft"] = r.roiHeightLeft;
         obj["offsetXLeft"] = r.offsetXLeft;
         obj["offsetYLeft"] = r.offsetYLeft;
 
         obj["roiWidthRight"] = r.roiWidthRight;
-        obj["roiHeightRight"] = r.roiHeightRight;
         obj["offsetXRight"] = r.offsetXRight;
         obj["offsetYRight"] = r.offsetYRight;
         

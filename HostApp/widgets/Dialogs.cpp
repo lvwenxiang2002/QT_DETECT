@@ -412,7 +412,7 @@ void DetectDialog::onSetRoiLeftClicked() {
     Recipe r = RecipeManager::instance().getRecipe(recipeName);
     
     RoiSettingDialog dlg(0, this);
-    dlg.setRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft, r.roiHeightLeft);
+    dlg.setRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft);
     
     QWidget* p = parentWidget();
     while (p && !p->inherits("MainWindow")) {
@@ -433,7 +433,7 @@ void DetectDialog::onSetRoiLeftClicked() {
         r.offsetXLeft = dlg.roiX();
         r.offsetYLeft = dlg.roiY();
         r.roiWidthLeft = dlg.roiWidth();
-        r.roiHeightLeft = dlg.roiHeight();
+
         RecipeManager::instance().addOrUpdateRecipe(r);
         RecipeManager::instance().save("recipes.json");
         emit recipeChanged(recipeName);
@@ -451,7 +451,7 @@ void DetectDialog::onSetRoiRightClicked() {
     Recipe r = RecipeManager::instance().getRecipe(recipeName);
     
     RoiSettingDialog dlg(1, this);
-    dlg.setRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight, r.roiHeightRight);
+    dlg.setRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight);
     
     QWidget* p = parentWidget();
     while (p && !p->inherits("MainWindow")) {
@@ -472,7 +472,7 @@ void DetectDialog::onSetRoiRightClicked() {
         r.offsetXRight = dlg.roiX();
         r.offsetYRight = dlg.roiY();
         r.roiWidthRight = dlg.roiWidth();
-        r.roiHeightRight = dlg.roiHeight();
+
         RecipeManager::instance().addOrUpdateRecipe(r);
         RecipeManager::instance().save("recipes.json");
         emit recipeChanged(recipeName);

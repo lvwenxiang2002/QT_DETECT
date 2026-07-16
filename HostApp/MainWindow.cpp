@@ -366,6 +366,8 @@ void MainWindow::disconnectLightController()
 
 void MainWindow::setLightControllerLineCount(int lineCount)
 {
+    qDebug() << "[LightController] Variable line height mode (VFL) active. Ignoring setLightControllerLineCount.";
+    /*
     if (m_lightCtrlSocket->state() != QAbstractSocket::ConnectedState) {
         qWarning() << "[LightController] Not connected. Cannot set line count.";
         return;
@@ -403,6 +405,7 @@ void MainWindow::setLightControllerLineCount(int lineCount)
     m_lightCtrlSocket->write(cmd);
     m_lightCtrlSocket->flush();
     qDebug() << "[LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount =" << signalCount << "Hex:" << cmd.toHex();
+    */
 }
 
 void MainWindow::onStartClicked()
@@ -1100,7 +1103,7 @@ void MainWindow::onRecipeChanged(const QString& recipeName)
     
     // 下发行高给光源控制器（取左右相机的最大高度）
     int maxLineCount = qMax(r.roiHeightLeft, r.roiHeightRight);
-    setLightControllerLineCount(maxLineCount);
+    // setLightControllerLineCount(maxLineCount); // 不定行高模式下不再发送固定行数指令
     
     // 切换 UI 拼图模式
     if (r.enableStitchingMode) {
@@ -1117,9 +1120,9 @@ void MainWindow::onRecipeChanged(const QString& recipeName)
         auto cam = m_cameraThreads[i];
         if (cam) {
             if (i == 0) {
-                cam->updateRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft, r.roiHeightLeft);
+                cam->updateRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft);
             } else {
-                cam->updateRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight, r.roiHeightRight);
+                cam->updateRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight);
             }
         }
     }
