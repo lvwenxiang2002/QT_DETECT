@@ -18,6 +18,7 @@ void ConfigManager::load(const QString& filePath) {
         QJsonObject camObj = root["camera"].toObject();
         camera.serialNumberLeft = camObj["serialNumberLeft"].toString("");
         camera.serialNumberRight = camObj["serialNumberRight"].toString("");
+        camera.ccfFilePath = camObj["ccfFilePath"].toString("");
         camera.gain = camObj["gain"].toDouble(1.0);
         camera.reconnectRetries = camObj["reconnectRetries"].toInt(3);
     }
@@ -59,6 +60,7 @@ void ConfigManager::save(const QString& filePath) {
     QJsonObject camObj;
     camObj["serialNumberLeft"] = camera.serialNumberLeft;
     camObj["serialNumberRight"] = camera.serialNumberRight;
+    camObj["ccfFilePath"] = camera.ccfFilePath;
     camObj["gain"] = camera.gain;
     camObj["reconnectRetries"] = camera.reconnectRetries;
     root["camera"] = camObj;

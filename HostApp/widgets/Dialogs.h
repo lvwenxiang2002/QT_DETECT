@@ -17,6 +17,7 @@ public:
 
 private slots:
     void onSaveConfig();
+    void onBrowseCcfClicked();
 
 private:
     void loadConfig();
@@ -26,6 +27,8 @@ private:
     // Camera tab
     QLineEdit *m_editSerialLeft;
     QLineEdit *m_editSerialRight;
+    QLineEdit *m_editCcfPath;
+    QPushButton *m_btnBrowseCcf;
     QDoubleSpinBox *m_spinGain;
     QSpinBox *m_spinReconnect;
     QSpinBox *m_spinOverlapPixels;

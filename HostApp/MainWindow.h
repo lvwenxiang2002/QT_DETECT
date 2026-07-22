@@ -52,6 +52,9 @@ private slots:
     void onMenuConfigClicked();
     void onMenuDetectClicked();
     void onMenuLogClicked();
+
+    void onCameraInitialized(int cameraId, bool success);
+    void reinitCameras();
     void onTimeTabClicked(int id);
     
     // Light Controller
@@ -73,10 +76,12 @@ private:
     QWidget* createLeftPanel();
     QWidget* createRightPanel();
 
-    std::vector<CameraThread*> m_cameraThreads;
+    QList<CameraThread*> m_cameraThreads;
+    int m_camerasReadyCount = 0;
+
     std::vector<InferThread*> m_inferThreads;
 
-    ImageWidget* m_imageWidgetLeft;
+    ImageWidget *m_imageWidgetLeft = nullptr;
     ImageWidget* m_imageWidgetRight;
     ImageWidget* m_imageWidgetCenter;
     PieChartWidget* m_pieChart;

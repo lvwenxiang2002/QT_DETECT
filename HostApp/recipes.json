@@ -159,8 +159,6 @@
             "offsetXRight": 0,
             "offsetYLeft": 0,
             "offsetYRight": 0,
-            "roiHeightLeft": 8192,
-            "roiHeightRight": 8192,
             "roiWidthLeft": 16384,
             "roiWidthRight": 16384
         },
@@ -304,8 +302,6 @@
             "offsetXRight": 0,
             "offsetYLeft": 0,
             "offsetYRight": 0,
-            "roiHeightLeft": 60000,
-            "roiHeightRight": 60000,
             "roiWidthLeft": 16384,
             "roiWidthRight": 16384
         },
@@ -449,8 +445,6 @@
             "offsetXRight": 0,
             "offsetYLeft": 0,
             "offsetYRight": 0,
-            "roiHeightLeft": 40000,
-            "roiHeightRight": 40000,
             "roiWidthLeft": 16384,
             "roiWidthRight": 16384
         }

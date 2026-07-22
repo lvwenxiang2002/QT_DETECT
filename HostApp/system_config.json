@@ -1,5 +1,6 @@
 {
     "camera": {
+        "ccfFilePath": "D:/config/budinghanggao.ccf",
         "gain": 1,
         "reconnectRetries": 3,
         "serialNumberLeft": "",

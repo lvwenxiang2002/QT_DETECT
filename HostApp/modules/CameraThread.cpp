@@ -120,6 +120,13 @@ void CameraThread::run()
         return;
     }
 
+    // --- [NEW] Load CCF file ---
+    QString ccfPath = ConfigManager::instance().camera.ccfFilePath;
+    if (!ccfPath.isEmpty() && QFile::exists(ccfPath)) {
+        ITKSTATUS loadRes = ItkDevLoadConfigurationFromFile(m_hCamera, (char*)ccfPath.toLocal8Bit().data());
+        qDebug() << "[CameraThread] Loaded CCF file:" << ccfPath << "Result:" << loadRes;
+    }
+
     // Apply settings from Recipe
     Recipe currentRecipe = RecipeManager::instance().getRecipe(RecipeManager::instance().getCurrentRecipeName());
     int rw = (m_cameraId == 0) ? currentRecipe.roiWidthLeft : currentRecipe.roiWidthRight;
@@ -166,6 +173,9 @@ void CameraThread::run()
     
     ITKSTATUS startRes = ItkDevExecuteCommand(m_hCamera, "AcquisitionStart");
     qDebug() << "[CameraThread] IKapStartGrab res:" << startGrabRes << "AcquisitionStart res:" << startRes;
+
+    // Emit initialized signal
+    emit cameraInitialized(m_cameraId, true);
 
     // 此时已经由主线程 startCapture 中调用了 m_softTriggerTimer->start(1500)
     
@@ -217,11 +227,41 @@ void CameraThread::handleFrameReady()
                 actualHeight = h; // Fallback 如果硬件未正确返回有效行，则使用最大值
             }
 
-            // 直接根据实际高度截取图像，不需要切块拼接
-            cv::Mat img(actualHeight, w, CV_8UC1, pUserBuffer);
-            cv::Mat fullImg = img.clone();
+            cv::Mat rawImg(actualHeight, w, CV_8UC1, pUserBuffer);
+            // --- 基于首行亮度的光场纠偏算法 (用户要求回复首行判断) ---
+            long long sumRow0 = 0;
+            long long sumRow1 = 0;
+            int samples = 0;
             
-            // [照妖镜] 打印图像最后一行中间的 10 个像素，看看是不是乱码
+            // 直接对比第0行和第1行的全局平均亮度
+            const uchar* pRow0 = rawImg.ptr<uchar>(0);
+            const uchar* pRow1 = rawImg.ptr<uchar>(1);
+            int stepX = (std::max)(1, (int)w / 1000); // 采样1000个点足够快
+            for (int c = 0; c < w; c += stepX) {
+                sumRow0 += pRow0[c];
+                sumRow1 += pRow1[c];
+                samples++;
+            }
+            
+            double avgRow0 = samples > 0 ? (double)sumRow0 / samples : 0;
+            double avgRow1 = samples > 0 ? (double)sumRow1 / samples : 0;
+            
+            int startRow = 0;
+            // 正常情况下，明场(第0行)的亮度远大于暗场(第1行)
+            // 如果第0行平均亮度低于第1行（加个10的容差防噪），说明首行是暗场，发生了反相
+            if (avgRow0 + 10.0 < avgRow1) {
+                startRow = 1;
+                actualHeight -= 1;
+                qDebug() << "[CameraThread] Camera" << m_cameraId << "Light field swapped! Auto-correcting. BL(Row1):" << avgRow1 << "DF(Row0):" << avgRow0;
+            }
+
+            // 强制将高度对齐为偶数
+            if (actualHeight % 2 != 0) {
+                actualHeight -= 1;
+            }
+
+            cv::Mat fullImg = rawImg(cv::Rect(0, startRow, w, actualHeight)).clone();
+
             if (fullImg.rows > 0) {
                 const uchar* lastRow = fullImg.ptr<uchar>(fullImg.rows - 1);
                 int midX = fullImg.cols / 2;
