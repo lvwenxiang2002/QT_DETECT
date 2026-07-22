@@ -51,8 +51,9 @@ public:
     int roiX() const;
     int roiY() const;
     int roiWidth() const;
+    int roiHeight() const;
 
-    void setRoi(int x, int y, int w);
+    void setRoi(int x, int y, int w, int h);
 
 public slots:
     void updateImage(std::shared_ptr<ImageFrame> frame);
@@ -69,6 +70,7 @@ private:
     QSpinBox* m_spinX;
     QSpinBox* m_spinY;
     QSpinBox* m_spinW;
+    QSpinBox* m_spinH;
     QPushButton* m_btnRefresh;
     QPushButton* m_btnApply;
 

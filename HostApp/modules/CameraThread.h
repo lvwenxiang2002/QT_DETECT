@@ -21,13 +21,13 @@ public:
     void startCapture(bool isForRoi = false);
     void stopCapture();
     void resetFrameCounter() { m_frameIndex = 0; }
-    void updateRoi(int offsetX, int offsetY, int width);
+    void updateRoi(int offsetX, int offsetY, int width, int height);
 
 signals:
     // 将采集到的图像发送给推理线程处理
     void imageCaptured(std::shared_ptr<ImageFrame> frame);
     void errorOccurred(QString msg);
-    void cameraInitialized(int cameraId, bool success);
+    void initCompleted(int cameraId, bool success);
 
 public:
     void handleFrameReady();
@@ -40,8 +40,6 @@ private:
     QMutex m_mutex;
     std::atomic<bool> m_isRunning;
     std::atomic<bool> m_isNextFrameForRoi;
-    
-    int m_currentLightState = 0; // 0 for CH1(Bright), 1 for CH2(Dark)
     
     // I-TEK SDK Handles
     ITKDEVICE m_hCamera;

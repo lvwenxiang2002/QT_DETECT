@@ -18,9 +18,10 @@ void ConfigManager::load(const QString& filePath) {
         QJsonObject camObj = root["camera"].toObject();
         camera.serialNumberLeft = camObj["serialNumberLeft"].toString("");
         camera.serialNumberRight = camObj["serialNumberRight"].toString("");
-        camera.ccfFilePath = camObj["ccfFilePath"].toString("");
+        camera.ccfPath = camObj["ccfPath"].toString("");
         camera.gain = camObj["gain"].toDouble(1.0);
         camera.reconnectRetries = camObj["reconnectRetries"].toInt(3);
+        camera.overlapPixels = camObj["overlapPixels"].toInt(100);
     }
 
     if (root.contains("plc")) {
@@ -60,9 +61,10 @@ void ConfigManager::save(const QString& filePath) {
     QJsonObject camObj;
     camObj["serialNumberLeft"] = camera.serialNumberLeft;
     camObj["serialNumberRight"] = camera.serialNumberRight;
-    camObj["ccfFilePath"] = camera.ccfFilePath;
+    camObj["ccfPath"] = camera.ccfPath;
     camObj["gain"] = camera.gain;
     camObj["reconnectRetries"] = camera.reconnectRetries;
+    camObj["overlapPixels"] = camera.overlapPixels;
     root["camera"] = camObj;
 
     QJsonObject plcObj;

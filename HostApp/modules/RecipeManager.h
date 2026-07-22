@@ -32,11 +32,13 @@ struct Recipe {
     
     // Camera Left Settings
     int roiWidthLeft = 16384;
+    int roiHeightLeft = 8192;
     int offsetXLeft = 0;
     int offsetYLeft = 0;
 
     // Camera Right Settings
     int roiWidthRight = 16384;
+    int roiHeightRight = 8192;
     int offsetXRight = 0;
     int offsetYRight = 0;
 };

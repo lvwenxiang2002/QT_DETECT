@@ -71,6 +71,16 @@ MainWindow::MainWindow(QWidget *parent)
         
         inferTh->start();
         m_inferThreads.push_back(inferTh);
+
+        CameraThread* camThread = new CameraThread(i, this);
+        connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::onRawImageCaptured, Qt::DirectConnection);
+        connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::capturedForRoi, Qt::QueuedConnection);
+        connect(camThread, &CameraThread::errorOccurred, this, &MainWindow::onCameraError, Qt::QueuedConnection);
+        connect(camThread, &CameraThread::initCompleted, this, &MainWindow::onCameraInitCompleted, Qt::QueuedConnection);
+        m_cameraThreads.push_back(camThread);
+        
+        // 初始化时立刻启动线程，让相机尽早完成打开和配置，避免第一次点击开始时卡顿
+        camThread->start();
     }
     
     updateDefectTags();
@@ -80,9 +90,6 @@ MainWindow::MainWindow(QWidget *parent)
     
     // 同步初始化界面布局（特别是中间拼图窗口的状态）
     onRecipeChanged(m_runningRecipeName);
-    
-    // 初始化相机线程（放在布局初始化后，确保 m_btnStart 已创建）
-    reinitCameras();
     
     // 连接光源控制器
     connectLightController();
@@ -94,6 +101,25 @@ MainWindow::~MainWindow()
     onStopClicked();
     for (auto inferTh : m_inferThreads) {
         inferTh->stop();
+    }
+}
+
+void MainWindow::onCameraInitCompleted(int cameraId, bool success) {
+    m_cameraReadyMap[cameraId] = success;
+    if (m_cameraReadyMap.size() == m_cameraThreads.size()) {
+        bool allReady = true;
+        for (bool r : m_cameraReadyMap.values()) {
+            if (!r) allReady = false;
+        }
+        if (allReady) {
+            m_btnStart->setEnabled(true);
+            m_btnStart->setText("开始检测");
+            if (m_currentStatus == Status_Error) {
+                updateStatusLight(Status_Stopped);
+            }
+        } else {
+            m_btnStart->setText("初始化失败");
+        }
     }
 }
 
@@ -256,8 +282,9 @@ void MainWindow::setupUi()
     rightLayout->setContentsMargins(15, 20, 15, 20);
     rightLayout->setSpacing(20);
     
-    m_btnStart = new QPushButton("开始检测", this);
+    m_btnStart = new QPushButton("初始化中...", this);
     m_btnStart->setFixedHeight(40);
+    m_btnStart->setEnabled(false); // 初始禁用，等待相机配置完成
     m_btnStart->setCursor(Qt::PointingHandCursor);
     m_btnStart->setStyleSheet(
         "QPushButton { background-color: #1A73E8; color: white; border-radius: 4px; font-size: 16px; font-weight: bold; } "
@@ -360,8 +387,6 @@ void MainWindow::disconnectLightController()
 
 void MainWindow::setLightControllerLineCount(int lineCount)
 {
-    qDebug() << "[LightController] Variable line height mode (VFL) active. Ignoring setLightControllerLineCount.";
-    /*
     if (m_lightCtrlSocket->state() != QAbstractSocket::ConnectedState) {
         qWarning() << "[LightController] Not connected. Cannot set line count.";
         return;
@@ -399,51 +424,6 @@ void MainWindow::setLightControllerLineCount(int lineCount)
     m_lightCtrlSocket->write(cmd);
     m_lightCtrlSocket->flush();
     qDebug() << "[LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount =" << signalCount << "Hex:" << cmd.toHex();
-    */
-}
-
-void MainWindow::reinitCameras()
-{
-    m_camerasReadyCount = 0;
-    if (m_btnStart) {
-        m_btnStart->setEnabled(false);
-        m_btnStart->setText("正在初始化相机...");
-    }
-
-    for (auto cam : m_cameraThreads) {
-        if (cam) {
-            cam->stopCapture();
-            cam->quit();
-            cam->wait();
-            delete cam;
-        }
-    }
-    m_cameraThreads.clear();
-    
-    for (int i = 0; i < 2; ++i) {
-        CameraThread* camThread = new CameraThread(i, this);
-        connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::onRawImageCaptured, Qt::DirectConnection);
-        connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::capturedForRoi, Qt::QueuedConnection);
-        connect(camThread, &CameraThread::errorOccurred, this, &MainWindow::onCameraError, Qt::QueuedConnection);
-        connect(camThread, &CameraThread::cameraInitialized, this, &MainWindow::onCameraInitialized, Qt::QueuedConnection);
-        m_cameraThreads.push_back(camThread);
-        
-        camThread->start();
-    }
-}
-
-void MainWindow::onCameraInitialized(int cameraId, bool success)
-{
-    Q_UNUSED(cameraId);
-    if (success) {
-        m_camerasReadyCount++;
-        if (m_camerasReadyCount == m_cameraThreads.size() && m_currentStatus != Status_Running) {
-            if (m_btnStart) {
-                m_btnStart->setEnabled(true);
-                m_btnStart->setText("开始检测");
-            }
-        }
-    }
 }
 
 void MainWindow::onStartClicked()
@@ -451,12 +431,31 @@ void MainWindow::onStartClicked()
     // 如果系统处于报警停机状态，点击开始时，我们需要强制销毁并重启相机线程，以重新初始化硬件（这会触发 ItkDevOpen 等底层 API）
     if (m_currentStatus == Status_Error) {
         qDebug() << "[MainWindow] Re-initializing cameras after error state.";
-        reinitCameras();
-        return; // 等待 cameraInitialized 信号触发，启用后用户可再次点击
+        for (auto cam : m_cameraThreads) {
+            cam->stopCapture();
+            cam->quit();
+            cam->wait();
+            delete cam;
+        }
+        m_cameraThreads.clear();
+        
+        for (int i = 0; i < 2; ++i) {
+            CameraThread* camThread = new CameraThread(i, this);
+            connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::onRawImageCaptured, Qt::DirectConnection);
+            connect(camThread, &CameraThread::imageCaptured, this, &MainWindow::capturedForRoi, Qt::QueuedConnection);
+            connect(camThread, &CameraThread::errorOccurred, this, &MainWindow::onCameraError, Qt::QueuedConnection);
+            connect(camThread, &CameraThread::initCompleted, this, &MainWindow::onCameraInitCompleted, Qt::QueuedConnection);
+            m_cameraThreads.push_back(camThread);
+            
+            camThread->start(); // 立即跑底层初始化
+        }
+        
+        // 确保配置是最新的
+        onRecipeChanged(m_runningRecipeName);
+        
+        // 阻断：必须等待相机初始化完成后，用户再次点击才能真正开始采图
+        return;
     }
-
-    // 确保配置是最新的
-    onRecipeChanged(m_runningRecipeName);
 
     QList<QPushButton*> allBtns = this->findChildren<QPushButton*>();
     for (QPushButton* btn : allBtns) {
@@ -469,6 +468,8 @@ void MainWindow::onStartClicked()
     m_pendingFrames.clear();
 
     updateStatusLight(Status_Running);
+
+    // 原本在这里的清零逻辑已经移除。现在的暂停和开始只会控制相机的采图，不会清零计数器。
     
     for (auto cam : m_cameraThreads) {
         cam->resetFrameCounter();
@@ -478,9 +479,18 @@ void MainWindow::onStartClicked()
 
 void MainWindow::onStopClicked()
 {
+    bool camerasReady = (m_cameraReadyMap.size() == m_cameraThreads.size() && !m_cameraThreads.empty());
+    for (bool r : m_cameraReadyMap.values()) {
+        if (!r) camerasReady = false;
+    }
+    
     QList<QPushButton*> allBtns = this->findChildren<QPushButton*>();
     for (QPushButton* btn : allBtns) {
-        btn->setEnabled(true);
+        if (btn == m_btnStart) {
+            btn->setEnabled(camerasReady);
+        } else if (btn != m_btnStop) {
+            btn->setEnabled(true);
+        }
     }
     m_btnStop->setEnabled(false);
     
@@ -548,44 +558,33 @@ void MainWindow::onRawImageCaptured(std::shared_ptr<ImageFrame> frame)
         int overlap = ConfigManager::instance().camera.overlapPixels;
 
         // 1. 去交织 (Fast memcpy)
-        int src_w_left = leftFrame->image.cols;
-        int src_w_right = rightFrame->image.cols;
-        int src_h = std::min(leftFrame->image.rows, rightFrame->image.rows);
-        
-        // 确保是偶数
-        if (src_h % 2 != 0) {
-            src_h -= 1;
-        }
-        
+        int src_w = leftFrame->image.cols;
+        int src_h = leftFrame->image.rows;
         int split_h = src_h / 2;
 
-        cv::Mat leftBL(split_h, src_w_left, leftFrame->image.type());
-        cv::Mat leftDF(split_h, src_w_left, leftFrame->image.type());
-        cv::Mat rightBL(split_h, src_w_right, rightFrame->image.type());
-        cv::Mat rightDF(split_h, src_w_right, rightFrame->image.type());
+        cv::Mat leftBL(split_h, src_w, leftFrame->image.type());
+        cv::Mat leftDF(split_h, src_w, leftFrame->image.type());
+        cv::Mat rightBL(split_h, src_w, rightFrame->image.type());
+        cv::Mat rightDF(split_h, src_w, rightFrame->image.type());
 
-        size_t left_step = leftFrame->image.step;
-        size_t right_step = rightFrame->image.step;
-        size_t left_copy_bytes = src_w_left * leftFrame->image.elemSize();
-        size_t right_copy_bytes = src_w_right * rightFrame->image.elemSize();
-        
+        size_t step = leftFrame->image.step;
+        size_t out_step = leftBL.step; 
+        size_t copy_bytes = src_w * leftFrame->image.elemSize();
         for (int r = 0; r < split_h; ++r) {
-            memcpy(leftBL.data + r * leftBL.step, leftFrame->image.data + (r * 2) * left_step, left_copy_bytes);
-            memcpy(leftDF.data + r * leftDF.step, leftFrame->image.data + (r * 2 + 1) * left_step, left_copy_bytes);
-            memcpy(rightBL.data + r * rightBL.step, rightFrame->image.data + (r * 2) * right_step, right_copy_bytes);
-            memcpy(rightDF.data + r * rightDF.step, rightFrame->image.data + (r * 2 + 1) * right_step, right_copy_bytes);
+            memcpy(leftBL.data + r * out_step, leftFrame->image.data + (r * 2) * step, copy_bytes);
+            memcpy(leftDF.data + r * out_step, leftFrame->image.data + (r * 2 + 1) * step, copy_bytes);
+            memcpy(rightBL.data + r * out_step, rightFrame->image.data + (r * 2) * step, copy_bytes);
+            memcpy(rightDF.data + r * out_step, rightFrame->image.data + (r * 2 + 1) * step, copy_bytes);
         }
 
         // 2. 裁剪重叠区
-        // 为避免越界，重叠区裁剪时也得考虑各自实际宽度
-        int overlapPixels = ConfigManager::instance().camera.overlapPixels;
-        int crop_w_left = src_w_left - overlapPixels / 2;
-        int crop_w_right = src_w_right - overlapPixels / 2;
-        int x_offset_right = overlapPixels / 2;
+        int crop_w_left = src_w - overlap / 2;
+        int crop_w_right = src_w - overlap / 2;
+        int x_offset_right = overlap / 2;
 
         if (crop_w_left <= 0 || crop_w_right <= 0) {
-            crop_w_left = src_w_left;
-            crop_w_right = src_w_right;
+            crop_w_left = src_w;
+            crop_w_right = src_w;
             x_offset_right = 0;
         }
 
@@ -1006,11 +1005,7 @@ void MainWindow::onMenuConfigClicked()
         QString password = dlg.textValue();
         if (password == "admin") {
             ConfigDialog configDlg(this);
-            if (configDlg.exec() == QDialog::Accepted) {
-                if (m_currentStatus != Status_Running) {
-                    reinitCameras();
-                }
-            }
+            configDlg.exec();
         } else {
             QMessageBox::warning(this, "错误", "密码错误，无法进入系统配置！");
         }
@@ -1096,15 +1091,6 @@ void MainWindow::onDefectTagClicked()
     
     if (m_imageWidgetLeft) m_imageWidgetLeft->setHiddenDefects(m_hiddenDefects);
     if (m_imageWidgetRight) m_imageWidgetRight->setHiddenDefects(m_hiddenDefects);
-    
-    // 如果当前处于非运行状态，且不是在初始化阶段，重启相机线程以应用新型号配置
-    if (m_currentStatus != Status_Running && m_cameraThreads.size() > 0) {
-        // We only call reinitCameras if m_btnStart is already enabled/initialized
-        // otherwise it might be called during constructor
-        if (m_btnStart && m_btnStart->text() != "正在初始化相机...") {
-            reinitCameras();
-        }
-    }
 }
 
 void MainWindow::updateStatusLight(SystemStatus status) {
@@ -1127,9 +1113,18 @@ void MainWindow::onCameraError(QString msg) {
     }
     
     // 恢复 UI 按钮的交互状态
+    bool camerasReady = (m_cameraReadyMap.size() == m_cameraThreads.size() && !m_cameraThreads.empty());
+    for (bool r : m_cameraReadyMap.values()) {
+        if (!r) camerasReady = false;
+    }
+    
     QList<QPushButton*> allBtns = this->findChildren<QPushButton*>();
     for (QPushButton* btn : allBtns) {
-        btn->setEnabled(true);
+        if (btn == m_btnStart) {
+            btn->setEnabled(camerasReady);
+        } else if (btn != m_btnStop) {
+            btn->setEnabled(true);
+        }
     }
     m_btnStop->setEnabled(false);
     
@@ -1147,8 +1142,8 @@ void MainWindow::onRecipeChanged(const QString& recipeName)
     Recipe r = RecipeManager::instance().getRecipe(recipeName);
     
     // 下发行高给光源控制器（取左右相机的最大高度）
-    // int maxLineCount = qMax(r.roiHeightLeft, r.roiHeightRight);
-    // setLightControllerLineCount(maxLineCount); // 不定行高模式下不再发送固定行数指令
+    int maxLineCount = qMax(r.roiHeightLeft, r.roiHeightRight);
+    setLightControllerLineCount(maxLineCount);
     
     // 切换 UI 拼图模式
     if (r.enableStitchingMode) {
@@ -1165,9 +1160,9 @@ void MainWindow::onRecipeChanged(const QString& recipeName)
         auto cam = m_cameraThreads[i];
         if (cam) {
             if (i == 0) {
-                cam->updateRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft);
+                cam->updateRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft, r.roiHeightLeft);
             } else {
-                cam->updateRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight);
+                cam->updateRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight, r.roiHeightRight);
             }
         }
     }

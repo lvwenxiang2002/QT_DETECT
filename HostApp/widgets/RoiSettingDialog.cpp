@@ -174,10 +174,12 @@ RoiSettingDialog::RoiSettingDialog(int cameraId, QWidget* parent)
     m_spinX = new QSpinBox(this); m_spinX->setRange(-m_maxWidth, m_maxWidth); m_spinX->setKeyboardTracking(false);
     m_spinY = new QSpinBox(this); m_spinY->setRange(0, m_maxHeight); m_spinY->setKeyboardTracking(false);
     m_spinW = new QSpinBox(this); m_spinW->setRange(1, m_maxWidth); m_spinW->setKeyboardTracking(false);
+    m_spinH = new QSpinBox(this); m_spinH->setRange(1, m_maxHeight); m_spinH->setKeyboardTracking(false);
     
     paramLayout->addWidget(new QLabel("Offset X(中心偏移):")); paramLayout->addWidget(m_spinX);
     paramLayout->addWidget(new QLabel("Offset Y(左上):")); paramLayout->addWidget(m_spinY);
     paramLayout->addWidget(new QLabel("Width:")); paramLayout->addWidget(m_spinW);
+    paramLayout->addWidget(new QLabel("Height:")); paramLayout->addWidget(m_spinH);
     
     controlLayout->addWidget(paramGroup);
     
@@ -195,6 +197,7 @@ RoiSettingDialog::RoiSettingDialog(int cameraId, QWidget* parent)
     connect(m_spinX, QOverload<int>::of(&QSpinBox::valueChanged), this, &RoiSettingDialog::onSpinBoxChanged);
     connect(m_spinY, QOverload<int>::of(&QSpinBox::valueChanged), this, &RoiSettingDialog::onSpinBoxChanged);
     connect(m_spinW, QOverload<int>::of(&QSpinBox::valueChanged), this, &RoiSettingDialog::onSpinBoxChanged);
+    connect(m_spinH, QOverload<int>::of(&QSpinBox::valueChanged), this, &RoiSettingDialog::onSpinBoxChanged);
     
     connect(m_btnRefresh, &QPushButton::clicked, this, &RoiSettingDialog::onRefreshClicked);
     connect(m_btnApply, &QPushButton::clicked, this, &RoiSettingDialog::onApplyClicked);
@@ -206,6 +209,7 @@ void RoiSettingDialog::setMaxResolution(int maxWidth, int maxHeight) {
     m_spinX->setMaximum(m_maxWidth);
     m_spinY->setMaximum(m_maxHeight);
     m_spinW->setMaximum(m_maxWidth);
+    m_spinH->setMaximum(m_maxHeight);
 }
 
 int RoiSettingDialog::roiX() const { 
@@ -216,13 +220,16 @@ int RoiSettingDialog::roiX() const {
 }
 int RoiSettingDialog::roiY() const { return m_spinY->value(); }
 int RoiSettingDialog::roiWidth() const { return m_spinW->value(); }
+int RoiSettingDialog::roiHeight() const { return m_spinH->value(); }
 
-void RoiSettingDialog::setRoi(int x, int y, int w) {
+void RoiSettingDialog::setRoi(int x, int y, int w, int h) {
     m_spinX->blockSignals(true);
     m_spinY->blockSignals(true);
     m_spinW->blockSignals(true);
+    m_spinH->blockSignals(true);
     
     m_spinW->setValue(w);
+    m_spinH->setValue(h);
     
     // UI Offset X = ROI_Center_X - Sensor_Center_X
     int uiOffsetX = (x + w / 2) - (m_maxWidth / 2);
@@ -232,9 +239,9 @@ void RoiSettingDialog::setRoi(int x, int y, int w) {
     m_spinX->blockSignals(false);
     m_spinY->blockSignals(false);
     m_spinW->blockSignals(false);
+    m_spinH->blockSignals(false);
     
-    // VFL 模式下，高度强制填满预览图的高度
-    m_imageView->setRoi(QRect(x, y, w, m_origImgH));
+    m_imageView->setRoi(QRect(x, y, w, h));
 }
 
 void RoiSettingDialog::updateImage(std::shared_ptr<ImageFrame> frame) {
@@ -274,6 +281,7 @@ void RoiSettingDialog::onRoiViewChanged(const QRect& r) {
     bool block = signalsBlocked();
     blockSignals(true);
     m_spinW->setValue(r.width());
+    m_spinH->setValue(r.height());
     
     // UI Offset X = ROI_Center_X - Sensor_Center_X
     int uiOffsetX = (r.x() + r.width() / 2) - (m_maxWidth / 2);
@@ -285,6 +293,6 @@ void RoiSettingDialog::onRoiViewChanged(const QRect& r) {
 void RoiSettingDialog::onSpinBoxChanged() {
     int startX = (m_maxWidth / 2) + m_spinX->value() - (m_spinW->value() / 2);
     startX = qBound(0, startX, m_maxWidth - m_spinW->value());
-    QRect r(startX, m_spinY->value(), m_spinW->value(), m_origImgH);
+    QRect r(startX, m_spinY->value(), m_spinW->value(), m_spinH->value());
     m_imageView->setRoi(r);
 }

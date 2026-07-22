@@ -1,7 +1,8 @@
 {
     "camera": {
-        "ccfFilePath": "D:/config/budinghanggao.ccf",
+        "ccfPath": "D:/config/guding.ccf",
         "gain": 1,
+        "overlapPixels": 100,
         "reconnectRetries": 3,
         "serialNumberLeft": "",
         "serialNumberRight": ""

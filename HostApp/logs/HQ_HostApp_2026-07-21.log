@@ -1,359 +1,434 @@
-[2026-07-21 09:40:01.625] [DEBUG] [T:3078] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 09:40:02.020] [DEBUG] [T:49b8] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
-[2026-07-21 09:40:02.029] [DEBUG] [T:3078] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 09:40:02.153] [DEBUG] [T:1928] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
-[2026-07-21 09:40:02.155] [DEBUG] [T:3078] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
-[2026-07-21 09:40:02.326] [DEBUG] [T:3078] [MainWindow.cpp:57] - [LightController] Connected successfully!
-[2026-07-21 09:40:03.427] [DEBUG] [T:49b8] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
-[2026-07-21 09:40:04.550] [DEBUG] [T:49b8] [CameraThread.cpp:153] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 09:40:04.557] [DEBUG] [T:49b8] [CameraThread.cpp:168] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 09:40:04.821] [DEBUG] [T:1928] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
-[2026-07-21 09:40:05.142] [DEBUG] [T:1928] [CameraThread.cpp:153] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 09:40:05.147] [DEBUG] [T:1928] [CameraThread.cpp:168] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 09:40:15.180] [DEBUG] [T:1e34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1250 ms. Total valid defects: 0
-[2026-07-21 09:40:15.476] [DEBUG] [T:435c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2917 ms. Total valid defects: 0
-[2026-07-21 09:40:21.901] [DEBUG] [T:435c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2125 ms. Total valid defects: 0
-[2026-07-21 09:40:24.347] [DEBUG] [T:1e34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 736 ms. Total valid defects: 0
-[2026-07-21 09:40:29.113] [DEBUG] [T:435c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2136 ms. Total valid defects: 0
-[2026-07-21 09:40:33.946] [DEBUG] [T:1e34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 653 ms. Total valid defects: 0
-[2026-07-21 09:40:50.351] [WARN ] [T:3078] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
-[2026-07-21 09:44:04.523] [DEBUG] [T:da4] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 09:44:04.720] [DEBUG] [T:26d0] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
-[2026-07-21 09:44:04.729] [DEBUG] [T:da4] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 09:44:04.852] [DEBUG] [T:10e8] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
-[2026-07-21 09:44:04.853] [DEBUG] [T:da4] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
-[2026-07-21 09:44:05.013] [DEBUG] [T:da4] [MainWindow.cpp:57] - [LightController] Connected successfully!
-[2026-07-21 09:44:06.088] [DEBUG] [T:26d0] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
-[2026-07-21 09:44:07.182] [DEBUG] [T:26d0] [CameraThread.cpp:153] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 09:44:07.188] [DEBUG] [T:26d0] [CameraThread.cpp:168] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 09:44:07.466] [DEBUG] [T:10e8] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
-[2026-07-21 09:44:07.780] [DEBUG] [T:10e8] [CameraThread.cpp:153] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 09:44:07.785] [DEBUG] [T:10e8] [CameraThread.cpp:168] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 09:44:18.521] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1196 ms. Total valid defects: 0
-[2026-07-21 09:44:18.524] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1199 ms. Total valid defects: 0
-[2026-07-21 09:44:24.646] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1280 ms. Total valid defects: 0
-[2026-07-21 09:44:24.649] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1284 ms. Total valid defects: 0
-[2026-07-21 09:44:30.334] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1278 ms. Total valid defects: 0
-[2026-07-21 09:44:30.337] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1289 ms. Total valid defects: 0
-[2026-07-21 09:44:34.889] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 808 ms. Total valid defects: 0
-[2026-07-21 09:44:34.892] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 808 ms. Total valid defects: 0
-[2026-07-21 09:44:39.160] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1119 ms. Total valid defects: 0
-[2026-07-21 09:44:39.163] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1114 ms. Total valid defects: 0
-[2026-07-21 09:44:41.247] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 474 ms. Total valid defects: 0
-[2026-07-21 09:44:41.250] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 478 ms. Total valid defects: 0
-[2026-07-21 09:44:44.279] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 801 ms. Total valid defects: 0
-[2026-07-21 09:44:44.282] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 810 ms. Total valid defects: 0
-[2026-07-21 09:44:54.078] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 493 ms. Total valid defects: 0
-[2026-07-21 09:45:08.565] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 797 ms. Total valid defects: 0
-[2026-07-21 09:45:08.569] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 804 ms. Total valid defects: 0
-[2026-07-21 09:45:11.983] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 797 ms. Total valid defects: 0
-[2026-07-21 09:45:11.986] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 795 ms. Total valid defects: 0
-[2026-07-21 09:45:17.123] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 959 ms. Total valid defects: 0
-[2026-07-21 09:45:17.126] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 965 ms. Total valid defects: 0
-[2026-07-21 09:45:23.295] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1122 ms. Total valid defects: 0
-[2026-07-21 09:45:23.298] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1116 ms. Total valid defects: 0
-[2026-07-21 09:45:29.206] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1128 ms. Total valid defects: 0
-[2026-07-21 09:45:29.208] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1116 ms. Total valid defects: 0
-[2026-07-21 09:45:35.578] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1286 ms. Total valid defects: 0
-[2026-07-21 09:45:35.581] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1288 ms. Total valid defects: 0
-[2026-07-21 09:45:41.766] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1131 ms. Total valid defects: 0
-[2026-07-21 09:45:41.770] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1144 ms. Total valid defects: 0
-[2026-07-21 09:45:50.575] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1437 ms. Total valid defects: 0
-[2026-07-21 09:45:50.578] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1436 ms. Total valid defects: 0
-[2026-07-21 09:45:56.262] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1123 ms. Total valid defects: 0
-[2026-07-21 09:45:56.265] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1106 ms. Total valid defects: 0
-[2026-07-21 09:45:59.447] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 809 ms. Total valid defects: 0
-[2026-07-21 09:45:59.450] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 798 ms. Total valid defects: 0
-[2026-07-21 09:46:03.882] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 965 ms. Total valid defects: 0
-[2026-07-21 09:46:03.886] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 968 ms. Total valid defects: 0
-[2026-07-21 09:46:10.307] [DEBUG] [T:5f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-不可擦拭脏污 | Conf: 79% | Area: 1.97 mm2 | Diag: 1.99 mm
-[2026-07-21 09:46:10.308] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1277 ms. Total valid defects: 1
-[2026-07-21 09:46:10.313] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1285 ms. Total valid defects: 0
-[2026-07-21 09:46:15.321] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1429 ms. Total valid defects: 0
-[2026-07-21 09:46:15.324] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1451 ms. Total valid defects: 0
-[2026-07-21 09:46:20.761] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1284 ms. Total valid defects: 0
-[2026-07-21 09:46:20.764] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1283 ms. Total valid defects: 0
-[2026-07-21 09:46:58.503] [DEBUG] [T:da4] [CameraThread.cpp:328] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 09:46:58.509] [DEBUG] [T:da4] [CameraThread.cpp:331] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 09:46:58.509] [DEBUG] [T:da4] [CameraThread.cpp:333] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 09:46:59.150] [DEBUG] [T:da4] [CameraThread.cpp:328] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 09:46:59.156] [DEBUG] [T:da4] [CameraThread.cpp:331] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 09:46:59.156] [DEBUG] [T:da4] [CameraThread.cpp:333] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 09:47:03.724] [DEBUG] [T:da4] [CameraThread.cpp:328] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 09:47:03.729] [DEBUG] [T:da4] [CameraThread.cpp:331] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 09:47:03.729] [DEBUG] [T:da4] [CameraThread.cpp:333] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 09:47:04.326] [DEBUG] [T:da4] [CameraThread.cpp:328] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 09:47:04.333] [DEBUG] [T:da4] [CameraThread.cpp:331] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 09:47:04.333] [DEBUG] [T:da4] [CameraThread.cpp:333] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 09:47:07.763] [DEBUG] [T:da4] [CameraThread.cpp:328] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 09:47:07.769] [DEBUG] [T:da4] [CameraThread.cpp:331] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 09:47:07.769] [DEBUG] [T:da4] [CameraThread.cpp:333] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 09:47:08.387] [DEBUG] [T:da4] [CameraThread.cpp:328] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 09:47:08.393] [DEBUG] [T:da4] [CameraThread.cpp:331] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 09:47:08.393] [DEBUG] [T:da4] [CameraThread.cpp:333] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 09:47:12.266] [DEBUG] [T:da4] [CameraThread.cpp:328] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 09:47:12.272] [DEBUG] [T:da4] [CameraThread.cpp:331] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 09:47:12.272] [DEBUG] [T:da4] [CameraThread.cpp:333] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 09:47:12.880] [DEBUG] [T:da4] [CameraThread.cpp:328] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 09:47:12.886] [DEBUG] [T:da4] [CameraThread.cpp:331] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 09:47:12.886] [DEBUG] [T:da4] [CameraThread.cpp:333] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 09:47:25.397] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 959 ms. Total valid defects: 0
-[2026-07-21 09:47:25.400] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 971 ms. Total valid defects: 0
-[2026-07-21 09:47:30.671] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1282 ms. Total valid defects: 0
-[2026-07-21 09:47:30.674] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1281 ms. Total valid defects: 0
-[2026-07-21 09:47:35.863] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1432 ms. Total valid defects: 0
-[2026-07-21 09:47:35.866] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1445 ms. Total valid defects: 0
-[2026-07-21 09:47:40.453] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1281 ms. Total valid defects: 0
-[2026-07-21 09:47:40.456] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1287 ms. Total valid defects: 0
-[2026-07-21 09:47:45.245] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1452 ms. Total valid defects: 0
-[2026-07-21 09:47:45.248] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1458 ms. Total valid defects: 0
-[2026-07-21 09:47:49.203] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1126 ms. Total valid defects: 0
-[2026-07-21 09:47:49.206] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1124 ms. Total valid defects: 0
-[2026-07-21 09:47:52.929] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 820 ms. Total valid defects: 0
-[2026-07-21 09:47:52.932] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 818 ms. Total valid defects: 0
-[2026-07-21 09:52:25.088] [DEBUG] [T:5f0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 26% | Area: 0.58 mm2 | Diag: 1.12 mm
-[2026-07-21 09:52:25.089] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2409 ms. Total valid defects: 1
-[2026-07-21 09:52:25.091] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2407 ms. Total valid defects: 0
-[2026-07-21 09:52:32.646] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1275 ms. Total valid defects: 0
-[2026-07-21 09:52:32.649] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1274 ms. Total valid defects: 0
-[2026-07-21 09:52:36.635] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1124 ms. Total valid defects: 0
-[2026-07-21 09:52:36.637] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1125 ms. Total valid defects: 0
-[2026-07-21 09:52:40.802] [DEBUG] [T:b9c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1279 ms. Total valid defects: 0
-[2026-07-21 09:52:40.805] [DEBUG] [T:5f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1272 ms. Total valid defects: 0
-[2026-07-21 10:19:45.540] [WARN ] [T:da4] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
-[2026-07-21 10:20:04.034] [DEBUG] [T:3718] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 10:20:04.232] [DEBUG] [T:2b8c] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
-[2026-07-21 10:20:04.243] [DEBUG] [T:3718] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 10:20:04.361] [DEBUG] [T:4018] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
-[2026-07-21 10:20:04.363] [DEBUG] [T:3718] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
-[2026-07-21 10:20:04.521] [DEBUG] [T:3718] [MainWindow.cpp:57] - [LightController] Connected successfully!
-[2026-07-21 10:20:05.612] [DEBUG] [T:2b8c] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
-[2026-07-21 10:20:06.711] [DEBUG] [T:2b8c] [CameraThread.cpp:153] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 10:20:06.717] [DEBUG] [T:2b8c] [CameraThread.cpp:168] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 10:20:07.001] [DEBUG] [T:4018] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
-[2026-07-21 10:20:07.330] [DEBUG] [T:4018] [CameraThread.cpp:153] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 10:20:07.337] [DEBUG] [T:4018] [CameraThread.cpp:168] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 10:20:16.874] [DEBUG] [T:1008] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2184 ms. Total valid defects: 0
-[2026-07-21 10:20:21.596] [DEBUG] [T:2c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1620 ms. Total valid defects: 0
-[2026-07-21 10:20:24.127] [DEBUG] [T:1008] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2132 ms. Total valid defects: 0
-[2026-07-21 10:20:31.235] [DEBUG] [T:1008] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2128 ms. Total valid defects: 0
-[2026-07-21 10:20:38.477] [DEBUG] [T:1008] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2103 ms. Total valid defects: 0
-[2026-07-21 10:20:47.699] [DEBUG] [T:1008] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4085 ms. Total valid defects: 0
-[2026-07-21 10:20:47.702] [DEBUG] [T:2c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4154 ms. Total valid defects: 0
-[2026-07-21 10:20:47.864] [DEBUG] [T:2c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 162 ms. Total valid defects: 0
-[2026-07-21 10:20:47.921] [WARN ] [T:3718] [MainWindow.cpp:1103] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
-[2026-07-21 10:20:48.155] [WARN ] [T:3718] [MainWindow.cpp:1103] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
-[2026-07-21 10:20:48.178] [WARN ] [T:3718] [MainWindow.cpp:1103] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
-[2026-07-21 10:21:11.378] [DEBUG] [T:3718] [MainWindow.cpp:415] - [MainWindow] Re-initializing cameras after error state.
-[2026-07-21 10:21:11.715] [DEBUG] [T:4a80] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
-[2026-07-21 10:21:11.716] [DEBUG] [T:38a8] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
-[2026-07-21 10:21:13.124] [DEBUG] [T:4a80] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
-[2026-07-21 10:21:14.236] [DEBUG] [T:4a80] [CameraThread.cpp:153] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 10:21:14.242] [DEBUG] [T:4a80] [CameraThread.cpp:168] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 10:21:14.526] [DEBUG] [T:38a8] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
-[2026-07-21 10:21:14.852] [DEBUG] [T:38a8] [CameraThread.cpp:153] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 10:21:14.857] [DEBUG] [T:38a8] [CameraThread.cpp:168] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 10:21:55.725] [WARN ] [T:3718] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
-[2026-07-21 10:56:16.026] [DEBUG] [T:1b00] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 10:56:16.230] [DEBUG] [T:1b00] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 10:56:16.350] [DEBUG] [T:1b00] [MainWindow.cpp:348] - [LightController] Connecting to "192.168.1.208" : 6600
-[2026-07-21 10:56:16.351] [DEBUG] [T:410c] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
-[2026-07-21 10:56:16.351] [DEBUG] [T:4ee0] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
-[2026-07-21 10:56:16.524] [DEBUG] [T:1b00] [MainWindow.cpp:57] - [LightController] Connected successfully!
-[2026-07-21 10:56:17.749] [DEBUG] [T:410c] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
-[2026-07-21 10:56:18.848] [DEBUG] [T:410c] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 10:56:18.854] [DEBUG] [T:410c] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 10:56:19.137] [DEBUG] [T:4ee0] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
-[2026-07-21 10:56:19.465] [DEBUG] [T:4ee0] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 10:56:19.471] [DEBUG] [T:4ee0] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 10:56:25.528] [DEBUG] [T:1b00] [CameraThread.cpp:338] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 10:56:25.534] [DEBUG] [T:1b00] [CameraThread.cpp:341] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 10:56:25.535] [DEBUG] [T:1b00] [CameraThread.cpp:343] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 10:56:26.191] [DEBUG] [T:1b00] [CameraThread.cpp:338] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 10:56:26.197] [DEBUG] [T:1b00] [CameraThread.cpp:341] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 10:56:26.197] [DEBUG] [T:1b00] [CameraThread.cpp:343] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 10:56:35.776] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2178 ms. Total valid defects: 0
-[2026-07-21 10:56:43.260] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2518 ms. Total valid defects: 0
-[2026-07-21 10:56:44.076] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3232 ms. Total valid defects: 0
-[2026-07-21 10:56:50.380] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2355 ms. Total valid defects: 0
-[2026-07-21 10:56:50.844] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 938 ms. Total valid defects: 0
-[2026-07-21 10:57:21.740] [DEBUG] [T:3878] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
-[2026-07-21 10:57:21.740] [DEBUG] [T:4bfc] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
-[2026-07-21 10:57:23.117] [DEBUG] [T:3878] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
-[2026-07-21 10:57:24.509] [DEBUG] [T:4bfc] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
-[2026-07-21 10:57:35.186] [DEBUG] [T:3878] [CameraThread.cpp:127] - [CameraThread] Loaded CCF file: "D:/config/budinghanggao.ccf" Result: 0
-[2026-07-21 10:57:35.266] [DEBUG] [T:4bfc] [CameraThread.cpp:127] - [CameraThread] Loaded CCF file: "D:/config/budinghanggao.ccf" Result: 0
-[2026-07-21 10:57:35.444] [DEBUG] [T:3878] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 10:57:35.451] [DEBUG] [T:3878] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 10:57:35.713] [DEBUG] [T:4bfc] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 10:57:35.718] [DEBUG] [T:4bfc] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 10:57:38.012] [DEBUG] [T:1b00] [CameraThread.cpp:338] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 10:57:38.018] [DEBUG] [T:1b00] [CameraThread.cpp:341] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 10:57:38.018] [DEBUG] [T:1b00] [CameraThread.cpp:343] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 10:57:38.694] [DEBUG] [T:1b00] [CameraThread.cpp:338] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 10:57:38.700] [DEBUG] [T:1b00] [CameraThread.cpp:341] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 10:57:38.701] [DEBUG] [T:1b00] [CameraThread.cpp:343] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 10:57:47.897] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1918 ms. Total valid defects: 0
-[2026-07-21 10:57:47.900] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1890 ms. Total valid defects: 0
-[2026-07-21 10:57:48.045] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 146 ms. Total valid defects: 0
-[2026-07-21 10:57:48.050] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 149 ms. Total valid defects: 0
-[2026-07-21 10:58:02.062] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2841 ms. Total valid defects: 0
-[2026-07-21 10:58:02.064] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2844 ms. Total valid defects: 0
-[2026-07-21 10:58:16.258] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2834 ms. Total valid defects: 0
-[2026-07-21 10:58:16.262] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2853 ms. Total valid defects: 0
-[2026-07-21 10:58:24.449] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2189 ms. Total valid defects: 0
-[2026-07-21 10:58:24.455] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2224 ms. Total valid defects: 0
-[2026-07-21 10:58:35.094] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3274 ms. Total valid defects: 0
-[2026-07-21 10:58:35.097] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3330 ms. Total valid defects: 0
-[2026-07-21 10:58:47.527] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3013 ms. Total valid defects: 0
-[2026-07-21 10:58:47.530] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3059 ms. Total valid defects: 0
-[2026-07-21 10:58:57.738] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2971 ms. Total valid defects: 0
-[2026-07-21 10:58:57.741] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3019 ms. Total valid defects: 0
-[2026-07-21 10:59:07.017] [DEBUG] [T:4dc0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2488 ms. Total valid defects: 0
-[2026-07-21 10:59:07.020] [DEBUG] [T:1b98] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2545 ms. Total valid defects: 0
-[2026-07-21 10:59:19.995] [WARN ] [T:1b00] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
-[2026-07-21 11:06:50.709] [DEBUG] [T:3018] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 11:06:50.911] [DEBUG] [T:3018] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 11:06:51.030] [DEBUG] [T:3018] [MainWindow.cpp:348] - [LightController] Connecting to "192.168.1.208" : 6600
-[2026-07-21 11:06:51.031] [DEBUG] [T:1eac] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
-[2026-07-21 11:06:51.032] [DEBUG] [T:3094] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
-[2026-07-21 11:06:51.204] [DEBUG] [T:3018] [MainWindow.cpp:57] - [LightController] Connected successfully!
-[2026-07-21 11:06:52.436] [DEBUG] [T:1eac] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
-[2026-07-21 11:06:53.828] [DEBUG] [T:3094] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
-[2026-07-21 11:06:53.865] [DEBUG] [T:1eac] [CameraThread.cpp:127] - [CameraThread] Loaded CCF file: "D:/config/budinghanggao.ccf" Result: 0
-[2026-07-21 11:06:53.950] [DEBUG] [T:3094] [CameraThread.cpp:127] - [CameraThread] Loaded CCF file: "D:/config/budinghanggao.ccf" Result: 0
-[2026-07-21 11:06:54.126] [DEBUG] [T:1eac] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 11:06:54.132] [DEBUG] [T:1eac] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 11:06:54.331] [DEBUG] [T:3094] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 11:06:54.337] [DEBUG] [T:3094] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 11:07:01.847] [DEBUG] [T:3018] [CameraThread.cpp:314] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 11:07:01.853] [DEBUG] [T:3018] [CameraThread.cpp:317] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 11:07:01.853] [DEBUG] [T:3018] [CameraThread.cpp:319] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 11:07:02.556] [DEBUG] [T:3018] [CameraThread.cpp:314] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 11:07:02.562] [DEBUG] [T:3018] [CameraThread.cpp:317] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 11:07:02.562] [DEBUG] [T:3018] [CameraThread.cpp:319] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 11:07:11.260] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2437 ms. Total valid defects: 0
-[2026-07-21 11:07:11.266] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2443 ms. Total valid defects: 0
-[2026-07-21 11:07:21.408] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3009 ms. Total valid defects: 0
-[2026-07-21 11:07:21.410] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3012 ms. Total valid defects: 0
-[2026-07-21 11:07:29.083] [DEBUG] [T:4450] [CameraThread.cpp:237] - [CameraThread] Camera 1 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:29.084] [DEBUG] [T:3278] [CameraThread.cpp:237] - [CameraThread] Camera 0 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:30.114] [DEBUG] [T:4450] [CameraThread.cpp:237] - [CameraThread] Camera 1 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:30.115] [DEBUG] [T:3278] [CameraThread.cpp:237] - [CameraThread] Camera 0 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:30.133] [WARN ] [T:4450] [InferThread.cpp:66] - [InferThread] Queue full, dropping oldest frame to save memory
-[2026-07-21 11:07:30.134] [WARN ] [T:3278] [InferThread.cpp:66] - [InferThread] Queue full, dropping oldest frame to save memory
-[2026-07-21 11:07:30.840] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2856 ms. Total valid defects: 0
-[2026-07-21 11:07:30.846] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2858 ms. Total valid defects: 0
-[2026-07-21 11:07:30.992] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 151 ms. Total valid defects: 0
-[2026-07-21 11:07:30.998] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 151 ms. Total valid defects: 0
-[2026-07-21 11:07:31.465] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 472 ms. Total valid defects: 0
-[2026-07-21 11:07:31.468] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 469 ms. Total valid defects: 0
-[2026-07-21 11:07:39.062] [DEBUG] [T:4450] [CameraThread.cpp:237] - [CameraThread] Camera 1 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:39.065] [DEBUG] [T:3278] [CameraThread.cpp:237] - [CameraThread] Camera 0 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:40.224] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1091 ms. Total valid defects: 0
-[2026-07-21 11:07:40.227] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1109 ms. Total valid defects: 0
-[2026-07-21 11:07:43.785] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 475 ms. Total valid defects: 0
-[2026-07-21 11:07:43.788] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 473 ms. Total valid defects: 0
-[2026-07-21 11:07:45.470] [DEBUG] [T:4450] [CameraThread.cpp:237] - [CameraThread] Camera 1 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:45.472] [DEBUG] [T:3278] [CameraThread.cpp:237] - [CameraThread] Camera 0 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:45.806] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 313 ms. Total valid defects: 0
-[2026-07-21 11:07:45.809] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 315 ms. Total valid defects: 0
-[2026-07-21 11:07:50.406] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 480 ms. Total valid defects: 0
-[2026-07-21 11:07:50.409] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 483 ms. Total valid defects: 0
-[2026-07-21 11:07:52.782] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 469 ms. Total valid defects: 0
-[2026-07-21 11:07:52.785] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 472 ms. Total valid defects: 0
-[2026-07-21 11:07:54.689] [DEBUG] [T:3278] [CameraThread.cpp:237] - [CameraThread] Camera 0 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:54.692] [DEBUG] [T:4450] [CameraThread.cpp:237] - [CameraThread] Camera 1 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:55.196] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 476 ms. Total valid defects: 0
-[2026-07-21 11:07:55.198] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 479 ms. Total valid defects: 0
-[2026-07-21 11:07:58.029] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 639 ms. Total valid defects: 0
-[2026-07-21 11:07:58.032] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 642 ms. Total valid defects: 0
-[2026-07-21 11:07:59.869] [DEBUG] [T:4450] [CameraThread.cpp:237] - [CameraThread] Camera 1 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:07:59.872] [DEBUG] [T:3278] [CameraThread.cpp:237] - [CameraThread] Camera 0 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:08:00.373] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 478 ms. Total valid defects: 0
-[2026-07-21 11:08:00.376] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 471 ms. Total valid defects: 0
-[2026-07-21 11:08:09.572] [DEBUG] [T:4450] [CameraThread.cpp:237] - [CameraThread] Camera 1 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:08:09.575] [DEBUG] [T:3278] [CameraThread.cpp:237] - [CameraThread] Camera 0 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:08:11.729] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2055 ms. Total valid defects: 0
-[2026-07-21 11:08:11.732] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2059 ms. Total valid defects: 0
-[2026-07-21 11:08:16.570] [DEBUG] [T:4450] [CameraThread.cpp:237] - [CameraThread] Camera 1 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:08:16.703] [DEBUG] [T:3278] [CameraThread.cpp:237] - [CameraThread] Camera 0 Parity tracker: First line is CH2. Discarding row 0.
-[2026-07-21 11:08:18.870] [DEBUG] [T:dd8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2075 ms. Total valid defects: 0
-[2026-07-21 11:08:18.873] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2060 ms. Total valid defects: 0
-[2026-07-21 11:08:26.441] [WARN ] [T:3018] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
-[2026-07-21 11:17:20.818] [DEBUG] [T:424c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 11:17:21.019] [DEBUG] [T:424c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
-[2026-07-21 11:17:21.139] [DEBUG] [T:424c] [MainWindow.cpp:348] - [LightController] Connecting to "192.168.1.208" : 6600
-[2026-07-21 11:17:21.139] [DEBUG] [T:12ec] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
-[2026-07-21 11:17:21.140] [DEBUG] [T:4014] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
-[2026-07-21 11:17:21.319] [DEBUG] [T:424c] [MainWindow.cpp:57] - [LightController] Connected successfully!
-[2026-07-21 11:17:22.546] [DEBUG] [T:12ec] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
-[2026-07-21 11:17:23.928] [DEBUG] [T:4014] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
-[2026-07-21 11:17:23.966] [DEBUG] [T:12ec] [CameraThread.cpp:127] - [CameraThread] Loaded CCF file: "D:/config/budinghanggao.ccf" Result: 0
-[2026-07-21 11:17:24.048] [DEBUG] [T:4014] [CameraThread.cpp:127] - [CameraThread] Loaded CCF file: "D:/config/budinghanggao.ccf" Result: 0
-[2026-07-21 11:17:24.230] [DEBUG] [T:12ec] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 11:17:24.236] [DEBUG] [T:12ec] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 11:17:24.436] [DEBUG] [T:4014] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
-[2026-07-21 11:17:24.441] [DEBUG] [T:4014] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
-[2026-07-21 11:17:26.704] [DEBUG] [T:424c] [CameraThread.cpp:327] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 11:17:26.710] [DEBUG] [T:424c] [CameraThread.cpp:330] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 11:17:26.710] [DEBUG] [T:424c] [CameraThread.cpp:332] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 11:17:27.259] [DEBUG] [T:424c] [CameraThread.cpp:327] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
-[2026-07-21 11:17:27.264] [DEBUG] [T:424c] [CameraThread.cpp:330] - [CameraThread] AcquisitionStart ROI Update res: 0
-[2026-07-21 11:17:27.265] [DEBUG] [T:424c] [CameraThread.cpp:332] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
-[2026-07-21 11:17:35.383] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1024 ms. Total valid defects: 0
-[2026-07-21 11:17:35.389] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1030 ms. Total valid defects: 0
-[2026-07-21 11:17:39.335] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1100 ms. Total valid defects: 0
-[2026-07-21 11:17:39.337] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1103 ms. Total valid defects: 0
-[2026-07-21 11:17:43.902] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1422 ms. Total valid defects: 0
-[2026-07-21 11:17:43.905] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1426 ms. Total valid defects: 0
-[2026-07-21 11:17:48.200] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1595 ms. Total valid defects: 0
-[2026-07-21 11:17:48.203] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1580 ms. Total valid defects: 0
-[2026-07-21 11:17:53.002] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1751 ms. Total valid defects: 0
-[2026-07-21 11:17:53.004] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1750 ms. Total valid defects: 0
-[2026-07-21 11:17:58.647] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1735 ms. Total valid defects: 0
-[2026-07-21 11:17:58.650] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1744 ms. Total valid defects: 0
-[2026-07-21 11:18:03.165] [DEBUG] [T:3224] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.026 DF(Row0): 0.00683594
-[2026-07-21 11:18:03.182] [DEBUG] [T:4a24] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4619 DF(Row0): 0.0126953
-[2026-07-21 11:18:05.340] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2058 ms. Total valid defects: 0
-[2026-07-21 11:18:05.343] [DEBUG] [T:1dac] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 79% | Area: 0.80 mm2 | Diag: 1.27 mm
-[2026-07-21 11:18:05.343] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2054 ms. Total valid defects: 1
-[2026-07-21 11:18:10.328] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1265 ms. Total valid defects: 0
-[2026-07-21 11:18:10.331] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1270 ms. Total valid defects: 0
-[2026-07-21 11:18:17.630] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2210 ms. Total valid defects: 0
-[2026-07-21 11:18:17.633] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2212 ms. Total valid defects: 0
-[2026-07-21 11:18:24.731] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1916 ms. Total valid defects: 0
-[2026-07-21 11:18:24.734] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1925 ms. Total valid defects: 0
-[2026-07-21 11:18:33.242] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2058 ms. Total valid defects: 0
-[2026-07-21 11:18:33.245] [DEBUG] [T:1dac] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 71% | Area: 0.97 mm2 | Diag: 1.47 mm
-[2026-07-21 11:18:33.245] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2031 ms. Total valid defects: 1
-[2026-07-21 11:18:40.174] [DEBUG] [T:3224] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.011 DF(Row0): 0.0078125
-[2026-07-21 11:18:40.273] [DEBUG] [T:4a24] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.5791 DF(Row0): 0.0185547
-[2026-07-21 11:18:43.379] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3004 ms. Total valid defects: 0
-[2026-07-21 11:18:43.549] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2929 ms. Total valid defects: 0
-[2026-07-21 11:18:46.560] [DEBUG] [T:4a24] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.6484 DF(Row0): 0.00390625
-[2026-07-21 11:18:46.561] [DEBUG] [T:3224] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.017 DF(Row0): 0
-[2026-07-21 11:18:48.217] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1581 ms. Total valid defects: 0
-[2026-07-21 11:18:48.223] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1589 ms. Total valid defects: 0
-[2026-07-21 11:18:55.144] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1901 ms. Total valid defects: 0
-[2026-07-21 11:18:55.147] [DEBUG] [T:1dac] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 67% | Area: 0.39 mm2 | Diag: 0.88 mm
-[2026-07-21 11:18:55.147] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1904 ms. Total valid defects: 1
-[2026-07-21 11:19:02.872] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2385 ms. Total valid defects: 0
-[2026-07-21 11:19:02.876] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2388 ms. Total valid defects: 0
-[2026-07-21 11:19:12.841] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2881 ms. Total valid defects: 0
-[2026-07-21 11:19:12.844] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2873 ms. Total valid defects: 0
-[2026-07-21 11:19:19.644] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2067 ms. Total valid defects: 0
-[2026-07-21 11:19:19.647] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2069 ms. Total valid defects: 0
-[2026-07-21 11:19:24.859] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1570 ms. Total valid defects: 0
-[2026-07-21 11:19:24.862] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1594 ms. Total valid defects: 0
-[2026-07-21 11:19:28.446] [DEBUG] [T:3224] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.008 DF(Row0): 0
-[2026-07-21 11:19:28.448] [DEBUG] [T:4a24] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.5742 DF(Row0): 0.0449219
-[2026-07-21 11:19:30.103] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1586 ms. Total valid defects: 0
-[2026-07-21 11:19:30.109] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1593 ms. Total valid defects: 0
-[2026-07-21 11:19:42.529] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1897 ms. Total valid defects: 0
-[2026-07-21 11:19:42.531] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1901 ms. Total valid defects: 0
-[2026-07-21 11:19:49.906] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1422 ms. Total valid defects: 0
-[2026-07-21 11:19:49.909] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1426 ms. Total valid defects: 0
-[2026-07-21 11:20:14.227] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1113 ms. Total valid defects: 0
-[2026-07-21 11:20:14.230] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1099 ms. Total valid defects: 0
-[2026-07-21 11:20:26.787] [WARN ] [T:424c] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 11:28:46.274] [DEBUG] [T:2b00] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 11:28:46.608] [DEBUG] [T:820] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 11:28:46.618] [DEBUG] [T:2b00] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 11:28:46.737] [DEBUG] [T:338c] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 11:28:46.739] [WARN ] [T:2b00] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 11:28:46.739] [DEBUG] [T:2b00] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 11:28:46.902] [DEBUG] [T:2b00] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 11:28:47.966] [DEBUG] [T:820] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 11:28:48.946] [DEBUG] [T:820] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 11:28:48.950] [DEBUG] [T:820] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 11:28:49.337] [DEBUG] [T:338c] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 11:28:49.522] [DEBUG] [T:338c] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 11:28:49.525] [DEBUG] [T:338c] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 11:28:59.981] [DEBUG] [T:2b00] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-21 11:29:00.040] [DEBUG] [T:2b00] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 11:29:00.044] [DEBUG] [T:2b00] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 11:29:00.044] [DEBUG] [T:2b00] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 11:29:00.100] [DEBUG] [T:2b00] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 11:29:00.104] [DEBUG] [T:2b00] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 11:29:00.105] [DEBUG] [T:2b00] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 11:29:23.625] [DEBUG] [T:4acc] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 11:29:23.823] [DEBUG] [T:401c] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 11:29:23.832] [DEBUG] [T:4acc] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 11:29:23.956] [DEBUG] [T:788] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 11:29:23.957] [WARN ] [T:4acc] [MainWindow.cpp:370] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 11:29:23.958] [DEBUG] [T:4acc] [MainWindow.cpp:354] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 11:29:24.123] [DEBUG] [T:4acc] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 11:29:25.194] [DEBUG] [T:401c] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 11:29:26.167] [DEBUG] [T:401c] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 11:29:26.171] [DEBUG] [T:401c] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 11:29:26.569] [DEBUG] [T:788] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 11:29:26.768] [DEBUG] [T:788] [CameraThread.cpp:152] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 11:29:26.772] [DEBUG] [T:788] [CameraThread.cpp:167] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 11:29:44.656] [DEBUG] [T:30fc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2674 ms. Total valid defects: 0
+[2026-07-21 11:29:44.658] [DEBUG] [T:1a08] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2670 ms. Total valid defects: 0
+[2026-07-21 11:30:20.535] [DEBUG] [T:4acc] [MainWindow.cpp:405] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-21 11:30:20.592] [DEBUG] [T:4acc] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 11:30:20.597] [DEBUG] [T:4acc] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 11:30:20.597] [DEBUG] [T:4acc] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 11:30:20.653] [DEBUG] [T:4acc] [CameraThread.cpp:305] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 11:30:20.657] [DEBUG] [T:4acc] [CameraThread.cpp:308] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 11:30:20.657] [DEBUG] [T:4acc] [CameraThread.cpp:310] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 11:30:30.818] [DEBUG] [T:30fc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1289 ms. Total valid defects: 0
+[2026-07-21 11:30:39.165] [DEBUG] [T:30fc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2517 ms. Total valid defects: 0
+[2026-07-21 11:30:39.168] [DEBUG] [T:1a08] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2513 ms. Total valid defects: 0
+[2026-07-21 11:30:48.540] [DEBUG] [T:30fc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2519 ms. Total valid defects: 0
+[2026-07-21 11:30:48.546] [DEBUG] [T:1a08] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2528 ms. Total valid defects: 0
+[2026-07-21 11:30:57.265] [DEBUG] [T:1a08] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2519 ms. Total valid defects: 0
+[2026-07-21 11:30:57.268] [DEBUG] [T:30fc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2525 ms. Total valid defects: 0
+[2026-07-21 11:31:01.526] [WARN ] [T:4acc] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 11:39:31.765] [DEBUG] [T:3c88] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 11:39:31.965] [DEBUG] [T:424c] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 11:39:31.977] [DEBUG] [T:3c88] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 11:39:32.094] [DEBUG] [T:f00] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 11:39:32.096] [WARN ] [T:3c88] [MainWindow.cpp:388] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 11:39:32.097] [DEBUG] [T:3c88] [MainWindow.cpp:372] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 11:39:32.269] [DEBUG] [T:3c88] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 11:39:33.318] [DEBUG] [T:424c] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 11:39:34.290] [DEBUG] [T:424c] [CameraThread.cpp:159] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 11:39:34.294] [DEBUG] [T:424c] [CameraThread.cpp:174] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 11:39:34.692] [DEBUG] [T:f00] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 11:39:34.886] [DEBUG] [T:f00] [CameraThread.cpp:159] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 11:39:34.890] [DEBUG] [T:f00] [CameraThread.cpp:174] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 11:40:14.542] [WARN ] [T:3c88] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 11:44:15.535] [DEBUG] [T:b7c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 11:44:15.733] [DEBUG] [T:1f38] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 11:44:15.742] [DEBUG] [T:b7c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 11:44:15.863] [DEBUG] [T:1798] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 11:44:15.863] [WARN ] [T:b7c] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 11:44:15.864] [DEBUG] [T:b7c] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 11:44:16.030] [DEBUG] [T:b7c] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 11:44:17.098] [DEBUG] [T:1f38] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 11:44:18.464] [DEBUG] [T:1798] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 11:44:18.595] [DEBUG] [T:1f38] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 11:44:18.597] [DEBUG] [T:1798] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 11:44:18.720] [DEBUG] [T:1f38] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 11:44:18.724] [DEBUG] [T:1f38] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 11:44:18.798] [DEBUG] [T:1798] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 11:44:18.802] [DEBUG] [T:1798] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 11:44:38.498] [DEBUG] [T:b7c] [MainWindow.cpp:426] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-21 11:44:38.557] [DEBUG] [T:b7c] [CameraThread.cpp:316] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 11:44:38.561] [DEBUG] [T:b7c] [CameraThread.cpp:319] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 11:44:38.561] [DEBUG] [T:b7c] [CameraThread.cpp:321] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 11:44:38.618] [DEBUG] [T:b7c] [CameraThread.cpp:316] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 11:44:38.622] [DEBUG] [T:b7c] [CameraThread.cpp:319] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 11:44:38.623] [DEBUG] [T:b7c] [CameraThread.cpp:321] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 11:45:12.536] [DEBUG] [T:2454] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2590 ms. Total valid defects: 0
+[2026-07-21 11:45:12.540] [DEBUG] [T:2998] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2552 ms. Total valid defects: 0
+[2026-07-21 11:45:21.417] [DEBUG] [T:2998] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2471 ms. Total valid defects: 0
+[2026-07-21 11:45:21.420] [DEBUG] [T:2454] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2515 ms. Total valid defects: 0
+[2026-07-21 11:45:31.899] [WARN ] [T:b7c] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:11:21.218] [DEBUG] [T:4b24] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:11:21.603] [DEBUG] [T:4a44] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:11:21.613] [DEBUG] [T:4b24] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:11:21.733] [DEBUG] [T:1914] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:11:21.734] [WARN ] [T:4b24] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:11:21.735] [DEBUG] [T:4b24] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:11:22.374] [WARN ] [T:4a44] [CameraThread.cpp:92] - [CameraThread] "找不到相机 0，目标 SN: "
+[2026-07-21 16:11:22.378] [WARN ] [T:4b24] [MainWindow.cpp:1132] - [MainWindow] Error triggered: "找不到相机 0，目标 SN: "
+[2026-07-21 16:11:23.690] [DEBUG] [T:1914] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:11:23.754] [DEBUG] [T:1914] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:11:23.876] [DEBUG] [T:1914] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:11:23.880] [DEBUG] [T:1914] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:11:42.777] [DEBUG] [T:4b24] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:11:57.259] [WARN ] [T:4b24] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:12:08.743] [DEBUG] [T:43c4] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:12:08.942] [DEBUG] [T:4d30] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:12:08.954] [DEBUG] [T:43c4] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:12:09.072] [DEBUG] [T:32e0] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:12:09.073] [WARN ] [T:43c4] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:12:09.073] [DEBUG] [T:43c4] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:12:09.262] [DEBUG] [T:43c4] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:12:10.307] [DEBUG] [T:4d30] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:12:11.697] [DEBUG] [T:32e0] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:12:11.816] [DEBUG] [T:4d30] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:12:11.816] [DEBUG] [T:32e0] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:12:11.949] [DEBUG] [T:4d30] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:12:11.953] [DEBUG] [T:4d30] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:12:12.025] [DEBUG] [T:32e0] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:12:12.029] [DEBUG] [T:32e0] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:12:31.260] [DEBUG] [T:4d68] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1534 ms. Total valid defects: 0
+[2026-07-21 16:12:32.429] [DEBUG] [T:4630] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1349 ms. Total valid defects: 0
+[2026-07-21 16:12:35.423] [DEBUG] [T:4d68] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1303 ms. Total valid defects: 0
+[2026-07-21 16:12:39.841] [DEBUG] [T:4d68] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1294 ms. Total valid defects: 0
+[2026-07-21 16:12:44.253] [DEBUG] [T:4d68] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1293 ms. Total valid defects: 0
+[2026-07-21 16:12:47.310] [DEBUG] [T:4630] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1297 ms. Total valid defects: 0
+[2026-07-21 16:12:48.673] [DEBUG] [T:4d68] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1298 ms. Total valid defects: 0
+[2026-07-21 16:12:52.770] [DEBUG] [T:4630] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1844 ms. Total valid defects: 0
+[2026-07-21 16:12:53.499] [DEBUG] [T:4d68] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1773 ms. Total valid defects: 0
+[2026-07-21 16:12:58.112] [DEBUG] [T:4d68] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1997 ms. Total valid defects: 0
+[2026-07-21 16:12:58.266] [WARN ] [T:43c4] [MainWindow.cpp:1132] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
+[2026-07-21 16:12:58.700] [DEBUG] [T:4630] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1938 ms. Total valid defects: 0
+[2026-07-21 16:12:58.840] [WARN ] [T:43c4] [MainWindow.cpp:1132] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
+[2026-07-21 16:14:01.805] [DEBUG] [T:43c4] [MainWindow.cpp:426] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-21 16:14:01.863] [DEBUG] [T:43c4] [CameraThread.cpp:316] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 16:14:01.867] [DEBUG] [T:43c4] [CameraThread.cpp:319] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 16:14:01.867] [DEBUG] [T:43c4] [CameraThread.cpp:321] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 16:14:01.924] [DEBUG] [T:43c4] [CameraThread.cpp:316] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 16:14:01.928] [DEBUG] [T:43c4] [CameraThread.cpp:319] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 16:14:01.928] [DEBUG] [T:43c4] [CameraThread.cpp:321] - [CameraThread] ROI updated to 0 0 16384 40000 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 16:14:23.031] [DEBUG] [T:48d0] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:14:23.232] [DEBUG] [T:4c64] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:14:23.242] [DEBUG] [T:48d0] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:14:23.359] [DEBUG] [T:48f4] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:14:23.360] [WARN ] [T:48d0] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:14:23.361] [DEBUG] [T:48d0] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:14:23.513] [DEBUG] [T:48d0] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:14:24.630] [DEBUG] [T:4c64] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:14:25.473] [DEBUG] [T:4c64] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:14:25.607] [DEBUG] [T:4c64] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:14:25.611] [DEBUG] [T:4c64] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:14:26.012] [DEBUG] [T:48f4] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:14:26.071] [DEBUG] [T:48f4] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:14:26.203] [DEBUG] [T:48f4] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:14:26.207] [DEBUG] [T:48f4] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:14:32.077] [DEBUG] [T:45ac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1368 ms. Total valid defects: 0
+[2026-07-21 16:14:36.405] [DEBUG] [T:45ac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1301 ms. Total valid defects: 0
+[2026-07-21 16:14:40.794] [DEBUG] [T:45ac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1302 ms. Total valid defects: 0
+[2026-07-21 16:14:45.206] [DEBUG] [T:45ac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1296 ms. Total valid defects: 0
+[2026-07-21 16:14:45.338] [WARN ] [T:48d0] [MainWindow.cpp:1132] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
+[2026-07-21 16:15:05.879] [DEBUG] [T:48d0] [MainWindow.cpp:433] - [MainWindow] Re-initializing cameras after error state.
+[2026-07-21 16:15:06.081] [DEBUG] [T:4e30] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:15:06.081] [DEBUG] [T:29d8] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:15:06.084] [DEBUG] [T:48d0] [MainWindow.cpp:426] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-21 16:15:06.919] [DEBUG] [T:48d0] [MainWindow.cpp:433] - [MainWindow] Re-initializing cameras after error state.
+[2026-07-21 16:15:07.440] [DEBUG] [T:4e30] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:15:08.287] [DEBUG] [T:4e30] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:15:08.451] [DEBUG] [T:4e30] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:15:08.455] [DEBUG] [T:4e30] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:15:08.841] [DEBUG] [T:29d8] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:15:08.944] [DEBUG] [T:29d8] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:15:09.078] [DEBUG] [T:29d8] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:15:09.082] [DEBUG] [T:29d8] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:15:09.165] [DEBUG] [T:4900] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:15:09.166] [DEBUG] [T:232c] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:15:09.169] [DEBUG] [T:48d0] [MainWindow.cpp:426] - [LightController] Sent 0x81 (Big Endian, 9 bytes) to Station 1. SignalCount = 4000 Hex: "81010100000fa0052b"
+[2026-07-21 16:15:10.563] [DEBUG] [T:4900] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:15:11.413] [DEBUG] [T:4900] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:15:11.548] [DEBUG] [T:4900] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:15:11.552] [DEBUG] [T:4900] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:15:11.953] [DEBUG] [T:232c] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:15:12.013] [DEBUG] [T:232c] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:15:12.145] [DEBUG] [T:232c] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:15:12.149] [DEBUG] [T:232c] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:15:32.460] [DEBUG] [T:4d90] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:15:32.659] [DEBUG] [T:46d4] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:15:32.670] [DEBUG] [T:4d90] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:15:32.789] [DEBUG] [T:4f6c] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:15:32.790] [WARN ] [T:4d90] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:15:32.790] [DEBUG] [T:4d90] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:15:32.945] [DEBUG] [T:4d90] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:15:34.024] [DEBUG] [T:46d4] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:15:34.855] [DEBUG] [T:46d4] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:15:34.991] [DEBUG] [T:46d4] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:15:34.995] [DEBUG] [T:46d4] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:15:35.393] [DEBUG] [T:4f6c] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:15:35.457] [DEBUG] [T:4f6c] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:15:35.589] [DEBUG] [T:4f6c] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:15:35.593] [DEBUG] [T:4f6c] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:15:45.854] [DEBUG] [T:48f8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1364 ms. Total valid defects: 0
+[2026-07-21 16:15:50.185] [DEBUG] [T:48f8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1293 ms. Total valid defects: 0
+[2026-07-21 16:15:54.583] [DEBUG] [T:48f8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1298 ms. Total valid defects: 0
+[2026-07-21 16:15:58.985] [DEBUG] [T:48f8] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1294 ms. Total valid defects: 0
+[2026-07-21 16:15:59.118] [WARN ] [T:4d90] [MainWindow.cpp:1132] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
+[2026-07-21 16:16:03.784] [WARN ] [T:4d90] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:17:21.231] [DEBUG] [T:1320] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:17:21.432] [DEBUG] [T:4ec8] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:17:21.443] [DEBUG] [T:1320] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:17:21.564] [DEBUG] [T:1974] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:17:21.565] [WARN ] [T:1320] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:17:21.565] [DEBUG] [T:1320] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:17:21.726] [DEBUG] [T:1320] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:17:22.804] [DEBUG] [T:4ec8] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:17:23.629] [DEBUG] [T:4ec8] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:17:23.764] [DEBUG] [T:4ec8] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:17:23.768] [DEBUG] [T:4ec8] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:17:24.155] [DEBUG] [T:1974] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:17:24.220] [DEBUG] [T:1974] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:17:24.350] [DEBUG] [T:1974] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:17:24.354] [DEBUG] [T:1974] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:17:34.621] [DEBUG] [T:e8c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1365 ms. Total valid defects: 0
+[2026-07-21 16:17:38.945] [DEBUG] [T:e8c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1293 ms. Total valid defects: 0
+[2026-07-21 16:17:43.353] [DEBUG] [T:e8c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1299 ms. Total valid defects: 0
+[2026-07-21 16:17:47.750] [DEBUG] [T:e8c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1294 ms. Total valid defects: 0
+[2026-07-21 16:17:47.884] [WARN ] [T:1320] [MainWindow.cpp:1132] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
+[2026-07-21 16:18:10.936] [WARN ] [T:1320] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:18:24.386] [DEBUG] [T:4a90] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:18:24.586] [DEBUG] [T:2098] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:18:24.597] [DEBUG] [T:4a90] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:18:24.715] [DEBUG] [T:44d0] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:18:24.716] [WARN ] [T:4a90] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:18:24.716] [DEBUG] [T:4a90] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:18:24.871] [DEBUG] [T:4a90] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:18:25.965] [DEBUG] [T:2098] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:18:26.811] [DEBUG] [T:2098] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:18:26.943] [DEBUG] [T:2098] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:18:26.947] [DEBUG] [T:2098] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:18:27.351] [DEBUG] [T:44d0] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:18:27.405] [DEBUG] [T:44d0] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:18:27.538] [DEBUG] [T:44d0] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:18:27.542] [DEBUG] [T:44d0] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:18:33.418] [DEBUG] [T:449c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1376 ms. Total valid defects: 0
+[2026-07-21 16:18:37.737] [DEBUG] [T:449c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1296 ms. Total valid defects: 0
+[2026-07-21 16:18:42.127] [DEBUG] [T:449c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1299 ms. Total valid defects: 0
+[2026-07-21 16:18:46.528] [DEBUG] [T:449c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1291 ms. Total valid defects: 0
+[2026-07-21 16:18:46.662] [WARN ] [T:4a90] [MainWindow.cpp:1132] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
+[2026-07-21 16:19:12.009] [WARN ] [T:4a90] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:19:32.142] [DEBUG] [T:4200] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:19:32.340] [DEBUG] [T:47a4] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:19:32.352] [DEBUG] [T:4200] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:19:32.470] [DEBUG] [T:4364] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:19:32.471] [WARN ] [T:4200] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:19:32.471] [DEBUG] [T:4200] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:19:32.627] [DEBUG] [T:4200] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:19:33.724] [DEBUG] [T:47a4] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:19:34.548] [DEBUG] [T:47a4] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:19:34.683] [DEBUG] [T:47a4] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:19:34.688] [DEBUG] [T:47a4] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:19:35.086] [DEBUG] [T:4364] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:19:35.145] [DEBUG] [T:4364] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:19:35.277] [DEBUG] [T:4364] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:19:35.282] [DEBUG] [T:4364] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:19:41.144] [DEBUG] [T:e48] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1367 ms. Total valid defects: 0
+[2026-07-21 16:19:45.473] [DEBUG] [T:e48] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1292 ms. Total valid defects: 0
+[2026-07-21 16:19:49.879] [DEBUG] [T:e48] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1303 ms. Total valid defects: 0
+[2026-07-21 16:19:54.284] [DEBUG] [T:e48] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1306 ms. Total valid defects: 0
+[2026-07-21 16:19:54.422] [WARN ] [T:4200] [MainWindow.cpp:1132] - [MainWindow] Error triggered: "相机触发同步异常或一侧信号掉线，已紧急停机！"
+[2026-07-21 16:19:58.306] [WARN ] [T:4200] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:23:20.652] [DEBUG] [T:1534] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:23:20.857] [DEBUG] [T:4624] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:23:20.870] [DEBUG] [T:1534] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:23:20.990] [DEBUG] [T:4798] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:23:20.991] [WARN ] [T:1534] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:23:20.991] [DEBUG] [T:1534] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:23:21.169] [DEBUG] [T:1534] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:23:22.237] [DEBUG] [T:4624] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:23:23.092] [DEBUG] [T:4624] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:23:23.231] [DEBUG] [T:4624] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:23:23.235] [DEBUG] [T:4624] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:23:23.632] [DEBUG] [T:4798] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:23:23.702] [DEBUG] [T:4798] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:23:23.835] [DEBUG] [T:4798] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:23:23.839] [DEBUG] [T:4798] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:23:36.302] [DEBUG] [T:2054] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2605 ms. Total valid defects: 0
+[2026-07-21 16:23:36.305] [DEBUG] [T:4d34] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2583 ms. Total valid defects: 0
+[2026-07-21 16:23:50.783] [WARN ] [T:1534] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:24:22.233] [DEBUG] [T:4738] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:24:22.431] [DEBUG] [T:4f64] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:24:22.444] [DEBUG] [T:4738] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:24:22.563] [DEBUG] [T:fe8] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:24:22.564] [WARN ] [T:4738] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:24:22.564] [DEBUG] [T:4738] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:24:22.724] [DEBUG] [T:4738] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:24:23.829] [DEBUG] [T:4f64] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:24:24.683] [DEBUG] [T:4f64] [CameraThread.cpp:129] - [CameraThread] Camera 0 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:24:24.820] [DEBUG] [T:4f64] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:24:24.825] [DEBUG] [T:4f64] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:24:25.210] [DEBUG] [T:fe8] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:24:25.262] [DEBUG] [T:fe8] [CameraThread.cpp:129] - [CameraThread] Camera 1 Load CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:24:25.384] [DEBUG] [T:fe8] [CameraThread.cpp:161] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:24:25.389] [DEBUG] [T:fe8] [CameraThread.cpp:176] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:24:38.959] [DEBUG] [T:4b88] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2617 ms. Total valid defects: 0
+[2026-07-21 16:24:38.962] [DEBUG] [T:25a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2565 ms. Total valid defects: 0
+[2026-07-21 16:24:45.643] [WARN ] [T:4738] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:38:52.761] [DEBUG] [T:401c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:38:52.961] [DEBUG] [T:42e0] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:38:52.972] [DEBUG] [T:401c] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:38:53.093] [DEBUG] [T:5168] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:38:53.094] [WARN ] [T:401c] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:38:53.094] [DEBUG] [T:401c] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:38:53.254] [DEBUG] [T:401c] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:38:54.354] [DEBUG] [T:42e0] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:38:55.194] [DEBUG] [T:42e0] [CameraThread.cpp:133] - [CameraThread] Camera 0 Load Board CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:38:55.735] [DEBUG] [T:5168] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:38:55.750] [DEBUG] [T:42e0] [CameraThread.cpp:138] - [CameraThread] Camera 0 Load Camera config result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:38:55.807] [DEBUG] [T:5168] [CameraThread.cpp:133] - [CameraThread] Camera 1 Load Board CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:38:55.830] [DEBUG] [T:5168] [CameraThread.cpp:138] - [CameraThread] Camera 1 Load Camera config result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:38:55.882] [DEBUG] [T:42e0] [CameraThread.cpp:171] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:38:55.887] [DEBUG] [T:42e0] [CameraThread.cpp:186] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:38:55.965] [DEBUG] [T:5168] [CameraThread.cpp:171] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:38:55.969] [DEBUG] [T:5168] [CameraThread.cpp:186] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:39:29.931] [DEBUG] [T:356c] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2594 ms. Total valid defects: 0
+[2026-07-21 16:39:29.934] [DEBUG] [T:4c68] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2556 ms. Total valid defects: 0
+[2026-07-21 16:39:39.606] [WARN ] [T:401c] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:40:30.701] [DEBUG] [T:5098] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:40:30.899] [DEBUG] [T:5058] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:40:30.914] [DEBUG] [T:5098] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:40:31.029] [DEBUG] [T:3634] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:40:31.029] [WARN ] [T:5098] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:40:31.030] [DEBUG] [T:5098] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:40:31.190] [DEBUG] [T:5098] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:40:32.267] [DEBUG] [T:5058] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:40:33.117] [DEBUG] [T:5058] [CameraThread.cpp:133] - [CameraThread] Camera 0 Load Board CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:40:33.652] [DEBUG] [T:3634] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:40:33.667] [DEBUG] [T:5058] [CameraThread.cpp:138] - [CameraThread] Camera 0 Load Camera config result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:40:33.718] [DEBUG] [T:3634] [CameraThread.cpp:133] - [CameraThread] Camera 1 Load Board CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:40:33.736] [DEBUG] [T:3634] [CameraThread.cpp:138] - [CameraThread] Camera 1 Load Camera config result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:40:33.808] [DEBUG] [T:5058] [CameraThread.cpp:171] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:40:33.812] [DEBUG] [T:5058] [CameraThread.cpp:186] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:40:33.869] [DEBUG] [T:3634] [CameraThread.cpp:171] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:40:33.873] [DEBUG] [T:3634] [CameraThread.cpp:186] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:41:29.861] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2560 ms. Total valid defects: 0
+[2026-07-21 16:41:29.864] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2604 ms. Total valid defects: 0
+[2026-07-21 16:41:40.016] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2532 ms. Total valid defects: 0
+[2026-07-21 16:41:40.020] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2533 ms. Total valid defects: 0
+[2026-07-21 16:41:50.435] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2520 ms. Total valid defects: 0
+[2026-07-21 16:41:50.438] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2526 ms. Total valid defects: 0
+[2026-07-21 16:42:26.171] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2489 ms. Total valid defects: 0
+[2026-07-21 16:42:26.173] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2534 ms. Total valid defects: 0
+[2026-07-21 16:42:57.539] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2522 ms. Total valid defects: 0
+[2026-07-21 16:42:57.542] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2532 ms. Total valid defects: 0
+[2026-07-21 16:43:27.640] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2539 ms. Total valid defects: 0
+[2026-07-21 16:43:27.643] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2528 ms. Total valid defects: 0
+[2026-07-21 16:43:38.649] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2508 ms. Total valid defects: 0
+[2026-07-21 16:43:38.652] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2541 ms. Total valid defects: 0
+[2026-07-21 16:43:46.382] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2530 ms. Total valid defects: 0
+[2026-07-21 16:43:46.384] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2552 ms. Total valid defects: 0
+[2026-07-21 16:43:51.675] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2511 ms. Total valid defects: 0
+[2026-07-21 16:43:51.678] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2535 ms. Total valid defects: 0
+[2026-07-21 16:43:57.150] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2530 ms. Total valid defects: 0
+[2026-07-21 16:43:57.156] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2549 ms. Total valid defects: 0
+[2026-07-21 16:44:02.475] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2535 ms. Total valid defects: 0
+[2026-07-21 16:44:02.478] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2516 ms. Total valid defects: 0
+[2026-07-21 16:44:07.887] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2495 ms. Total valid defects: 0
+[2026-07-21 16:44:07.893] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2537 ms. Total valid defects: 0
+[2026-07-21 16:44:12.851] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2525 ms. Total valid defects: 0
+[2026-07-21 16:44:12.853] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2548 ms. Total valid defects: 0
+[2026-07-21 16:44:17.807] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2542 ms. Total valid defects: 0
+[2026-07-21 16:44:17.810] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2509 ms. Total valid defects: 0
+[2026-07-21 16:44:23.077] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2545 ms. Total valid defects: 0
+[2026-07-21 16:44:23.080] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2548 ms. Total valid defects: 0
+[2026-07-21 16:44:27.876] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2524 ms. Total valid defects: 0
+[2026-07-21 16:44:27.879] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2537 ms. Total valid defects: 0
+[2026-07-21 16:44:33.383] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2535 ms. Total valid defects: 0
+[2026-07-21 16:44:33.386] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2540 ms. Total valid defects: 0
+[2026-07-21 16:44:39.132] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2543 ms. Total valid defects: 0
+[2026-07-21 16:44:39.141] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2552 ms. Total valid defects: 0
+[2026-07-21 16:44:44.597] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2538 ms. Total valid defects: 0
+[2026-07-21 16:44:44.599] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2545 ms. Total valid defects: 0
+[2026-07-21 16:44:49.530] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2540 ms. Total valid defects: 0
+[2026-07-21 16:44:49.533] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2543 ms. Total valid defects: 0
+[2026-07-21 16:44:54.473] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2524 ms. Total valid defects: 0
+[2026-07-21 16:44:54.476] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2534 ms. Total valid defects: 0
+[2026-07-21 16:44:59.491] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2527 ms. Total valid defects: 0
+[2026-07-21 16:44:59.496] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2534 ms. Total valid defects: 0
+[2026-07-21 16:45:04.788] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2522 ms. Total valid defects: 0
+[2026-07-21 16:45:04.791] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2536 ms. Total valid defects: 0
+[2026-07-21 16:45:09.713] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2542 ms. Total valid defects: 0
+[2026-07-21 16:45:09.716] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2543 ms. Total valid defects: 0
+[2026-07-21 16:45:14.549] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2543 ms. Total valid defects: 0
+[2026-07-21 16:45:14.555] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2549 ms. Total valid defects: 0
+[2026-07-21 16:45:19.441] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2543 ms. Total valid defects: 0
+[2026-07-21 16:45:19.447] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2549 ms. Total valid defects: 0
+[2026-07-21 16:45:24.224] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2541 ms. Total valid defects: 0
+[2026-07-21 16:45:24.228] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2541 ms. Total valid defects: 0
+[2026-07-21 16:45:29.621] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2548 ms. Total valid defects: 0
+[2026-07-21 16:45:29.624] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2551 ms. Total valid defects: 0
+[2026-07-21 16:45:45.093] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2536 ms. Total valid defects: 0
+[2026-07-21 16:45:45.096] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2539 ms. Total valid defects: 0
+[2026-07-21 16:45:54.219] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2544 ms. Total valid defects: 0
+[2026-07-21 16:45:54.223] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2523 ms. Total valid defects: 0
+[2026-07-21 16:46:03.232] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2528 ms. Total valid defects: 0
+[2026-07-21 16:46:03.235] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2528 ms. Total valid defects: 0
+[2026-07-21 16:46:46.016] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2520 ms. Total valid defects: 0
+[2026-07-21 16:46:46.019] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2529 ms. Total valid defects: 0
+[2026-07-21 16:46:53.971] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2517 ms. Total valid defects: 0
+[2026-07-21 16:46:53.974] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2546 ms. Total valid defects: 0
+[2026-07-21 16:46:59.017] [DEBUG] [T:39c0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2496 ms. Total valid defects: 0
+[2026-07-21 16:46:59.020] [DEBUG] [T:4508] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2541 ms. Total valid defects: 0
+[2026-07-21 16:47:01.364] [WARN ] [T:5098] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:47:44.075] [DEBUG] [T:27f0] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:47:44.275] [DEBUG] [T:4c1c] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:47:44.288] [DEBUG] [T:27f0] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:47:44.405] [DEBUG] [T:3a70] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:47:44.405] [WARN ] [T:27f0] [MainWindow.cpp:391] - [LightController] Not connected. Cannot set line count.
+[2026-07-21 16:47:44.406] [DEBUG] [T:27f0] [MainWindow.cpp:375] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:47:44.566] [DEBUG] [T:27f0] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:47:45.636] [DEBUG] [T:4c1c] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:47:46.464] [DEBUG] [T:4c1c] [CameraThread.cpp:133] - [CameraThread] Camera 0 Load Board CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:47:47.009] [DEBUG] [T:3a70] [CameraThread.cpp:103] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:47:47.024] [DEBUG] [T:4c1c] [CameraThread.cpp:138] - [CameraThread] Camera 0 Load Camera config result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:47:47.082] [DEBUG] [T:3a70] [CameraThread.cpp:133] - [CameraThread] Camera 1 Load Board CCF result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:47:47.103] [DEBUG] [T:3a70] [CameraThread.cpp:138] - [CameraThread] Camera 1 Load Camera config result: 0 Path: "D:/config/guding.ccf"
+[2026-07-21 16:47:47.155] [DEBUG] [T:4c1c] [CameraThread.cpp:171] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:47:47.159] [DEBUG] [T:4c1c] [CameraThread.cpp:186] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:47:47.235] [DEBUG] [T:3a70] [CameraThread.cpp:171] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:47:47.239] [DEBUG] [T:3a70] [CameraThread.cpp:186] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:47:58.056] [DEBUG] [T:52f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2611 ms. Total valid defects: 0
+[2026-07-21 16:47:58.059] [DEBUG] [T:42e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2614 ms. Total valid defects: 0
+[2026-07-21 16:48:06.732] [DEBUG] [T:52f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2535 ms. Total valid defects: 0
+[2026-07-21 16:48:06.737] [DEBUG] [T:42e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2508 ms. Total valid defects: 0
+[2026-07-21 16:48:15.693] [DEBUG] [T:52f0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2547 ms. Total valid defects: 0
+[2026-07-21 16:48:15.696] [DEBUG] [T:42e0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2536 ms. Total valid defects: 0
+[2026-07-21 16:48:30.524] [WARN ] [T:27f0] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...

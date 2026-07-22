@@ -9,7 +9,7 @@
 struct CameraConfig {
     QString serialNumberLeft = "";
     QString serialNumberRight = "";
-    QString ccfFilePath = "";
+    QString ccfPath = "";
     double gain = 1.0;
     int reconnectRetries = 3;
     int overlapPixels = 100; // 相机重叠区像素

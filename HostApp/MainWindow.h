@@ -47,14 +47,12 @@ private slots:
     void onCameraError(QString msg);
     void onRawImageCaptured(std::shared_ptr<ImageFrame> frame);
     void onImageProcessed(std::shared_ptr<ImageFrame> frame);
+    void onCameraInitCompleted(int cameraId, bool success);
 
     // New slots for interaction
     void onMenuConfigClicked();
     void onMenuDetectClicked();
     void onMenuLogClicked();
-
-    void onCameraInitialized(int cameraId, bool success);
-    void reinitCameras();
     void onTimeTabClicked(int id);
     
     // Light Controller
@@ -76,12 +74,10 @@ private:
     QWidget* createLeftPanel();
     QWidget* createRightPanel();
 
-    QList<CameraThread*> m_cameraThreads;
-    int m_camerasReadyCount = 0;
-
+    std::vector<CameraThread*> m_cameraThreads;
     std::vector<InferThread*> m_inferThreads;
 
-    ImageWidget *m_imageWidgetLeft = nullptr;
+    ImageWidget* m_imageWidgetLeft;
     ImageWidget* m_imageWidgetRight;
     ImageWidget* m_imageWidgetCenter;
     PieChartWidget* m_pieChart;
@@ -121,6 +117,8 @@ private:
     
     // Store hidden defects
     QStringList m_hiddenDefects;
+    
+    QMap<int, bool> m_cameraReadyMap;
 };
 
 #endif // MAINWINDOW_H

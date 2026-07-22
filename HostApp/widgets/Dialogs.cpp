@@ -6,11 +6,11 @@
 #include <QFormLayout>
 #include <QInputDialog>
 #include <QMessageBox>
-#include <QFileDialog>
 #include <QPushButton>
 #include <QListWidget>
 #include <QTableWidget>
 #include <QHeaderView>
+#include <QFileDialog>
 #include "modules/RecipeManager.h"
 #include "modules/RecipeManager.h"
 #include "modules/ConfigManager.h"
@@ -31,23 +31,28 @@ ConfigDialog::ConfigDialog(QWidget *parent) : QDialog(parent) {
     m_editSerialLeft->setPlaceholderText("左相机 SN");
     m_editSerialRight = new QLineEdit(this);
     m_editSerialRight->setPlaceholderText("右相机 SN");
-    m_editCcfPath = new QLineEdit(this);
-    m_editCcfPath->setPlaceholderText("相机 CCF 配置文件路径");
-    m_btnBrowseCcf = new QPushButton("浏览...", this);
-    QHBoxLayout *ccfLayout = new QHBoxLayout();
-    ccfLayout->addWidget(m_editCcfPath);
-    ccfLayout->addWidget(m_btnBrowseCcf);
-    connect(m_btnBrowseCcf, &QPushButton::clicked, this, &ConfigDialog::onBrowseCcfClicked);
-    
     m_spinGain = new QDoubleSpinBox(this);
     m_spinGain->setRange(0.0, 20.0);
     m_spinReconnect = new QSpinBox(this);
     m_spinReconnect->setRange(0, 10);
     m_spinOverlapPixels = new QSpinBox(this);
     m_spinOverlapPixels->setRange(0, 16384);
+    
+    m_editCcfPath = new QLineEdit(this);
+    m_editCcfPath->setPlaceholderText("相机配置文件 (.ccf)");
+    m_btnSelectCcf = new QPushButton("...", this);
+    m_btnSelectCcf->setFixedWidth(40);
+    QHBoxLayout *ccfLayout = new QHBoxLayout();
+    ccfLayout->addWidget(m_editCcfPath);
+    ccfLayout->addWidget(m_btnSelectCcf);
+    connect(m_btnSelectCcf, &QPushButton::clicked, this, [this]() {
+        QString path = QFileDialog::getOpenFileName(this, "选择CCF文件", "", "CCF Files (*.ccf);;All Files (*.*)");
+        if (!path.isEmpty()) m_editCcfPath->setText(path);
+    });
+
     formCam->addRow("左相机 SN:", m_editSerialLeft);
     formCam->addRow("右相机 SN:", m_editSerialRight);
-    formCam->addRow("相机 CCF 文件:", ccfLayout);
+    formCam->addRow("相机配置文件(CCF):", ccfLayout);
     formCam->addRow("相机重叠区(像素):", m_spinOverlapPixels);
     formCam->addRow("增益:", m_spinGain);
     formCam->addRow("掉线重试次数:", m_spinReconnect);
@@ -137,7 +142,7 @@ void ConfigDialog::loadConfig() {
 
     m_editSerialLeft->setText(c.serialNumberLeft);
     m_editSerialRight->setText(c.serialNumberRight);
-    m_editCcfPath->setText(c.ccfFilePath);
+    m_editCcfPath->setText(c.ccfPath);
     m_spinGain->setValue(c.gain);
     m_spinReconnect->setValue(c.reconnectRetries);
     m_spinOverlapPixels->setValue(c.overlapPixels);
@@ -169,7 +174,7 @@ void ConfigDialog::onSaveConfig() {
 
     c.serialNumberLeft = m_editSerialLeft->text().trimmed();
     c.serialNumberRight = m_editSerialRight->text().trimmed();
-    c.ccfFilePath = m_editCcfPath->text().trimmed();
+    c.ccfPath = m_editCcfPath->text().trimmed();
     c.gain = m_spinGain->value();
     c.reconnectRetries = m_spinReconnect->value();
     c.overlapPixels = m_spinOverlapPixels->value();
@@ -196,13 +201,6 @@ void ConfigDialog::onSaveConfig() {
     
     QMessageBox::information(this, "成功", "系统配置保存成功！");
     accept();
-}
-
-void ConfigDialog::onBrowseCcfClicked() {
-    QString path = QFileDialog::getOpenFileName(this, "选择相机 CCF 配置文件", "", "CCF Files (*.ccf);;All Files (*.*)");
-    if (!path.isEmpty()) {
-        m_editCcfPath->setText(path);
-    }
 }
 
 DetectDialog::DetectDialog(QWidget *parent) : QDialog(parent) {
@@ -431,7 +429,7 @@ void DetectDialog::onSetRoiLeftClicked() {
     Recipe r = RecipeManager::instance().getRecipe(recipeName);
     
     RoiSettingDialog dlg(0, this);
-    dlg.setRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft);
+    dlg.setRoi(r.offsetXLeft, r.offsetYLeft, r.roiWidthLeft, r.roiHeightLeft);
     
     QWidget* p = parentWidget();
     while (p && !p->inherits("MainWindow")) {
@@ -452,7 +450,7 @@ void DetectDialog::onSetRoiLeftClicked() {
         r.offsetXLeft = dlg.roiX();
         r.offsetYLeft = dlg.roiY();
         r.roiWidthLeft = dlg.roiWidth();
-
+        r.roiHeightLeft = dlg.roiHeight();
         RecipeManager::instance().addOrUpdateRecipe(r);
         RecipeManager::instance().save("recipes.json");
         emit recipeChanged(recipeName);
@@ -470,7 +468,7 @@ void DetectDialog::onSetRoiRightClicked() {
     Recipe r = RecipeManager::instance().getRecipe(recipeName);
     
     RoiSettingDialog dlg(1, this);
-    dlg.setRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight);
+    dlg.setRoi(r.offsetXRight, r.offsetYRight, r.roiWidthRight, r.roiHeightRight);
     
     QWidget* p = parentWidget();
     while (p && !p->inherits("MainWindow")) {
@@ -491,7 +489,7 @@ void DetectDialog::onSetRoiRightClicked() {
         r.offsetXRight = dlg.roiX();
         r.offsetYRight = dlg.roiY();
         r.roiWidthRight = dlg.roiWidth();
-
+        r.roiHeightRight = dlg.roiHeight();
         RecipeManager::instance().addOrUpdateRecipe(r);
         RecipeManager::instance().save("recipes.json");
         emit recipeChanged(recipeName);
