@@ -1,4 +1,4 @@
-#ifndef COMMON_H
+﻿#ifndef COMMON_H
 #define COMMON_H
 
 #include <QString>
@@ -30,6 +30,7 @@ struct DefectResult {
 struct ImageFrame {
     int cameraId;
     int frameIndex;
+    qint64 captureTimestamp; // 用于绝对时间戳对齐
     bool isForRoi = false; // Flag to indicate if this frame is specifically for ROI setup and should bypass inference
     
     // 我们将使用 cv::Mat 指向 Pinned Memory，避免在高频操作中使用 QImage

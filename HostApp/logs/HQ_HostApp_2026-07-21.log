@@ -357,3 +357,542 @@
 [2026-07-21 11:20:14.227] [DEBUG] [T:1dac] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1113 ms. Total valid defects: 0
 [2026-07-21 11:20:14.230] [DEBUG] [T:3678] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1099 ms. Total valid defects: 0
 [2026-07-21 11:20:26.787] [WARN ] [T:424c] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...
+[2026-07-21 16:54:21.303] [DEBUG] [T:5108] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:54:21.728] [DEBUG] [T:5108] [InferThread.cpp:19] - [InferThread] Successfully loaded InferLib.dll and created engine.
+[2026-07-21 16:54:21.850] [DEBUG] [T:53a4] [CameraThread.cpp:50] - [CameraThread] Init Camera 1
+[2026-07-21 16:54:21.851] [DEBUG] [T:5048] [CameraThread.cpp:50] - [CameraThread] Init Camera 0
+[2026-07-21 16:54:21.851] [DEBUG] [T:5108] [MainWindow.cpp:348] - [LightController] Connecting to "192.168.1.208" : 6600
+[2026-07-21 16:54:22.049] [DEBUG] [T:5108] [MainWindow.cpp:57] - [LightController] Connected successfully!
+[2026-07-21 16:54:23.238] [DEBUG] [T:53a4] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD006  Class: GigEVisionBoard
+[2026-07-21 16:54:24.629] [DEBUG] [T:5048] [CameraThread.cpp:101] - [CameraThread] Found Camera: PA16KXGV-75KM  Serial: LS73BAD009  Class: GigEVisionBoard
+[2026-07-21 16:54:35.484] [DEBUG] [T:5048] [CameraThread.cpp:127] - [CameraThread] Loaded CCF file: "D:/config/budinghanggao.ccf" Result: 0
+[2026-07-21 16:54:35.753] [DEBUG] [T:5048] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:54:35.760] [DEBUG] [T:5048] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:54:46.132] [DEBUG] [T:53a4] [CameraThread.cpp:127] - [CameraThread] Loaded CCF file: "D:/config/budinghanggao.ccf" Result: 0
+[2026-07-21 16:54:46.396] [DEBUG] [T:53a4] [CameraThread.cpp:160] - [CameraThread] IKapSetInfo Init Setup: 1 1 1 1 1
+[2026-07-21 16:54:46.401] [DEBUG] [T:53a4] [CameraThread.cpp:175] - [CameraThread] IKapStartGrab res: 1 AcquisitionStart res: 0
+[2026-07-21 16:54:52.450] [DEBUG] [T:5108] [CameraThread.cpp:327] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 16:54:52.456] [DEBUG] [T:5108] [CameraThread.cpp:330] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 16:54:52.456] [DEBUG] [T:5108] [CameraThread.cpp:332] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 16:54:53.129] [DEBUG] [T:5108] [CameraThread.cpp:327] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 16:54:53.138] [DEBUG] [T:5108] [CameraThread.cpp:330] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 16:54:53.138] [DEBUG] [T:5108] [CameraThread.cpp:332] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 16:54:58.017] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4473 DF(Row0): 0
+[2026-07-21 16:54:58.021] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.999 DF(Row0): 0
+[2026-07-21 16:54:58.523] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 489 ms. Total valid defects: 0
+[2026-07-21 16:54:58.527] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 491 ms. Total valid defects: 0
+[2026-07-21 16:55:08.289] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2048 ms. Total valid defects: 0
+[2026-07-21 16:55:08.291] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2051 ms. Total valid defects: 0
+[2026-07-21 16:55:16.299] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.019 DF(Row0): 0.00292969
+[2026-07-21 16:55:16.301] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4463 DF(Row0): 0.00390625
+[2026-07-21 16:55:19.434] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3008 ms. Total valid defects: 0
+[2026-07-21 16:55:19.437] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3010 ms. Total valid defects: 0
+[2026-07-21 16:55:24.041] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.2764 DF(Row0): 0.0117188
+[2026-07-21 16:55:24.042] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.975 DF(Row0): 0.000976563
+[2026-07-21 16:55:25.865] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1748 ms. Total valid defects: 0
+[2026-07-21 16:55:25.868] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1724 ms. Total valid defects: 0
+[2026-07-21 16:55:37.923] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.984 DF(Row0): 0
+[2026-07-21 16:55:37.926] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4199 DF(Row0): 0.000976563
+[2026-07-21 16:55:39.588] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1588 ms. Total valid defects: 0
+[2026-07-21 16:55:39.591] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1564 ms. Total valid defects: 0
+[2026-07-21 16:55:45.586] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.98 DF(Row0): 0.00585938
+[2026-07-21 16:55:45.587] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.3398 DF(Row0): 0.00976563
+[2026-07-21 16:55:48.390] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2686 ms. Total valid defects: 0
+[2026-07-21 16:55:48.393] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2689 ms. Total valid defects: 0
+[2026-07-21 16:55:58.004] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.97 DF(Row0): 0
+[2026-07-21 16:55:58.008] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.334 DF(Row0): 0.00488281
+[2026-07-21 16:56:00.143] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2043 ms. Total valid defects: 0
+[2026-07-21 16:56:00.146] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2059 ms. Total valid defects: 0
+[2026-07-21 16:56:22.403] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.014 DF(Row0): 0
+[2026-07-21 16:56:22.405] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.5508 DF(Row0): 0
+[2026-07-21 16:56:24.064] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1587 ms. Total valid defects: 0
+[2026-07-21 16:56:24.067] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1590 ms. Total valid defects: 0
+[2026-07-21 16:56:46.427] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2654 ms. Total valid defects: 0
+[2026-07-21 16:56:46.430] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2701 ms. Total valid defects: 0
+[2026-07-21 16:56:54.286] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.3828 DF(Row0): 0
+[2026-07-21 16:56:54.288] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.007 DF(Row0): 0.000976563
+[2026-07-21 16:56:56.935] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2529 ms. Total valid defects: 0
+[2026-07-21 16:56:56.938] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2525 ms. Total valid defects: 0
+[2026-07-21 16:57:06.297] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2372 ms. Total valid defects: 0
+[2026-07-21 16:57:06.300] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2385 ms. Total valid defects: 0
+[2026-07-21 16:57:12.633] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4424 DF(Row0): 0.0166016
+[2026-07-21 16:57:12.757] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.007 DF(Row0): 0
+[2026-07-21 16:57:16.104] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3189 ms. Total valid defects: 0
+[2026-07-21 16:57:16.107] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3192 ms. Total valid defects: 0
+[2026-07-21 16:57:22.839] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.3701 DF(Row0): 0.00488281
+[2026-07-21 16:57:22.840] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.029 DF(Row0): 0
+[2026-07-21 16:57:25.995] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3021 ms. Total valid defects: 0
+[2026-07-21 16:57:25.998] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3006 ms. Total valid defects: 0
+[2026-07-21 16:57:29.473] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.026 DF(Row0): 0
+[2026-07-21 16:57:29.530] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4932 DF(Row0): 0.00488281
+[2026-07-21 16:57:30.983] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1405 ms. Total valid defects: 0
+[2026-07-21 16:57:31.001] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1373 ms. Total valid defects: 0
+[2026-07-21 16:57:34.457] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.981 DF(Row0): 0
+[2026-07-21 16:57:34.468] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.3223 DF(Row0): 0.00976563
+[2026-07-21 16:57:34.922] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 440 ms. Total valid defects: 0
+[2026-07-21 16:57:34.958] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 436 ms. Total valid defects: 0
+[2026-07-21 16:57:38.435] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 947 ms. Total valid defects: 0
+[2026-07-21 16:57:38.438] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 950 ms. Total valid defects: 0
+[2026-07-21 16:57:43.852] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.3984 DF(Row0): 0.0292969
+[2026-07-21 16:57:43.854] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.975 DF(Row0): 0.00292969
+[2026-07-21 16:57:46.816] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2837 ms. Total valid defects: 0
+[2026-07-21 16:57:46.819] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2846 ms. Total valid defects: 0
+[2026-07-21 16:57:48.543] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.3438 DF(Row0): 0.0273438
+[2026-07-21 16:57:48.544] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.005 DF(Row0): 0.000976563
+[2026-07-21 16:57:50.510] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1893 ms. Total valid defects: 0
+[2026-07-21 16:57:50.513] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1895 ms. Total valid defects: 0
+[2026-07-21 16:57:57.336] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.99 DF(Row0): 0
+[2026-07-21 16:57:57.339] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4717 DF(Row0): 0.015625
+[2026-07-21 16:57:59.162] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1737 ms. Total valid defects: 0
+[2026-07-21 16:57:59.165] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1740 ms. Total valid defects: 0
+[2026-07-21 16:58:03.792] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.2861 DF(Row0): 0.00683594
+[2026-07-21 16:58:03.792] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.005 DF(Row0): 0
+[2026-07-21 16:58:05.432] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1546 ms. Total valid defects: 0
+[2026-07-21 16:58:05.435] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1582 ms. Total valid defects: 0
+[2026-07-21 16:58:09.642] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4902 DF(Row0): 0.0166016
+[2026-07-21 16:58:09.643] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.99 DF(Row0): 0
+[2026-07-21 16:58:11.638] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1919 ms. Total valid defects: 0
+[2026-07-21 16:58:11.641] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1925 ms. Total valid defects: 0
+[2026-07-21 16:58:21.034] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3309 ms. Total valid defects: 0
+[2026-07-21 16:58:21.037] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 3331 ms. Total valid defects: 0
+[2026-07-21 16:58:25.213] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.018 DF(Row0): 0
+[2026-07-21 16:58:25.471] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.415 DF(Row0): 0.0292969
+[2026-07-21 16:58:28.302] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2717 ms. Total valid defects: 0
+[2026-07-21 16:58:28.436] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 2656 ms. Total valid defects: 0
+[2026-07-21 16:58:31.127] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4512 DF(Row0): 0.0341797
+[2026-07-21 16:58:31.231] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.972 DF(Row0): 0
+[2026-07-21 16:58:32.914] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1617 ms. Total valid defects: 0
+[2026-07-21 16:58:33.041] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1571 ms. Total valid defects: 0
+[2026-07-21 16:58:36.479] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.051 DF(Row0): 0
+[2026-07-21 16:58:36.480] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4756 DF(Row0): 0.0214844
+[2026-07-21 16:58:37.805] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1272 ms. Total valid defects: 0
+[2026-07-21 16:58:37.808] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1274 ms. Total valid defects: 0
+[2026-07-21 16:58:48.598] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4258 DF(Row0): 0.00488281
+[2026-07-21 16:58:48.602] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.004 DF(Row0): 0.00585938
+[2026-07-21 16:58:52.910] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4109 ms. Total valid defects: 0
+[2026-07-21 16:58:52.914] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4113 ms. Total valid defects: 0
+[2026-07-21 16:59:06.165] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.012 DF(Row0): 0
+[2026-07-21 16:59:06.168] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.5352 DF(Row0): 0.00976563
+[2026-07-21 16:59:10.479] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4091 ms. Total valid defects: 0
+[2026-07-21 16:59:10.482] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4115 ms. Total valid defects: 0
+[2026-07-21 16:59:32.546] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.006 DF(Row0): 0.0322266
+[2026-07-21 16:59:32.548] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.5498 DF(Row0): 0.000976563
+[2026-07-21 16:59:36.854] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4116 ms. Total valid defects: 0
+[2026-07-21 16:59:36.857] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4069 ms. Total valid defects: 0
+[2026-07-21 16:59:51.314] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 244.026 DF(Row0): 0
+[2026-07-21 16:59:51.317] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.3047 DF(Row0): 0
+[2026-07-21 16:59:55.609] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4118 ms. Total valid defects: 0
+[2026-07-21 16:59:55.612] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4058 ms. Total valid defects: 0
+[2026-07-21 16:59:59.971] [DEBUG] [T:2ffc] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1745 ms. Total valid defects: 0
+[2026-07-21 16:59:59.974] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1751 ms. Total valid defects: 0
+[2026-07-21 17:02:53.497] [DEBUG] [T:5108] [CameraThread.cpp:327] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 17:02:53.504] [DEBUG] [T:5108] [CameraThread.cpp:330] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 17:02:53.504] [DEBUG] [T:5108] [CameraThread.cpp:332] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 17:02:54.079] [DEBUG] [T:5108] [CameraThread.cpp:327] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 17:02:54.085] [DEBUG] [T:5108] [CameraThread.cpp:330] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 17:02:54.085] [DEBUG] [T:5108] [CameraThread.cpp:332] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 17:02:57.520] [DEBUG] [T:5108] [CameraThread.cpp:327] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 17:02:57.526] [DEBUG] [T:5108] [CameraThread.cpp:330] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 17:02:57.526] [DEBUG] [T:5108] [CameraThread.cpp:332] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 17:02:58.217] [DEBUG] [T:5108] [CameraThread.cpp:327] - [CameraThread] IKapSetInfo ROI Update res: 1 1 StartGrab: 1
+[2026-07-21 17:02:58.223] [DEBUG] [T:5108] [CameraThread.cpp:330] - [CameraThread] AcquisitionStart ROI Update res: 0
+[2026-07-21 17:02:58.223] [DEBUG] [T:5108] [CameraThread.cpp:332] - [CameraThread] ROI updated to 0 0 16384 Status: 0 9502734 0 0 0 9502734
+[2026-07-21 17:03:01.917] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.4873 DF(Row0): 0.00390625
+[2026-07-21 17:03:01.922] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.998 DF(Row0): 0.00292969
+[2026-07-21 17:03:02.293] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 261 ms. Total valid defects: 0
+[2026-07-21 17:03:07.065] [DEBUG] [T:1d1c] [CameraThread.cpp:255] - [CameraThread] Camera 1 Light field swapped! Auto-correcting. BL(Row1): 73.5254 DF(Row0): 0.0839844
+[2026-07-21 17:03:07.066] [DEBUG] [T:5700] [CameraThread.cpp:255] - [CameraThread] Camera 0 Light field swapped! Auto-correcting. BL(Row1): 243.979 DF(Row0): 0.0136719
+[2026-07-21 17:03:08.883] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 1298 ms. Total valid defects: 0
+[2026-07-21 17:03:22.244] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 789 ms. Total valid defects: 0
+[2026-07-21 17:03:37.675] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 37% | Area: 1.41 mm2 | Diag: 2.63 mm
+[2026-07-21 17:03:37.676] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 38% | Area: 2.43 mm2 | Diag: 2.48 mm
+[2026-07-21 17:03:37.676] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 33% | Area: 1.71 mm2 | Diag: 2.17 mm
+[2026-07-21 17:03:37.676] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 26% | Area: 1.97 mm2 | Diag: 2.30 mm
+[2026-07-21 17:03:37.677] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 35% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.677] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 37% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.677] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 41% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.677] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 39% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.677] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 26% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.678] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 26% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.678] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 55% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.678] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 27% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.678] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 42% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.678] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 41% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.679] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 32% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.679] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 43% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.679] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 43% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.679] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 37% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.679] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 38% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.680] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 26% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.680] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.680] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 31% | Area: 0.87 mm2 | Diag: 1.32 mm
+[2026-07-21 17:03:37.680] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 26% | Area: 1.68 mm2 | Diag: 2.38 mm
+[2026-07-21 17:03:37.680] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 26% | Area: 1.76 mm2 | Diag: 2.39 mm
+[2026-07-21 17:03:37.681] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 25% | Area: 0.91 mm2 | Diag: 1.35 mm
+[2026-07-21 17:03:37.681] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 28% | Area: 2.38 mm2 | Diag: 2.39 mm
+[2026-07-21 17:03:37.681] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 26% | Area: 1.66 mm2 | Diag: 2.19 mm
+[2026-07-21 17:03:37.681] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 45% | Area: 1.67 mm2 | Diag: 2.13 mm
+[2026-07-21 17:03:37.682] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 36% | Area: 2.29 mm2 | Diag: 2.32 mm
+[2026-07-21 17:03:37.682] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 42% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.682] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 41% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.682] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 26% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.683] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 46% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.683] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 29% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.683] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 41% | Area: 1.71 mm2 | Diag: 2.17 mm
+[2026-07-21 17:03:37.683] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 25% | Area: 1.85 mm2 | Diag: 2.25 mm
+[2026-07-21 17:03:37.683] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 36% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.683] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 49% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.684] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 27% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.684] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 56% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.684] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 30% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.684] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.684] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 47% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.685] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 28% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.686] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 36% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.686] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 38% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.686] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 41% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.686] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.687] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 35% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.687] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 36% | Area: 2.25 mm2 | Diag: 2.29 mm
+[2026-07-21 17:03:37.687] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 37% | Area: 2.17 mm2 | Diag: 2.27 mm
+[2026-07-21 17:03:37.687] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 27% | Area: 1.64 mm2 | Diag: 2.25 mm
+[2026-07-21 17:03:37.687] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 36% | Area: 2.46 mm2 | Diag: 2.41 mm
+[2026-07-21 17:03:37.687] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 29% | Area: 1.85 mm2 | Diag: 2.41 mm
+[2026-07-21 17:03:37.688] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 41% | Area: 2.43 mm2 | Diag: 2.42 mm
+[2026-07-21 17:03:37.688] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 29% | Area: 0.99 mm2 | Diag: 2.01 mm
+[2026-07-21 17:03:37.688] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 36% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.688] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 35% | Area: 1.78 mm2 | Diag: 2.03 mm
+[2026-07-21 17:03:37.688] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 32% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.689] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 39% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.689] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 31% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.689] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 27% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.689] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 54% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.689] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 32% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.690] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 44% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.690] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 30% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.690] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 48% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.690] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 28% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.690] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 40% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.691] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 33% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.691] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 33% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.691] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 31% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.691] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 41% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.691] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 28% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.691] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 26% | Area: 1.25 mm2 | Diag: 2.22 mm
+[2026-07-21 17:03:37.692] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 50% | Area: 1.39 mm2 | Diag: 2.31 mm
+[2026-07-21 17:03:37.692] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 50% | Area: 1.36 mm2 | Diag: 2.27 mm
+[2026-07-21 17:03:37.692] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 41% | Area: 2.50 mm2 | Diag: 2.39 mm
+[2026-07-21 17:03:37.692] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 30% | Area: 1.43 mm2 | Diag: 1.99 mm
+[2026-07-21 17:03:37.692] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 43% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.693] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.693] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 43% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.693] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 37% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.693] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 41% | Area: 1.11 mm2 | Diag: 2.24 mm
+[2026-07-21 17:03:37.693] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 44% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.694] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 42% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.694] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 40% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.694] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 32% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.694] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 45% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.694] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 26% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.695] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 51% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.695] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 35% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.695] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 53% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.695] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 32% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.695] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 44% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.696] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 32% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.696] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 38% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.696] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 38% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.696] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 40% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.696] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.697] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 55% | Area: 1.40 mm2 | Diag: 2.11 mm
+[2026-07-21 17:03:37.697] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 30% | Area: 1.97 mm2 | Diag: 2.46 mm
+[2026-07-21 17:03:37.697] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 26% | Area: 1.58 mm2 | Diag: 2.17 mm
+[2026-07-21 17:03:37.697] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 48% | Area: 1.64 mm2 | Diag: 2.25 mm
+[2026-07-21 17:03:37.697] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 27% | Area: 1.37 mm2 | Diag: 2.17 mm
+[2026-07-21 17:03:37.697] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 36% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.698] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 37% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.698] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 41% | Area: 2.26 mm2 | Diag: 2.39 mm
+[2026-07-21 17:03:37.698] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 35% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.698] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 34% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.699] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 48% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.699] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 29% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.699] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.699] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 53% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.699] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 31% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.699] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 43% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.700] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 26% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.701] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 46% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.701] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 36% | Area: 2.29 mm2 | Diag: 2.32 mm
+[2026-07-21 17:03:37.701] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 36% | Area: 2.29 mm2 | Diag: 2.32 mm
+[2026-07-21 17:03:37.701] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 38% | Area: 1.46 mm2 | Diag: 2.03 mm
+[2026-07-21 17:03:37.702] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 32% | Area: 1.30 mm2 | Diag: 2.44 mm
+[2026-07-21 17:03:37.702] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 26% | Area: 1.29 mm2 | Diag: 2.06 mm
+[2026-07-21 17:03:37.702] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 54% | Area: 1.27 mm2 | Diag: 2.12 mm
+[2026-07-21 17:03:37.702] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 32% | Area: 0.93 mm2 | Diag: 2.04 mm
+[2026-07-21 17:03:37.702] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 44% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.703] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 30% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.703] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 47% | Area: 1.83 mm2 | Diag: 2.16 mm
+[2026-07-21 17:03:37.703] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 31% | Area: 1.67 mm2 | Diag: 2.28 mm
+[2026-07-21 17:03:37.703] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 40% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.704] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 34% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.704] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 33% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.704] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 31% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.704] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 41% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.704] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 26% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.705] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.705] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 49% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.705] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 39% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.705] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 34% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.705] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 28% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.706] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 48% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.706] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 48% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.706] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 36% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.706] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 27% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.706] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.706] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 57% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.707] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 49% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.707] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 32% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.707] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 29% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.707] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 33% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.707] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 32% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.707] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 41% | Area: 2.38 mm2 | Diag: 2.39 mm
+[2026-07-21 17:03:37.708] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 36% | Area: 1.13 mm2 | Diag: 2.14 mm
+[2026-07-21 17:03:37.708] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 41% | Area: 2.43 mm2 | Diag: 2.42 mm
+[2026-07-21 17:03:37.708] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 28% | Area: 0.99 mm2 | Diag: 2.01 mm
+[2026-07-21 17:03:37.708] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 32% | Area: 1.60 mm2 | Diag: 2.12 mm
+[2026-07-21 17:03:37.708] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 45% | Area: 1.53 mm2 | Diag: 2.29 mm
+[2026-07-21 17:03:37.709] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 29% | Area: 1.59 mm2 | Diag: 2.27 mm
+[2026-07-21 17:03:37.709] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 51% | Area: 1.40 mm2 | Diag: 2.21 mm
+[2026-07-21 17:03:37.709] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 35% | Area: 1.81 mm2 | Diag: 2.27 mm
+[2026-07-21 17:03:37.709] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 54% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.709] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 31% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.709] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 46% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.710] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 29% | Area: 1.72 mm2 | Diag: 2.26 mm
+[2026-07-21 17:03:37.710] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 38% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.710] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 37% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.710] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 41% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.710] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 27% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.711] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 33% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.711] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 36% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.711] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 41% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.711] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.711] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 55% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.712] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 29% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.712] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 41% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.712] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 31% | Area: 1.40 mm2 | Diag: 1.96 mm
+[2026-07-21 17:03:37.712] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 30% | Area: 1.46 mm2 | Diag: 2.03 mm
+[2026-07-21 17:03:37.712] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 31% | Area: 2.12 mm2 | Diag: 2.19 mm
+[2026-07-21 17:03:37.712] [DEBUG] [T:40a0] [InferThread.cpp:243] - [Defect DETECTED] 背光-划伤 | Conf: 29% | Area: 2.42 mm2 | Diag: 2.38 mm
+[2026-07-21 17:03:37.713] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 45% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.713] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 26% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.713] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 31% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.713] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 29% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.713] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.714] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 34% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.714] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 25% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.714] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 40% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.714] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 42% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.715] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 28% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.716] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 46% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.716] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 35% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.716] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 39% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.717] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 49% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.717] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 28% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.717] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 27% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.717] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 55% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.717] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 背光-划伤 | Conf: 27% | min:255 max:255 mean:255.0
+[2026-07-21 17:03:37.718] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.718] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.718] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 43% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.718] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 33% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.718] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 30% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.718] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:2 mean:1.3
+[2026-07-21 17:03:37.719] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 38% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.719] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.719] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.719] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 39% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.719] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.720] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 30% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.720] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 30% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.720] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.720] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 55% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.720] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 25% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.721] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 42% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.721] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.721] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 31% | min:0 max:1 mean:0.4
+[2026-07-21 17:03:37.721] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 44% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.721] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 42% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.722] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 42% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.722] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 25% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.722] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 52% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.722] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.722] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 46% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.723] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 33% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.723] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 36% | min:0 max:2 mean:1.1
+[2026-07-21 17:03:37.723] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:2 mean:1.3
+[2026-07-21 17:03:37.723] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 33% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.723] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.724] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 45% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.724] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 36% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.724] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 43% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.724] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.724] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.725] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 46% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.725] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.725] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 36% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.725] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 39% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.725] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 49% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.726] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 33% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.726] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.726] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 56% | min:0 max:1 mean:0.5
+[2026-07-21 17:03:37.726] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 32% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.726] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:2 mean:0.4
+[2026-07-21 17:03:37.727] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 47% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.727] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:2 mean:0.3
+[2026-07-21 17:03:37.727] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.727] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.727] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 36% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.728] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.728] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.728] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 52% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.728] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 49% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.728] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.728] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:2 mean:1.1
+[2026-07-21 17:03:37.729] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 55% | min:0 max:2 mean:1.1
+[2026-07-21 17:03:37.729] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 50% | min:0 max:2 mean:1.1
+[2026-07-21 17:03:37.729] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 29% | min:0 max:3 mean:1.3
+[2026-07-21 17:03:37.729] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 38% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.729] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 31% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.730] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.730] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.730] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 34% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.730] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 31% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.730] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:1 mean:0.5
+[2026-07-21 17:03:37.732] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:1 mean:0.5
+[2026-07-21 17:03:37.733] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 29% | min:0 max:2 mean:0.4
+[2026-07-21 17:03:37.733] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:1 mean:0.3
+[2026-07-21 17:03:37.733] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 54% | min:0 max:1 mean:0.3
+[2026-07-21 17:03:37.733] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 32% | min:0 max:2 mean:0.4
+[2026-07-21 17:03:37.734] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 46% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.734] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 33% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.734] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 38% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.734] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.734] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:2 mean:1.1
+[2026-07-21 17:03:37.735] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:2 mean:1.1
+[2026-07-21 17:03:37.735] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 25% | min:0 max:2 mean:1.2
+[2026-07-21 17:03:37.735] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 55% | min:0 max:2 mean:1.2
+[2026-07-21 17:03:37.735] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 34% | min:0 max:3 mean:1.3
+[2026-07-21 17:03:37.735] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.735] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 31% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.736] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 44% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.736] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.736] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 42% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.736] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.736] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.737] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 46% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.737] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.737] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 36% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.737] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 32% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.737] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 48% | min:0 max:1 mean:0.5
+[2026-07-21 17:03:37.738] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 51% | min:0 max:1 mean:0.3
+[2026-07-21 17:03:37.738] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:1 mean:0.3
+[2026-07-21 17:03:37.738] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 25% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.738] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 56% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.738] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 34% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.739] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 43% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.739] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 43% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.739] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 43% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.739] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.739] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.740] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 46% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.740] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 32% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.740] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.740] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 38% | min:0 max:2 mean:1.1
+[2026-07-21 17:03:37.740] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 49% | min:0 max:2 mean:1.3
+[2026-07-21 17:03:37.740] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.741] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:2 mean:1.2
+[2026-07-21 17:03:37.741] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 56% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.741] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 32% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.741] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 25% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.741] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 47% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.742] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 29% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.742] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 36% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.742] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.742] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.742] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.743] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 36% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.743] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 38% | min:0 max:1 mean:0.4
+[2026-07-21 17:03:37.743] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 50% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.743] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.743] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 25% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.744] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 52% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.744] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.744] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.744] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.744] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 31% | min:0 max:3 mean:1.1
+[2026-07-21 17:03:37.745] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.745] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.745] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 30% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.745] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.745] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 54% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.746] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 32% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.746] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 45% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.746] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.746] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 48% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.746] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.747] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.747] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 32% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.748] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.749] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.750] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:2 mean:0.4
+[2026-07-21 17:03:37.750] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 29% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.750] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:1 mean:0.4
+[2026-07-21 17:03:37.750] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 51% | min:0 max:1 mean:0.4
+[2026-07-21 17:03:37.750] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:1 mean:0.3
+[2026-07-21 17:03:37.751] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:1 mean:0.3
+[2026-07-21 17:03:37.751] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 28% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.751] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 25% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.751] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 52% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.751] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 52% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.752] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 44% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.752] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.752] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 42% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.752] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.752] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.753] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 45% | min:0 max:2 mean:1.1
+[2026-07-21 17:03:37.753] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:2 mean:1.2
+[2026-07-21 17:03:37.753] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 39% | min:0 max:2 mean:1.3
+[2026-07-21 17:03:37.753] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 33% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.753] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 46% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.753] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 51% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.754] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 36% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.754] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 54% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.754] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 33% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.754] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 43% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.754] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 34% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.755] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 39% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.755] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 38% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.755] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:2 mean:0.6
+[2026-07-21 17:03:37.755] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 33% | min:0 max:1 mean:0.3
+[2026-07-21 17:03:37.755] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 37% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.756] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 40% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.756] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.756] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 25% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.756] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 27% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.756] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 32% | min:0 max:1 mean:0.0
+[2026-07-21 17:03:37.757] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 30% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.757] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 46% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.757] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 30% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.757] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 32% | min:0 max:2 mean:0.8
+[2026-07-21 17:03:37.757] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 30% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.758] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 26% | min:0 max:2 mean:0.7
+[2026-07-21 17:03:37.758] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 36% | min:0 max:1 mean:0.5
+[2026-07-21 17:03:37.758] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 25% | min:0 max:2 mean:0.5
+[2026-07-21 17:03:37.758] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 43% | min:0 max:1 mean:0.3
+[2026-07-21 17:03:37.759] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 41% | min:0 max:1 mean:0.1
+[2026-07-21 17:03:37.759] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 46% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.759] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.759] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 46% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.759] [DEBUG] [T:40a0] [InferThread.cpp:224] - [Defect FILTERED (Ghost Box)] 暗场-划伤 | Conf: 35% | min:0 max:0 mean:0.0
+[2026-07-21 17:03:37.759] [DEBUG] [T:40a0] [InferThread.cpp:257] - [InferThread] DLL Inference completed in 4058 ms. Total valid defects: 57
+[2026-07-21 17:04:13.980] [WARN ] [T:5108] [MainWindow.cpp:60] - [LightController] Disconnected. Will try to reconnect...

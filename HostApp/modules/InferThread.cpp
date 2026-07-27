@@ -61,7 +61,7 @@ bool InferThread::initializeTRT(const QString& engineBacklightPath, const QStrin
 void InferThread::pushImage(std::shared_ptr<ImageFrame> frame)
 {
     QMutexLocker locker(&m_mutex);
-    if (m_queue.size() > 1) {
+    if (m_queue.size() > 5) {
         m_queue.dequeue();
         qWarning() << "[InferThread] Queue full, dropping oldest frame to save memory";
     }

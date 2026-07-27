@@ -221,12 +221,16 @@ void CameraThread::handleFrameReady()
         IKapGetInfo64(m_hBoard, IKP_IMAGE_HEIGHT, &h);
         
         if (pUserBuffer && w > 0 && h > 0) {
-            // VFL 模式下，实际采到的有效行数在 status.uLineNum
+            // 恢复回最初的 VFL（不定行高）逻辑
+            // 依赖硬件汇报的实际有效行数
             int actualHeight = status.uLineNum;
             if (actualHeight <= 0 || actualHeight > h) {
-                actualHeight = h; // Fallback 如果硬件未正确返回有效行，则使用最大值
+                actualHeight = h; // Fallback
             }
-
+            if (actualHeight < 1000) {
+                qWarning() << "[CameraThread] Camera" << m_cameraId << "Noise frame detected! Height:" << actualHeight << "Ignoring.";
+                return;
+            }
             cv::Mat rawImg(actualHeight, w, CV_8UC1, pUserBuffer);
             // --- 基于首行亮度的光场纠偏算法 (用户要求回复首行判断) ---
             long long sumRow0 = 0;
@@ -276,6 +280,7 @@ void CameraThread::handleFrameReady()
             frame->cameraId = m_cameraId;
             frame->frameIndex = m_frameIndex++;
             frame->exposureType = 0; 
+            frame->captureTimestamp = QDateTime::currentMSecsSinceEpoch();
             
             if (m_isNextFrameForRoi.exchange(false)) {
                 frame->isForRoi = true;
